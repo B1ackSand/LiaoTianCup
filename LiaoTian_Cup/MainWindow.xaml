@@ -1,0 +1,38 @@
+﻿<Window x:Class="LiaoTian_Cup.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LiaoTian_Cup"
+        mc:Ignorable="d"
+        Height="780" Width="960"
+        Title="聊天杯"
+        ResizeMode="CanMinimize"
+        WindowStartupLocation="CenterScreen"
+        >
+    <Window.Background>
+        <ImageBrush ImageSource="Resources/R-C.jpg" Opacity="0.8" Stretch="Fill"/>
+    </Window.Background>
+    
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="180"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <Button Content="随机官突模式" 
+                Width="200" Height="60"
+                Margin="20,10,0,0" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                FontSize="20" Click="Button_RandomMutation_Click"/>
+            <Button Content="纯正面因子模式" 
+                Width="200" Height="60"
+                Margin="20,20,0,0" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                FontSize="20" Click="Button_Negative_Click"/>
+        </StackPanel>
+        
+    </Grid>
+</Window>

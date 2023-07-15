@@ -1,0 +1,542 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+	<PublishSingleFile>true</PublishSingleFile>
+	<SelfContained>false</SelfContained>
+	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\commander\凯拉克斯.png" />
+    <None Remove="Resources\commander\凯瑞甘.png" />
+    <None Remove="Resources\commander\德哈卡.png" />
+    <None Remove="Resources\commander\扎加拉.png" />
+    <None Remove="Resources\commander\斯台特曼.png" />
+    <None Remove="Resources\commander\斯图科夫.png" />
+    <None Remove="Resources\commander\斯托科夫.png" />
+    <None Remove="Resources\commander\斯旺.png" />
+    <None Remove="Resources\commander\沃拉尊.png" />
+    <None Remove="Resources\commander\泰凯斯.png" />
+    <None Remove="Resources\commander\泽拉图.png" />
+    <None Remove="Resources\commander\米拉.png" />
+    <None Remove="Resources\commander\自选.png" />
+    <None Remove="Resources\commander\菲尼克斯.png" />
+    <None Remove="Resources\commander\蒙斯克.png" />
+    <None Remove="Resources\commander\蒙斯克A.png" />
+    <None Remove="Resources\commander\蒙斯克B.png" />
+    <None Remove="Resources\commander\诺娃.png" />
+    <None Remove="Resources\commander\阿塔尼斯.png" />
+    <None Remove="Resources\commander\阿巴瑟.png" />
+    <None Remove="Resources\commander\阿拉纳克.png" />
+    <None Remove="Resources\commander\阿纳拉克.png" />
+    <None Remove="Resources\commander\雷诺.png" />
+    <None Remove="Resources\factor\不给糖果就捣蛋.png" />
+    <None Remove="Resources\factor\丧尸大战.png" />
+    <None Remove="Resources\factor\乘胜追击.png" />
+    <None Remove="Resources\factor\亚空间放逐.png" />
+    <None Remove="Resources\factor\伤害散射.png" />
+    <None Remove="Resources\factor\光子过载.png" />
+    <None Remove="Resources\factor\净化光束.png" />
+    <None Remove="Resources\factor\减伤屏障.png" />
+    <None Remove="Resources\factor\前赴后继.png" />
+    <None Remove="Resources\factor\剧毒之种.png" />
+    <None Remove="Resources\factor\力量蜕变.png" />
+    <None Remove="Resources\factor\双重压力.png" />
+    <None Remove="Resources\factor\变形者.png" />
+    <None Remove="Resources\factor\同化体.png" />
+    <None Remove="Resources\factor\嗜血狂热.png" />
+    <None Remove="Resources\factor\圣母舰.png" />
+    <None Remove="Resources\factor\坚强意志.png" />
+    <None Remove="Resources\factor\复仇战士.png" />
+    <None Remove="Resources\factor\小捞油水.png" />
+    <None Remove="Resources\factor\岩浆爆发.png" />
+    <None Remove="Resources\factor\幸运红包.png" />
+    <None Remove="Resources\factor\异形寄生.png" />
+    <None Remove="Resources\factor\弥散之雾.png" />
+    <None Remove="Resources\factor\强磁雷场.png" />
+    <None Remove="Resources\factor\强行征用.png" />
+    <None Remove="Resources\factor\惧怕黑暗.png" />
+    <None Remove="Resources\factor\感染地带.png" />
+    <None Remove="Resources\factor\扫雷专家.png" />
+    <None Remove="Resources\factor\拿钱说话.png" />
+    <None Remove="Resources\factor\排斥立场.png" />
+    <None Remove="Resources\factor\无边恐惧.png" />
+    <None Remove="Resources\factor\时空力场.png" />
+    <None Remove="Resources\factor\时空立场.png" />
+    <None Remove="Resources\factor\时间扭曲.png" />
+    <None Remove="Resources\factor\晶矿护盾.png" />
+    <None Remove="Resources\factor\暗影能量.png" />
+    <None Remove="Resources\factor\暗无天日.png" />
+    <None Remove="Resources\factor\暴风雪.png" />
+    <None Remove="Resources\factor\杀戮机器人.png" />
+    <None Remove="Resources\factor\杀生业报.png" />
+    <None Remove="Resources\factor\来去无踪.png" />
+    <None Remove="Resources\factor\极性不定.png" />
+    <None Remove="Resources\factor\核弹地雷.png" />
+    <None Remove="Resources\factor\核弹打击.png" />
+    <None Remove="Resources\factor\死灵之书.png" />
+    <None Remove="Resources\factor\混乱工作室.png" />
+    <None Remove="Resources\factor\激光钻机.png" />
+    <None Remove="Resources\factor\灵能爆表.png" />
+    <None Remove="Resources\factor\炸弹机器人.png" />
+    <None Remove="Resources\factor\烟火秀.png" />
+    <None Remove="Resources\factor\焦土政策.png" />
+    <None Remove="Resources\factor\焰火秀.png" />
+    <None Remove="Resources\factor\生命吸取.png" />
+    <None Remove="Resources\factor\生命汲取.png" />
+    <None Remove="Resources\factor\相互摧毁.png" />
+    <None Remove="Resources\factor\短兵相接.png" />
+    <None Remove="Resources\factor\短视症.png" />
+    <None Remove="Resources\factor\石像狂热者.png" />
+    <None Remove="Resources\factor\礼尚往来.png" />
+    <None Remove="Resources\factor\给我死吧.png" />
+    <None Remove="Resources\factor\自毁程序.png" />
+    <None Remove="Resources\factor\致命勾引.png" />
+    <None Remove="Resources\factor\英雄祝福.png" />
+    <None Remove="Resources\factor\莫斯科套娃.png" />
+    <None Remove="Resources\factor\虚空裂隙.png" />
+    <None Remove="Resources\factor\虚空重生者.png" />
+    <None Remove="Resources\factor\行尸走肉.png" />
+    <None Remove="Resources\factor\贴因子用的框架.png" />
+    <None Remove="Resources\factor\超远视距.png" />
+    <None Remove="Resources\factor\轨道轰炸.png" />
+    <None Remove="Resources\factor\进攻部署.png" />
+    <None Remove="Resources\factor\迷失方向.png" />
+    <None Remove="Resources\factor\速度狂魔.png" />
+    <None Remove="Resources\factor\长城.png" />
+    <None Remove="Resources\factor\闪避机动.png" />
+    <None Remove="Resources\factor\随机.png" />
+    <None Remove="Resources\factor\震荡攻击.png" />
+    <None Remove="Resources\factor\非人道战法.png" />
+    <None Remove="Resources\factor\非同寻常的战役.png" />
+    <None Remove="Resources\factor\风暴英雄.png" />
+    <None Remove="Resources\factor\飞弹大战.png" />
+    <None Remove="Resources\factor\鲜血重塑.png" />
+    <None Remove="Resources\factor\黑死病.png" />
+    <None Remove="Resources\factor\默哀.png" />
+    <None Remove="Resources\factor\鼓舞人心.png" />
+    <None Remove="Resources\factor\龙卷风暴.png" />
+    <None Remove="Resources\maps\亡者之夜.png" />
+    <None Remove="Resources\maps\克哈裂痕.png" />
+    <None Remove="Resources\maps\净网行动.png" />
+    <None Remove="Resources\maps\升格之链.png" />
+    <None Remove="Resources\maps\天界封锁.png" />
+    <None Remove="Resources\maps\往日神庙.png" />
+    <None Remove="Resources\maps\机会渺茫.png" />
+    <None Remove="Resources\maps\死亡摇篮.png" />
+    <None Remove="Resources\maps\湮灭快车.png" />
+    <None Remove="Resources\maps\熔火危机.png" />
+    <None Remove="Resources\maps\聚铁成兵.png" />
+    <None Remove="Resources\maps\营救矿工.png" />
+    <None Remove="Resources\maps\虚空撕裂.png" />
+    <None Remove="Resources\maps\虚空降临.png" />
+    <None Remove="Resources\maps\融火危机.png" />
+    <None Remove="Resources\maps\黑暗杀星.png" />
+    <None Remove="Resources\R-C.jpg" />
+    <None Remove="Resources\先出指挥官列表.csv" />
+    <None Remove="Resources\后出指挥官列表.csv" />
+    <None Remove="Resources\电脑AI.csv" />
+    <None Remove="Resources\突变列表整合（排除反面）.xlsx" />
+    <None Remove="Resources\突变因子列表.csv" />
+    <None Remove="Resources\自选突变列表.csv" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\R-C.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
+    <Folder Include="View\" />
+    <Folder Include="ViewModel\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DeepCloner" Version="0.10.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\commander\凯拉克斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\凯瑞甘.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\德哈卡.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\扎加拉.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\斯台特曼.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\斯托科夫.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\斯旺.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\沃拉尊.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\泰凯斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\泽拉图.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\米拉.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\自选.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\菲尼克斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\蒙斯克.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\蒙斯克A.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\蒙斯克B.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\诺娃.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\阿塔尼斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\阿巴瑟.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\阿拉纳克.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\雷诺.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\不给糖果就捣蛋.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\丧尸大战.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\乘胜追击.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\亚空间放逐.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\伤害散射.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\光子过载.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\净化光束.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\减伤屏障.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\前赴后继.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\剧毒之种.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\力量蜕变.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\双重压力.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\变形者.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\同化体.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\嗜血狂热.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\圣母舰.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\坚强意志.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\复仇战士.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\小捞油水.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\岩浆爆发.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\幸运红包.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\异形寄生.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\弥散之雾.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\强磁雷场.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\强行征用.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\惧怕黑暗.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\感染地带.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\扫雷专家.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\拿钱说话.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\排斥立场.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\无边恐惧.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\时空立场.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\时间扭曲.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\晶矿护盾.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\暗影能量.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\暗无天日.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\暴风雪.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\杀戮机器人.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\杀生业报.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\来去无踪.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\极性不定.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\核弹地雷.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\核弹打击.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\死灵之书.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\混乱工作室.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\激光钻机.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\灵能爆表.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\炸弹机器人.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\焦土政策.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\焰火秀.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\生命汲取.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\相互摧毁.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\短兵相接.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\短视症.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\石像狂热者.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\礼尚往来.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\给我死吧.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\自毁程序.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\致命勾引.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\英雄祝福.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\莫斯科套娃.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\虚空裂隙.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\虚空重生者.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\行尸走肉.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\贴因子用的框架.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\超远视距.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\轨道轰炸.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\进攻部署.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\迷失方向.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\速度狂魔.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\长城.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\闪避机动.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\随机.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\震荡攻击.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\非人道战法.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\非同寻常的战役.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\风暴英雄.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\飞弹大战.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\鲜血重塑.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\黑死病.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\默哀.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\鼓舞人心.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\龙卷风暴.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\亡者之夜.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\克哈裂痕.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\净网行动.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\升格之链.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\天界封锁.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\往日神庙.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\机会渺茫.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\死亡摇篮.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\湮灭快车.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\熔火危机.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\聚铁成兵.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\营救矿工.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\虚空撕裂.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\虚空降临.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\黑暗杀星.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\先出指挥官列表.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\后出指挥官列表.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\电脑AI.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\突变列表整合（排除反面）.xlsx">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\突变因子列表.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\自选突变列表.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+</Project>
