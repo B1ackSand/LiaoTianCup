@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
-        Height="880" Width="1160"
+        Height="880" Width="1180"
         Background="white"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
@@ -28,8 +28,8 @@
                 <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
             </ComboBox>
-            <Button Content="开始随机" Width="120" Height="30" Margin="95,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
-            <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+            <Button x:Name="RandStartBtn" Content="开始随机" Width="120" Height="30" Margin="95,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
+            <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Reset_Click"/>
             <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" Click="Button_BackMain_Click"/>
         </StackPanel>
 
@@ -54,13 +54,13 @@
 			Grid.Row="2">
             <StackPanel Orientation="Horizontal">
                 <Label Content="基础因子：" Foreground="Red" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                <Image x:Name="Factor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" />
-                <Image x:Name="Factor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
-                <Image x:Name="Factor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
-                <Image x:Name="Factor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
-                <Image x:Name="Factor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
-                <Image x:Name="Factor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
-                <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="448,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BaseConfirm_Click"/>
+                <Image x:Name="Factor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Image x:Name="Factor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Image x:Name="Factor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Image x:Name="Factor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Image x:Name="Factor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Image x:Name="Factor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
+                <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="448,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BaseConfirm_Click" IsEnabled="False"/>
             </StackPanel>
         </Grid>
 
@@ -96,6 +96,7 @@
                 <StackPanel Orientation="Horizontal">
                     <Label Content="已选地图：" HorizontalAlignment="Left" Margin="18,10,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectMap" Margin="10,15,0,0" Height="85" Width="285" Stretch="UniformToFill"/>
+                    <TextBlock x:Name="MapWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                     <Label Content="已选基础因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
@@ -105,6 +106,7 @@
                     <Image x:Name="HasSelectFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
+                    <TextBlock x:Name="FactorWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
 
 
