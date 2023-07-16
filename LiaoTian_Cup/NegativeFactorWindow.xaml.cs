@@ -1,5 +1,8 @@
-﻿using System;
+﻿using Force.DeepCloner;
+using LiaoTian_Cup.Helper;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,11 +20,406 @@ namespace LiaoTian_Cup
     /// <summary>
     /// NegativeFactorWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class NegativeFactorWindow : Window
+    public partial class NegativeFactorWindow : Window, INotifyPropertyChanged
     {
+        //路径
+        private readonly string baseNegativeFactorFilePath = "./Resources/纯正面因子基础库.csv";
+        private readonly string negativeFactorFilePath = "./Resources/正面因子库.csv";
+        private readonly string beforeCommanderFilePath = "./Resources/先出指挥官列表.csv";
+        private readonly string afterCommanderFilePath = "./Resources/后出指挥官列表.csv";
+        private readonly string aIFilePath = "./Resources/电脑AI.csv";
+        private readonly string mapsFilePath = "./Resources/所有地图.csv";
+
+        //存放因子库CSV中得到的数据
+        private List<string> baseNegativeFactorInfo = new List<string>();
+        private List<string> negativeFactorInfo = new List<string>();
+
+        //存放先出指挥官CSV中得到的数据
+        private List<string> beforeCommanderInfo = new List<string>();
+        //存放后出指挥官CSV中得到的数据
+        private List<string> afterCommanderInfo = new List<string>();
+
+        //存放所有的人机CSV中得到的数据
+        private List<string> botInfo = new List<string>();
+        public string botName = "暂未随机AI";
+
+        //存放地图数据
+        private List<string> mapsInfo = new List<string>();
+
+        //链表，存放自选因子
+        private List<Image> hasSelectBase = new List<Image>(2);
+        private List<Image> hasSelectFactor = new List<Image>(5);
+        private Image hasSelectCommander = new Image();
+        private Image hasSelectMap = new Image();
+
+        //初始化
+        RandomKit rk = new RandomKit();
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public NegativeFactorWindow()
         {
+            //初始化窗口时即拿数据
+            CSVKit.Csv2Dt(baseNegativeFactorFilePath, baseNegativeFactorInfo);
+            CSVKit.Csv2Dt(negativeFactorFilePath, negativeFactorInfo);
+            CSVKit.Csv2Dt(beforeCommanderFilePath, beforeCommanderInfo);
+            CSVKit.Csv2Dt(afterCommanderFilePath, afterCommanderInfo);
+            CSVKit.Csv2Dt(aIFilePath, botInfo);
+            CSVKit.Csv2Dt(mapsFilePath,mapsInfo);
             InitializeComponent();
+            this.DataContext = this;
+        }
+
+
+        //是否允许随机AI逻辑
+        private bool _isRandAI;
+        public bool isRandAI
+        {
+            get { return _isRandAI; }
+            set
+            {
+                _isRandAI = value;
+                RaisePropertyChanged(nameof(isRandAI));
+            }
+        }
+
+        //玩家名响应相关逻辑
+        private string _playName;
+        public string playName
+        {
+            get { return _playName; }
+            set
+            {
+                _playName = value;
+                RaisePropertyChanged(nameof(playName));
+            }
+        }
+
+        //模式选择（3因子模式,5因子模式）数据
+        private string _modeName = "3因子模式";
+        public string modeName
+        {
+            get { return _modeName; }
+            set
+            {
+                _modeName = value;
+                RaisePropertyChanged(nameof(_modeName));
+            }
+        }
+
+        //随机先出和后出指挥官处理逻辑
+        private void RandomCommanderInfo()
+        {
+            List<int> beforeRandNum = rk.GenerateXRandomNum(4, beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(2, afterCommanderInfo.Count);
+
+            //相对路径URI指定指挥官图片来源
+            BeforeCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+
+            AfterCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+        }
+
+        //是否随机AI的处理逻辑
+        private string IsRandAIFunc()
+        {
+            if (isRandAI)
+            {
+                Random rand = new Random();
+                int number = rand.Next(0, botInfo.Count);
+                return botInfo[number];
+            }
+            else
+            {
+                return "暂未随机AI";
+            }
+        }
+
+        //随机地图显示
+        private void ShowRandomMaps()
+        {
+            List<int> randNums = rk.GenerateXRandomNum(3, mapsInfo.Count);
+            MapImg1.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+        }
+
+        
+
+        //返回主页事件响应
+        private void Button_BackMain_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        //开始随机事件响应
+        private void Button_Random_Click(object sender, RoutedEventArgs e)
+        {
+            ShowRandomMaps();
+        }
+
+        //确认地图按钮事件响应
+        private void Button_MapConfirm_Click(object sender, RoutedEventArgs e) 
+        {
+            SetRandMapEnable(false);
+            ShowRandomBaseFactor();
+        }
+
+        //点击地图图片事件响应
+        private void Maps_MouseDown(object sender, MouseEventArgs e)
+        {
+            Image selectMap = (Image)sender;
+            if(selectMap != null)
+            {
+                hasSelectMap = selectMap;
+            }
+            FlashHasSelectMap();
+        }
+
+        //取消当前选择的地图事件响应
+        private void CancelMap_MouseDown(Object sender, RoutedEventArgs e)
+        {
+            Image cancelMap = (Image)sender;
+            if (cancelMap != null)
+            {
+                hasSelectMap = new Image();
+            }
+            else { return; }
+            FlashHasSelectMap();
+        }
+
+        //刷新选择的地图
+        private void FlashHasSelectMap()
+        {
+            if (hasSelectMap != null)
+            {
+                HasSelectMap.Source = hasSelectMap.Source;
+            }
+        }
+
+        //地图相关控件的可用性设置
+        private void SetRandMapEnable(bool enable)
+        {
+            MapImg1.IsEnabled = enable;
+            MapImg2.IsEnabled = enable;
+            MapImg3.IsEnabled = enable;
+            HasSelectMap.IsEnabled = enable;
+            MapConfirmBtn.IsEnabled = enable;
+        }
+
+        //随机基础因子显示
+        private void ShowRandomBaseFactor()
+        {
+            //相对路径URI指定因子图片来源
+            Factor1.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[0] + ".png", UriKind.Relative));
+            Factor2.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[1] + ".png", UriKind.Relative));
+            Factor3.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[2] + ".png", UriKind.Relative));
+            Factor4.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[3] + ".png", UriKind.Relative));
+            Factor5.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[4] + ".png", UriKind.Relative));
+            Factor6.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[5] + ".png", UriKind.Relative));
+        }
+
+        //点击基础因子图片事件响应
+        private void Base_MouseDown(object sender, MouseEventArgs e)
+        {
+            Image selectBase = (Image)sender;
+            if (selectBase != null && hasSelectBase.Count > 0)
+            {
+                if (_modeName.Equals("3因子模式") && hasSelectBase[0] == null && !hasSelectBase.Contains(selectBase))
+                {
+                    hasSelectBase.Add(selectBase);
+                }
+                else
+                {
+
+                }
+                
+                if(_modeName.Equals("5因子模式") && hasSelectBase[1] == null && !hasSelectBase.Contains(selectBase))
+                {
+                    hasSelectBase.Add(selectBase);
+                }
+                else
+                {
+
+                }
+            }
+            FlashSelectBase();
+        }
+
+        //取消当前选择的基础因子事件响应
+        private void CancelBase_MouseDown(Object sender, RoutedEventArgs e)
+        {
+            Image cancelBase = (Image)sender;
+            if (cancelBase != null)
+            {
+                hasSelectBase.Remove(cancelBase);
+            }
+            else { return; }
+            FlashSelectBase();
+        }
+
+        private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
+        {
+            SetBaseFactorEnable(false);
+            ShowRandomFactor();
+        }
+
+        //刷新已选基础因子事件
+        private void FlashSelectBase()
+        {
+            HasSelectBaseFactor1.Source = hasSelectBase.Count < 1 ? null : hasSelectBase[0].Source;
+            HasSelectBaseFactor2.Source = hasSelectBase.Count < 2 ? null : hasSelectBase[1].Source;
+        }
+
+        //基础因子相关控件的可用性设置
+        private void SetBaseFactorEnable(bool enable)
+        {
+            Factor1.IsEnabled = enable;
+            Factor2.IsEnabled = enable;
+            Factor3.IsEnabled = enable;
+            Factor4.IsEnabled = enable;
+            Factor5.IsEnabled = enable;
+            Factor6.IsEnabled = enable;
+            HasSelectBaseFactor1.IsEnabled = enable;
+            HasSelectBaseFactor2.IsEnabled = enable;
+        }
+
+        //显示最多5个随机选择因子
+        private void ShowRandomFactor()
+        {
+            var factorListClone = negativeFactorInfo.DeepClone();
+            for (int i = 0; i < hasSelectBase.Count; i++)
+            {
+                if (factorListClone.Contains(hasSelectBase[i].Source.ToString().Replace("./Resources/factor/", "").Replace(".png","")))
+                {
+                    factorListClone.RemoveAt(i);
+                }
+            }
+            List<int> randNum = rk.GenerateXRandomNum(5, factorListClone.Count);
+
+            //相对路径URI显示8个因子的图片
+            SelectFactor1.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[0]] + ".png", UriKind.Relative));
+            SelectFactor2.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[1]] + ".png", UriKind.Relative));
+            SelectFactor3.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[2]] + ".png", UriKind.Relative));
+            SelectFactor4.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[3]] + ".png", UriKind.Relative));
+            SelectFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[4]] + ".png", UriKind.Relative));
+        }
+
+        //点击自选因子事件响应
+        private void Factor_MouseDown(object sender, RoutedEventArgs e)
+        {
+            Image selectFactor = (Image)sender;
+            if (selectFactor != null)
+            {
+                if (!hasSelectFactor.Contains(selectFactor))
+                {
+                    hasSelectFactor.Add(selectFactor);
+                }
+                else
+                {
+                    return;
+                }
+            }
+            FlashHasSelectFactor();
+        }
+
+       
+
+        //点击已选择的自选因子 取消事件响应
+        private void CancelFactor_MouseDown(object sender, RoutedEventArgs e)
+        {
+            Image cancelFactor = (Image)sender;
+            if (cancelFactor != null)
+            {
+                for (int i = 0; i < hasSelectFactor.Count; i++)
+                {
+                    if (hasSelectFactor[i] != null
+                        && hasSelectFactor[i].Source.ToString().Equals(cancelFactor.Source.ToString()))
+                    {
+                        hasSelectFactor.RemoveAt(i);
+                    }
+                }
+            }
+            else { return; }
+            FlashHasSelectFactor();
+        }
+
+        //刷新已选择的因子
+        private void FlashHasSelectFactor()
+        {
+            HasSelectFactor1.Source = hasSelectFactor.Count < 1 ? null : hasSelectFactor[0].Source;
+            HasSelectFactor2.Source = hasSelectFactor.Count < 2 ? null : hasSelectFactor[1].Source;
+            HasSelectFactor3.Source = hasSelectFactor.Count < 3 ? null : hasSelectFactor[2].Source;
+        }
+
+        //点击自选指挥官事件响应
+        private void Commander_MouseDown(object sender, RoutedEventArgs e)
+        {
+            CommanderWarn.Text = "";
+            Image selectCommander = (Image)sender;
+            if (selectCommander != null)
+            {
+                hasSelectCommander = selectCommander;
+            }
+            FlashHasSelectCommander();
+        }
+
+        //取消当前选择的指挥官事件响应
+        private void CancelCommander_MouseDown(Object sender, RoutedEventArgs e)
+        {
+            Image cancelCommander = (Image)sender;
+            if (cancelCommander != null)
+            {
+                hasSelectCommander = new Image();
+            }
+            else { return; }
+            FlashHasSelectCommander();
+        }
+
+        //刷新选择的指挥官
+        private void FlashHasSelectCommander()
+        {
+            if (hasSelectCommander != null)
+            {
+                HasSelectCommander.Source = hasSelectCommander.Source;
+            }
+        }
+
+        //重写关闭窗口事件
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            Application.Current.MainWindow.Show();
+        }
+
+        //确认按钮事件响应
+        private void Button_Confirm_Click(object sender, RoutedEventArgs e)
+        {
+            botName = IsRandAIFunc();
+            if (hasSelectCommander == null || hasSelectCommander.Source == null || hasSelectCommander.Source.Equals(""))
+            {
+                CommanderWarn.Text = "未选择指挥官";
+                return;
+            }
+            else
+            {
+                CommanderWarn.Text = "";
+            }
+            this.Hide();
+            //ShowRMDetail showRMDetail = new ShowRMDetail(this);
+            //showRMDetail.Show();
+        }
+
+        //实现绑定响应接口
+        private void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler(this, new PropertyChangedEventArgs(propertyName));
+            }
         }
     }
 }

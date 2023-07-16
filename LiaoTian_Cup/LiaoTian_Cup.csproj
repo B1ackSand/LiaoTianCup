@@ -139,6 +139,7 @@
     <None Remove="Resources\R-C.jpg" />
     <None Remove="Resources\先出指挥官列表.csv" />
     <None Remove="Resources\后出指挥官列表.csv" />
+    <None Remove="Resources\正面因子库.csv" />
     <None Remove="Resources\电脑AI.csv" />
     <None Remove="Resources\突变列表整合（排除反面）.xlsx" />
     <None Remove="Resources\突变因子列表.csv" />
@@ -523,6 +524,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\后出指挥官列表.csv">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\正面因子库.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\电脑AI.csv">

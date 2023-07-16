@@ -31,6 +31,13 @@ namespace LiaoTian_Cup
             randomMutationWindow.Show();
             this.Hide();
         }
+
+        private void Button_Negative_Click(object sender, RoutedEventArgs e)
+        {
+            NegativeFactorWindow negativeFactorWindow = new NegativeFactorWindow();
+            negativeFactorWindow.Show();
+            this.Hide();
+        }
     }
 
     

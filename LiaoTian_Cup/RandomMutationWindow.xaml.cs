@@ -291,7 +291,7 @@ namespace LiaoTian_Cup
             FlashHasSelectCommander();
         }
 
-        //实现响应接口
+        //实现绑定响应接口
         private void RaisePropertyChanged(string propertyName)
         {
             PropertyChangedEventHandler handler = PropertyChanged;
