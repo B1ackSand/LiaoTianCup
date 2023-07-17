@@ -10,7 +10,8 @@
         Title="聊天杯 - 官突随机因子模式"
         Background="white"
         ResizeMode="CanMinimize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="./Resources/Logo/icon.ico">
 
     <!--<Page.Background>
         <ImageBrush ImageSource="Resources/R-C.jpg" Opacity="0.8"/>

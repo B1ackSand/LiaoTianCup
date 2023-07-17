@@ -38,6 +38,13 @@ namespace LiaoTian_Cup
             negativeFactorWindow.Show();
             this.Hide();
         }
+
+        private void Button_Doubles_Click(object sender, RoutedEventArgs e)
+        {
+            DoublesModeWindow doublesModeWindow = new DoublesModeWindow();
+            doublesModeWindow.Show();
+            this.Hide();
+        }
     }
 
     

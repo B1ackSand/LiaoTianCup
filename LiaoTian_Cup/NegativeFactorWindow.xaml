@@ -9,7 +9,8 @@
         Background="white"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Title="聊天杯 - 纯正面因子模式" >
+        Title="聊天杯 - 纯正面因子模式"
+        Icon="./Resources/Logo/icon.ico">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
@@ -24,11 +25,11 @@
             <Label Content="选手名称："  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
             <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
-            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="85" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
                 <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
             </ComboBox>
-            <Button x:Name="RandStartBtn" Content="开始随机" Width="120" Height="30" Margin="95,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
+            <Button x:Name="RandStartBtn" Content="开始随机" Width="120" Height="30" Margin="55,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
             <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Reset_Click"/>
             <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" Click="Button_BackMain_Click"/>
         </StackPanel>

@@ -9,7 +9,8 @@
       Title="聊天杯 - 随机官突模式已确认"
       Background="White" 
       ResizeMode="CanMinimize"
-      WindowStartupLocation="CenterScreen">
+      WindowStartupLocation="CenterScreen"
+      Icon="./Resources/Logo/icon.ico">
 
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>

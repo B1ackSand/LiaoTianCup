@@ -9,7 +9,8 @@
         Title="聊天杯 - 纯正面因子模式已确认"
         Background="White" 
         ResizeMode="CanMinimize"
-        WindowStartupLocation="CenterScreen">
+        WindowStartupLocation="CenterScreen"
+        Icon="./Resources/Logo/icon.ico">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>

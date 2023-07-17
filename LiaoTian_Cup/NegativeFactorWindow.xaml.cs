@@ -201,7 +201,7 @@ namespace LiaoTian_Cup
         //点击地图图片事件响应
         private void Maps_MouseDown(object sender, MouseEventArgs e)
         {
-            MapWarn.Text = "";
+            CommanderWarn.Text = "";
             Image selectMap = (Image)sender;
             if(selectMap != null)
             {

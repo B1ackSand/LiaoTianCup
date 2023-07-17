@@ -8,6 +8,9 @@
 	<SelfContained>false</SelfContained>
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
+    <Version>0.0.2</Version>
+	<Authors>BlackSand</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -121,6 +124,7 @@
     <None Remove="Resources\factor\默哀.png" />
     <None Remove="Resources\factor\鼓舞人心.png" />
     <None Remove="Resources\factor\龙卷风暴.png" />
+    <None Remove="Resources\Logo\icon.ico" />
     <None Remove="Resources\maps\亡者之夜.png" />
     <None Remove="Resources\maps\克哈裂痕.png" />
     <None Remove="Resources\maps\净网行动.png" />
@@ -148,7 +152,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="Resources\Logo\icon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\factor\耐力挑战.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Logo\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\R-C.jpg">
