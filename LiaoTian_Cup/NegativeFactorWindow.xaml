@@ -24,7 +24,7 @@
             <Label Content="选手名称："  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
             <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
-            <ComboBox Text="{Binding Path=modeName}" Height="30" Width="85" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="85" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
                 <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
             </ComboBox>
@@ -112,7 +112,7 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
+                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
                     <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
 

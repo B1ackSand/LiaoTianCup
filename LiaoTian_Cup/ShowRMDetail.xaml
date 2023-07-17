@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LiaoTian_Cup"
       mc:Ignorable="d" 
       Height="540" Width="960"
-      Title="聊天杯 - 已确认"
+      Title="聊天杯 - 随机官突模式已确认"
       Background="White" 
       ResizeMode="CanMinimize"
       WindowStartupLocation="CenterScreen">
@@ -37,7 +37,7 @@
         <Grid
 			Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <Label Content="基础因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="基础因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="Factor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill"/>
                 <Image x:Name="Factor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                 <Image x:Name="Factor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
@@ -49,7 +49,7 @@
 			Grid.Row="3">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选择自选因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center"/>
+                    <Label Content="已选自选因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectFactor1" Height="60" Width="60" Stretch="Fill"/>
                     <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                     <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
@@ -62,15 +62,15 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center"/>
-                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
+                    <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Stretch="Fill"/>
 
                 </StackPanel>
             </StackPanel>
 
 
-            <Label Content="随机AI为：" Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom"/>
-            <TextBox x:Name="AIBox" Text="暂无随机AI" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="bottom" Height="auto" Width="200" Margin="100,0,0,30" FontWeight="Bold" Focusable="False"/>
+            <Label Content="随机AI为：" Margin="30,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="20" FontWeight="Bold"/>
+            <TextBox x:Name="AIBox" Text="暂无随机AI" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="bottom" Height="auto" Width="200" Margin="132,0,0,32" FontWeight="Bold" Focusable="False"/>
             <Button Content="返回" Width="120" Height="30" Margin="0,0,75,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Back_Click"/>
         </Grid>
     </Grid>

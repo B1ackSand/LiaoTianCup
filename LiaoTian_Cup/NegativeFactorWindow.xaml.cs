@@ -122,6 +122,19 @@ namespace LiaoTian_Cup
             AfterCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
         }
 
+        //随机先出和后出指挥官清除显示
+        private void clearRandomCommander()
+        {
+            //相对路径URI指定指挥官图片来源
+            BeforeCommander1.Source = new BitmapImage();
+            BeforeCommander2.Source = new BitmapImage();
+            BeforeCommander3.Source = new BitmapImage();
+            BeforeCommander4.Source = new BitmapImage();
+
+            AfterCommander1.Source = new BitmapImage();
+            AfterCommander2.Source = new BitmapImage();
+        }
+
         //是否随机AI的处理逻辑
         private string IsRandAIFunc()
         {
@@ -148,7 +161,13 @@ namespace LiaoTian_Cup
             MapImg3.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[2]] + ".png", UriKind.Relative));
         }
 
-        
+        //随机地图显示清除
+        private void ClearRandomMaps()
+        {
+            MapImg1.Source = new BitmapImage();
+            MapImg2.Source = new BitmapImage();
+            MapImg3.Source = new BitmapImage();
+        }
 
         //返回主页事件响应
         private void Button_BackMain_Click(object sender, RoutedEventArgs e)
@@ -159,6 +178,7 @@ namespace LiaoTian_Cup
         //开始随机事件响应
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
+            ModeBox.IsEnabled = false;
             ShowRandomMaps();
         }
 
@@ -235,9 +255,22 @@ namespace LiaoTian_Cup
             Factor6.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[5] + ".png", UriKind.Relative));
         }
 
+        //基础因子清除
+        private void ClearRandomBaseFactor()
+        {
+            //相对路径URI指定因子图片来源
+            Factor1.Source = new BitmapImage();
+            Factor2.Source = new BitmapImage();
+            Factor3.Source = new BitmapImage();
+            Factor4.Source = new BitmapImage();
+            Factor5.Source = new BitmapImage();
+            Factor6.Source = new BitmapImage();
+        }
+
         //点击基础因子图片事件响应
         private void Base_MouseDown(object sender, MouseEventArgs e)
         {
+            FactorWarn.Text = "";
             Image selectBase = (Image)sender;
             if (selectBase != null)
             {
@@ -281,6 +314,17 @@ namespace LiaoTian_Cup
 
         private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
         {
+            FactorWarn.Text = "";
+            if (_modeName.Equals("3因子模式") && hasSelectBase.Count < 1)
+            {
+                FactorWarn.Text = "未选择足够的基础因子";
+                return;
+            }
+            if(_modeName.Equals("5因子模式") && hasSelectBase.Count < 2)
+            {
+                FactorWarn.Text = "未选择足够的基础因子";
+                return;
+            }
             SetBaseFactorEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
@@ -316,11 +360,18 @@ namespace LiaoTian_Cup
             var factorListClone = negativeFactorInfo.DeepClone();
             for (int i = 0; i < hasSelectBase.Count; i++)
             {
-                if (factorListClone.Contains((hasSelectBase[i].Source as BitmapImage).UriSource.ToString()
-                        .Replace("./Resources/factor/","").Replace(".png","")))
+                var currentFactor = (hasSelectBase[i].Source as BitmapImage).UriSource.ToString()
+                        .Replace("./Resources/factor/", "").Replace(".png", "");
+                if (currentFactor.Equals("风暴英雄"))
                 {
-                    factorListClone.RemoveAt(i);
+                    factorListClone.Remove("非同寻常的战役");
                 }
+                else if(currentFactor.Equals("非同寻常的战役"))
+                {
+                    factorListClone.Remove("风暴英雄");
+                }
+
+                factorListClone.Remove(currentFactor);
             }
             List<int> randNum = rk.GenerateXRandomNum(5, factorListClone.Count);
 
@@ -332,9 +383,20 @@ namespace LiaoTian_Cup
             SelectFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[4]] + ".png", UriKind.Relative));
         }
 
+        private void ClearRandomFactor()
+        {
+            //相对路径URI显示5个因子的图片
+            SelectFactor1.Source = new BitmapImage();
+            SelectFactor2.Source = new BitmapImage();
+            SelectFactor3.Source = new BitmapImage();
+            SelectFactor4.Source = new BitmapImage();
+            SelectFactor5.Source = new BitmapImage();
+        }
+
         //点击自选因子事件响应
         private void Factor_MouseDown(object sender, RoutedEventArgs e)
         {
+            FactorWarn.Text = "";
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
@@ -432,14 +494,14 @@ namespace LiaoTian_Cup
         private void Button_Confirm_Click(object sender, RoutedEventArgs e)
         {
             botName = IsRandAIFunc();
-            if(hasSelectFactor == null)
+            if(hasSelectFactor != null)
             {
                 if (_modeName.Equals("3因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 2)
                 {
                     FactorWarn.Text = "3因子模式需要至少自选2个因子";
                     return;
                 }
-                else if(_modeName.Equals("3因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 3)
+                else if(_modeName.Equals("5因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 3)
                 {
                     FactorWarn.Text = "5因子模式需要至少自选3个因子";
                     return;
@@ -457,15 +519,36 @@ namespace LiaoTian_Cup
                 CommanderWarn.Text = "";
             }
             this.Hide();
-            //ShowRMDetail showRMDetail = new ShowRMDetail(this);
-            //showRMDetail.Show();
+            ShowNegativeDetail showNegativeDetail = new ShowNegativeDetail(this);
+            showNegativeDetail.Show();
         }
 
         private void Button_Reset_Click(object sender, RoutedEventArgs e)
         {
+            ResetFunc();
+        }
+
+        public void ResetFunc()
+        {
+            ModeBox.IsEnabled = true;
             SetRandMapEnable(true);
             SetBaseFactorEnable(true);
 
+            hasSelectBase.Clear();
+            ClearRandomBaseFactor();
+            FlashSelectBase();
+
+            hasSelectFactor.Clear();
+            ClearRandomFactor();
+            FlashHasSelectFactor();
+
+            hasSelectCommander = new Image();
+            clearRandomCommander();
+            FlashHasSelectCommander();
+
+            hasSelectMap = new Image();
+            ClearRandomMaps();
+            FlashHasSelectMap();
         }
 
         //实现绑定响应接口

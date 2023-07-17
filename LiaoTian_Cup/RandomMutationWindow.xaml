@@ -52,7 +52,7 @@
         <Grid
 			Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <Label Content="基础因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="基础因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="Factor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill"/>
                 <Image x:Name="Factor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                 <Image x:Name="Factor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
@@ -63,7 +63,7 @@
         <Grid
 			Grid.Row="3">
             <StackPanel Orientation="Horizontal">
-                <Label Content="自选因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="自选因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="SelectFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
                 <Image x:Name="SelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
                 <Image x:Name="SelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
@@ -89,13 +89,13 @@
         <Grid
 			Grid.Row="4">
             <StackPanel Orientation="Horizontal">
-                <Label Content="先出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center"/>
+                <Label Content="先出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="BeforeCommander1" Height="60" Width="60" HorizontalAlignment="Left" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="BeforeCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="BeforeCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="BeforeCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
-                <Label Content="后出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center"/>
-                <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
+                <Label Content="后出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="10,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="AfterCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
             </StackPanel>
         </Grid>
@@ -103,7 +103,7 @@
 			Grid.Row="5">
             <StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选择自选因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center"/>
+                    <Label Content="已选自选因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
@@ -116,16 +116,16 @@
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" />
-                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
+                    <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
                     <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
                 
             </StackPanel>
 
 
-            <Label Content="自选因子由系统随机出8个因子，选手可以随意选择，数量不限。"  Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom"/>
-            <Button Content="确认" Width="120" Height="30" Margin="0,0,75,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
+            <Label Content="自选因子由系统随机出8个因子，选手可以随意选择，数量不限。"  Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="14" FontWeight="Bold"/>
+            <Button Content="确认" Width="120" Height="30" Margin="0,0,75,28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
         </Grid>
 
     </Grid>
