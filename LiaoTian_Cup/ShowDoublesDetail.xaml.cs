@@ -19,9 +19,22 @@ namespace LiaoTian_Cup
     /// </summary>
     public partial class ShowDoublesDetail : Window
     {
+        private DoublesModeWindow m_parent;
+        public ShowDoublesDetail(DoublesModeWindow parent)
+        {
+            m_parent = parent;
+            InitializeComponent();
+            showSelect();
+        }
+
         public ShowDoublesDetail()
         {
             InitializeComponent();
+        }
+
+        private void showSelect()
+        {
+
         }
     }
 }

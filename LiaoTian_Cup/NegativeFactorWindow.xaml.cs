@@ -195,7 +195,7 @@ namespace LiaoTian_Cup
                 CommanderWarn.Text = "";
             }
             SetRandMapEnable(false);
-            ShowRandomBaseFactor();
+            ShowBaseFactor();
         }
 
         //点击地图图片事件响应
@@ -244,7 +244,7 @@ namespace LiaoTian_Cup
         }
 
         //基础因子显示
-        private void ShowRandomBaseFactor()
+        private void ShowBaseFactor()
         {
             //相对路径URI指定因子图片来源
             Factor1.Source = new BitmapImage(new Uri("./Resources/factor/" + baseNegativeFactorInfo[0] + ".png", UriKind.Relative));

@@ -28,28 +28,28 @@
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
             <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
             <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
-                <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
+                <ComboBoxItem>8因子模式</ComboBoxItem>
             </ComboBox>
-            <Button x:Name="RandStartBtn" Content="开始随机" Width="120" Height="30" Margin="55,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-            <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
-            <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center"/>
+            <Button x:Name="RandStartBtn" Content="开始随机" Width="120" Height="30" Margin="55,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
+            <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Reset_Click"/>
+            <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" Click="Button_BackMain_Click"/>
         </StackPanel>
         
         <Grid
             Grid.Row="1">
             <StackPanel Orientation="Horizontal">
                 <Label Content="随机地图：" Foreground="Red" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                <Image x:Name="MapImg1" Margin="0,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" >
+                <Image x:Name="MapImg1" Margin="0,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" MouseLeftButtonDown="Maps_MouseDown">
                     <!--<Image.Source> 
                         <FormatConvertedBitmap x:Name="MapImg1D" DestinationFormat="Cmyk32"/>
                     </Image.Source>-->
                 </Image>
-                <Image x:Name="MapImg2" Margin="10,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" >
+                <Image x:Name="MapImg2" Margin="10,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" MouseLeftButtonDown="Maps_MouseDown">
                 </Image>
-                <Image x:Name="MapImg3" Margin="10,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" >
+                <Image x:Name="MapImg3" Margin="10,0,0,0" Height="85" Width="285" RenderTransformOrigin="0.5,0.5" Cursor="Hand" Stretch="UniformToFill" MouseLeftButtonDown="Maps_MouseDown">
                 </Image>
-                <Button x:Name="MapConfirmBtn" Content="确认地图" Width="120" Height="30" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right"/>
+                <Button x:Name="MapConfirmBtn" Content="确认地图" Width="120" Height="30" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_MapConfirm_Click"/>
             </StackPanel>
         </Grid>
 
@@ -64,24 +64,24 @@
                     Grid.Row="0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="正面因子：" Foreground="Red" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                        <Image x:Name="NegativeFactor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="NegativeFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="NegativeFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="NegativeFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="NegativeFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="NegativeFactor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
+                        <Image x:Name="NegativeFactor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
+                        <Image x:Name="NegativeFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
+                        <Image x:Name="NegativeFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
+                        <Image x:Name="NegativeFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
+                        <Image x:Name="NegativeFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
+                        <Image x:Name="NegativeFactor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="NegativeBase_MouseDown"/>
                     </StackPanel>
                 </Grid>
                 <Grid
                     Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="多线因子：" Foreground="Red" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                        <Image x:Name="MultiFactor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="MultiFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="MultiFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="MultiFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Image x:Name="MultiFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" />
-                        <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="528,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False"/>
+                        <Image x:Name="MultiFactor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="MultiBase_MouseDown"/>
+                        <Image x:Name="MultiFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="MultiBase_MouseDown"/>
+                        <Image x:Name="MultiFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="MultiBase_MouseDown"/>
+                        <Image x:Name="MultiFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="MultiBase_MouseDown"/>
+                        <Image x:Name="MultiFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="MultiBase_MouseDown"/>
+                        <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="528,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" IsEnabled="False" Click="Button_BaseConfirm_Click"/>
                     </StackPanel>
                 </Grid>
                 
@@ -92,29 +92,32 @@
 			Grid.Row="3">
             <StackPanel Orientation="Horizontal">
                 <Label Content="自选因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                <Image x:Name="SelectFactor1" Height="60" Width="60" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="SelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="SelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="SelectFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="SelectFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
+                <Image x:Name="SelectFactor1" Height="60" Width="60" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor7" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
+                <Image x:Name="SelectFactor8" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Factor_MouseDown"/>
             </StackPanel>
         </Grid>
 
         <Grid
 			Grid.Row="4">
             <StackPanel Orientation="Horizontal">
-                <Label Content="先出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                <Image x:Name="BeforeCommander1" Height="60" Width="60" HorizontalAlignment="Left" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="BeforeCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="BeforeCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="BeforeCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="BeforeCommander5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="BeforeCommander6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
+                <Label Content="先出指挥官：" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Image x:Name="BeforeCommander1" Height="60" Width="60" HorizontalAlignment="Left" Cursor="Hand"  Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="BeforeCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="BeforeCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="BeforeCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="BeforeCommander5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="BeforeCommander6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
                 <Label Content="后出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="AfterCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="AfterCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                <Image x:Name="AfterCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand"  Stretch="Fill"/>
+                <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="AfterCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="AfterCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
+                <Image x:Name="AfterCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="Commander_MouseDown"/>
             </StackPanel>
             
         </Grid>
@@ -148,23 +151,18 @@
                     Grid.Row="0">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="已选正面因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                        <Image x:Name="HasSelectNegativeFactor1" Height="60" Width="60" Cursor="Hand" />
-                        <Image x:Name="HasSelectNegativeFactor2" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectNegativeFactor3" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectNegativeFactor4" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectNegativeFactor5" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectNegativeFactor6" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
+                        <Image x:Name="HasSelectNegativeFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelNegativeBase_MouseDown"/>
+                        <Image x:Name="HasSelectNegativeFactor2" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelNegativeBase_MouseDown"/>
+                        <Image x:Name="HasSelectNegativeFactor3" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelNegativeBase_MouseDown"/>
                     </StackPanel>
                 </Grid>
                 <Grid
                     Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <Label Content="已选多线因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                        <Image x:Name="HasSelectMultiFactor1" Height="60" Width="60" Cursor="Hand" />
-                        <Image x:Name="HasSelectMultiFactor2" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectMultiFactor3" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectMultiFactor4" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
-                        <Image x:Name="HasSelectMultiFactor5" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand"/>
+                        <Image x:Name="HasSelectMultiFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelMultiBase_MouseDown"/>
+                        <Image x:Name="HasSelectMultiFactor2" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelMultiBase_MouseDown"/>
+                        <Image x:Name="HasSelectMultiFactor3" Height="60" Width="60" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelMultiBase_MouseDown"/>
                     </StackPanel>
                 </Grid>
             </Grid>
@@ -173,9 +171,11 @@
                 Grid.Row="2">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="已选自选因子：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                    <Image x:Name="HasSelectFactor1" Height="60" Width="60" Cursor="Hand" />
-                    <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" />
-                    <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" />
+                    <Image x:Name="HasSelectFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
+                    <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
+                    <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
+                    <Image x:Name="HasSelectFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
+                    <Image x:Name="HasSelectFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <TextBlock x:Name="FactorWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
             </Grid>
@@ -184,10 +184,10 @@
                 Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                    <Image x:Name="HasSelectCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                    <Image x:Name="HasSelectCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand"  Stretch="Fill"/>
-                    <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
-                    <Button Content="确认" Margin="685,0,0,0" Width="120" Height="30"/>
+                    <Image x:Name="HasSelectCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="CancelCommander_MouseDown"/>
+                    <Image x:Name="HasSelectCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" Stretch="Fill" MouseLeftButtonDown="CancelCommander_MouseDown"/>
+                    <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold"/>
+                    <Button Content="确认" Margin="685,0,0,0" Width="120" Height="30" Click="Button_Confirm_Click"/>
                 </StackPanel>
             </Grid>
         </Grid>
