@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -32,9 +33,41 @@ namespace LiaoTian_Cup
             InitializeComponent();
         }
 
+        //展示已选择的因子
         private void showSelect()
         {
+            //上个窗口的数据传递至本窗口
+            PlayerName.Text = m_parent.PlayerName.Text;
+            modeName.Text = m_parent.modeName;
 
+            HasSelectMap.Source = m_parent.HasSelectMap.Source;
+            HasSelectBaseFactor1.Source = m_parent.HasSelectBaseFactor1.Source;
+            HasSelectBaseFactor2.Source = m_parent.HasSelectBaseFactor2.Source;
+            HasSelectBaseFactor3.Source = m_parent.HasSelectBaseFactor3.Source;
+
+            HasSelectFactor1.Source = m_parent.HasSelectFactor1.Source;
+            HasSelectFactor2.Source = m_parent.HasSelectFactor2.Source;
+            HasSelectFactor3.Source = m_parent.HasSelectFactor3.Source;
+            HasSelectFactor4.Source = m_parent.HasSelectFactor4.Source;
+            HasSelectFactor5.Source = m_parent.HasSelectFactor5.Source;
+
+            HasSelectCommander1.Source = m_parent.HasSelectCommander1.Source;
+            HasSelectCommander2.Source = m_parent.HasSelectCommander2.Source;
+
+            AIBox.Text = m_parent.botName;
+        }
+
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        //重写关闭窗口方法
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            base.OnClosing(e);
+            m_parent.ResetFunc();
+            m_parent.Show();
         }
     }
 }

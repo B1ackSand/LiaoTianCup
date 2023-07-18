@@ -50,8 +50,7 @@ namespace LiaoTian_Cup
         private List<string> mapsInfo = new List<string>();
 
         //链表，存放自选因子
-        private List<Image> hasSelectBaseNegative = new List<Image>();
-        private List<Image> hasSelectBaseMulti = new List<Image>();
+        private List<Image> hasSelectBase = new List<Image>(3);
         private List<Image> hasSelectFactor = new List<Image>();
         private List<Image> hasSelectCommander = new List<Image>(2);
         private Image hasSelectMap = new Image();
@@ -133,18 +132,16 @@ namespace LiaoTian_Cup
 
         public void ResetFunc()
         {
+            Warn.Text = "";
             ModeBox.IsEnabled = true;
             SetRandMapEnable(true);
             SetBaseFactorEnable(true);
 
-            hasSelectBaseNegative.Clear();
+            hasSelectBase.Clear();
             ClearBaseNegativeFactor();
-            FlashSelectNegativeBase();
-
-            hasSelectBaseMulti.Clear();
             ClearBaseMultiFactor();
-            FlashSelectMultiBase();
-
+            FlashSelectBase();
+            
             hasSelectFactor.Clear();
             ClearRandomFactor();
             FlashHasSelectFactor();
@@ -193,7 +190,7 @@ namespace LiaoTian_Cup
         //点击地图图片事件响应
         private void Maps_MouseDown(object sender, MouseEventArgs e)
         {
-            CommanderWarn.Text = "";
+            Warn.Text = "";
             Image selectMap = (Image)sender;
             if (selectMap != null)
             {
@@ -228,12 +225,12 @@ namespace LiaoTian_Cup
         {
             if (hasSelectMap == null || hasSelectMap.Source == null || hasSelectMap.Source.Equals(""))
             {
-                CommanderWarn.Text = "未选择地图";
+                Warn.Text = "未选择地图";
                 return;
             }
             else
             {
-                CommanderWarn.Text = "";
+                Warn.Text = "";
             }
             SetRandMapEnable(false);
             ShowBaseNegativeFactor();
@@ -264,108 +261,63 @@ namespace LiaoTian_Cup
             MultiFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + baseMultiFactorInfo[4] + ".png", UriKind.Relative));
         }
 
-        //点击正面因子图片事件响应
-        private void NegativeBase_MouseDown(object sender, MouseEventArgs e)
+        //点击基础因子(正面和多面)图片事件响应
+        private void Base_MouseDown(object sender, MouseEventArgs e)
         {
-            FactorWarn.Text = "";
+            Warn.Text = "";
             Image selectBase = (Image)sender;
             if (selectBase != null)
             {
-                if (_modeName.Equals("5因子模式") && hasSelectBaseNegative != null && !hasSelectBaseNegative.Contains(selectBase))
+                if (_modeName.Equals("5因子模式") && hasSelectBase != null && !hasSelectBase.Contains(selectBase))
                 {
-                    if (hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 2)
+                    if (hasSelectBase.Count < 2)
                     {
-                        hasSelectBaseNegative.Add(selectBase);
+                        hasSelectBase.Add(selectBase);
                     }
                 }
 
-                if (_modeName.Equals("8因子模式") && hasSelectBaseNegative != null && !hasSelectBaseNegative.Contains(selectBase))
+                if (_modeName.Equals("8因子模式") && hasSelectBase!= null && !hasSelectBase.Contains(selectBase))
                 {
-                    if (hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 3)
+                    if (hasSelectBase.Count < 3)
                     {
-                        hasSelectBaseNegative.Add(selectBase);
-                    }
-                }
-            }
-            FlashSelectNegativeBase();
-        }
-
-        //点击多线因子图片事件响应
-        private void MultiBase_MouseDown(object sender, MouseEventArgs e)
-        {
-            FactorWarn.Text = "";
-            Image selectBase = (Image)sender;
-            if (selectBase != null)
-            {
-                if (_modeName.Equals("5因子模式") && hasSelectBaseMulti != null && !hasSelectBaseMulti.Contains(selectBase))
-                {
-                    if (hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 2)
-                    {
-                        hasSelectBaseMulti.Add(selectBase);
-                    }
-                }
-
-                if (_modeName.Equals("8因子模式") && hasSelectBaseMulti != null && !hasSelectBaseMulti.Contains(selectBase))
-                {
-                    if (hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 3)
-                    {
-                        hasSelectBaseMulti.Add(selectBase);
+                        hasSelectBase.Add(selectBase);
                     }
                 }
             }
-            FlashSelectMultiBase();
+            FlashSelectBase();
         }
 
-        //取消当前选择的正面基础因子事件响应
-        private void CancelNegativeBase_MouseDown(Object sender, RoutedEventArgs e)
+        //取消当前选择的基础因子事件响应
+        private void CancelBase_MouseDown(Object sender, RoutedEventArgs e)
         {
             Image cancelBase = (Image)sender;
             if (cancelBase != null)
             {
-                for (int i = 0; i < hasSelectBaseNegative.Count; i++)
+                for (int i = 0; i < hasSelectBase.Count; i++)
                 {
-                    if (hasSelectBaseNegative[i] != null
-                        && hasSelectBaseNegative[i].Source.ToString().Equals(cancelBase.Source.ToString()))
+                    if (hasSelectBase[i] != null
+                        && hasSelectBase[i].Source.ToString().Equals(cancelBase.Source.ToString()))
                     {
-                        hasSelectBaseNegative.RemoveAt(i);
+                        hasSelectBase.RemoveAt(i);
                     }
                 }
             }
             else { return; }
-            FlashSelectNegativeBase();
-        }
-
-        //取消当前选择的多线基础因子事件响应
-        private void CancelMultiBase_MouseDown(Object sender, RoutedEventArgs e)
-        {
-            Image cancelBase = (Image)sender;
-            if (cancelBase != null)
-            {
-                for (int i = 0; i < hasSelectBaseMulti.Count; i++)
-                {
-                    if (hasSelectBaseMulti[i] != null
-                        && hasSelectBaseMulti[i].Source.ToString().Equals(cancelBase.Source.ToString()))
-                    {
-                        hasSelectBaseMulti.RemoveAt(i);
-                    }
-                }
-            }
-            else { return; }
-            FlashSelectMultiBase();
+            FlashSelectBase();
         }
 
         //确认基础因子按钮逻辑响应
         private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
         {
-            FactorWarn.Text = "";
-            if (_modeName.Equals("5因子模式") && hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 2)
+            Warn.Text = "";
+            if (_modeName.Equals("5因子模式") && hasSelectBase.Count < 2)
             {
-                FactorWarn.Text = "未选择足够的基础因子";
+                Warn.Text = "未选择足够的基础因子";
                 return;
             }
-            if (_modeName.Equals("8因子模式") && hasSelectBaseNegative.Count + hasSelectBaseMulti.Count < 3)
+            if (_modeName.Equals("8因子模式") && hasSelectBase.Count < 3)
             {
-                FactorWarn.Text = "未选择足够的基础因子";
+                Warn.Text = "未选择足够的基础因子";
                 return;
             }
             SetBaseFactorEnable(false);
@@ -374,24 +326,13 @@ namespace LiaoTian_Cup
         }
 
         //刷新已选基础因子事件
-        private void FlashSelectNegativeBase()
+        private void FlashSelectBase()
         {
-            if (hasSelectBaseNegative != null)
+            if (hasSelectBase != null)
             {
-                HasSelectNegativeFactor1.Source = hasSelectBaseNegative.Count < 1 ? null : hasSelectBaseNegative[0].Source;
-                HasSelectNegativeFactor2.Source = hasSelectBaseNegative.Count < 2 ? null : hasSelectBaseNegative[1].Source;
-                HasSelectNegativeFactor3.Source = hasSelectBaseNegative.Count < 3 ? null : hasSelectBaseNegative[2].Source;
-            }
-        }
-
-        //刷新已选基础因子事件
-        private void FlashSelectMultiBase()
-        {
-            if (hasSelectBaseMulti != null)
-            {
-                HasSelectMultiFactor1.Source = hasSelectBaseMulti.Count < 1 ? null : hasSelectBaseMulti[0].Source;
-                HasSelectMultiFactor2.Source = hasSelectBaseMulti.Count < 2 ? null : hasSelectBaseMulti[1].Source;
-                HasSelectMultiFactor3.Source = hasSelectBaseMulti.Count < 3 ? null : hasSelectBaseMulti[2].Source;
+                HasSelectBaseFactor1.Source = hasSelectBase.Count < 1 ? null : hasSelectBase[0].Source;
+                HasSelectBaseFactor2.Source = hasSelectBase.Count < 2 ? null : hasSelectBase[1].Source;
+                HasSelectBaseFactor3.Source = hasSelectBase.Count < 3 ? null : hasSelectBase[2].Source;
             }
         }
 
@@ -400,10 +341,10 @@ namespace LiaoTian_Cup
         private void ShowRandomFactor()
         {
             var factorListClone = mutationFactorList.DeepClone();
-            for (int i = 0; i < hasSelectBaseNegative.Count; i++)
+            for (int i = 0; i < hasSelectBase.Count; i++)
             {
 
-                var currentNegativeFactor = (hasSelectBaseNegative[i].Source as BitmapImage).UriSource.ToString()
+                var currentNegativeFactor = (hasSelectBase[i].Source as BitmapImage).UriSource.ToString()
                         .Replace("./Resources/factor/", "").Replace(".png", "");
                 
 
@@ -417,13 +358,6 @@ namespace LiaoTian_Cup
                 }
 
                 factorListClone.Remove(currentNegativeFactor);
-            }
-
-            for (int i = 0; i < hasSelectBaseMulti.Count; i++)
-            {
-                string currentMultiFactor = (hasSelectBaseMulti[i].Source as BitmapImage).UriSource.ToString()
-                       .Replace("./Resources/factor/", "").Replace(".png", "");
-                factorListClone.Remove(currentMultiFactor);
             }
 
             List<int> randNum = rk.GenerateXRandomNum(8, factorListClone.Count);
@@ -446,7 +380,7 @@ namespace LiaoTian_Cup
         //点击自选因子事件响应
         private void Factor_MouseDown(object sender, RoutedEventArgs e)
         {
-            FactorWarn.Text = "";
+            Warn.Text = "";
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
@@ -532,7 +466,7 @@ namespace LiaoTian_Cup
         //点击自选指挥官事件响应
         private void Commander_MouseDown(object sender, RoutedEventArgs e)
         {
-            CommanderWarn.Text = "";
+            Warn.Text = "";
             Image selectCommander = (Image)sender;
             if (selectCommander != null && hasSelectCommander.Count < 2)
             {
@@ -579,12 +513,12 @@ namespace LiaoTian_Cup
             {
                 if (_modeName.Equals("5因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 3)
                 {
-                    FactorWarn.Text = "5因子模式需要至少自选3个因子";
+                    Warn.Text = "5因子模式需要至少自选3个因子";
                     return;
                 }
                 else if (_modeName.Equals("8因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 5)
                 {
-                    FactorWarn.Text = "8因子模式需要至少自选5个因子";
+                    Warn.Text = "8因子模式需要至少自选5个因子";
                     return;
                 }
 
@@ -592,12 +526,12 @@ namespace LiaoTian_Cup
 
             if (hasSelectCommander == null || hasSelectCommander.Count < 2)
             {
-                FactorWarn.Text = "双打模式需选择两名指挥官";
+                Warn.Text = "双打模式需选择两名指挥官";
                 return;
             }
             else
             {
-                FactorWarn.Text = "";
+                Warn.Text = "";
             }
 
             this.Hide();
@@ -622,24 +556,23 @@ namespace LiaoTian_Cup
         //基础因子相关控件的可用性设置
         private void SetBaseFactorEnable(bool enable)
         {
+            
             NegativeFactor1.IsEnabled = enable;
             NegativeFactor2.IsEnabled = enable;
             NegativeFactor3.IsEnabled = enable;
             NegativeFactor4.IsEnabled = enable;
             NegativeFactor5.IsEnabled = enable;
             NegativeFactor6.IsEnabled = enable;
-            HasSelectNegativeFactor1.IsEnabled = enable;
-            HasSelectNegativeFactor2.IsEnabled = enable;
-            HasSelectNegativeFactor2.IsEnabled = enable;
 
             MultiFactor1.IsEnabled = enable;
             MultiFactor2.IsEnabled = enable;
             MultiFactor3.IsEnabled = enable;
             MultiFactor4.IsEnabled = enable;
             MultiFactor5.IsEnabled = enable;
-            HasSelectMultiFactor1.IsEnabled = enable;
-            HasSelectMultiFactor2.IsEnabled = enable;
-            HasSelectMultiFactor3.IsEnabled = enable;
+
+            HasSelectBaseFactor1.IsEnabled = enable;
+            HasSelectBaseFactor2.IsEnabled = enable;
+            HasSelectBaseFactor3.IsEnabled = enable;
 
             BaseConfirmBtn.IsEnabled = enable;
         }

@@ -9,7 +9,7 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.0.2</Version>
+    <Version>0.0.4</Version>
 	<Authors>BlackSand</Authors>
   </PropertyGroup>
 
@@ -125,6 +125,7 @@
     <None Remove="Resources\factor\鼓舞人心.png" />
     <None Remove="Resources\factor\龙卷风暴.png" />
     <None Remove="Resources\Logo\icon.ico" />
+    <None Remove="Resources\Logo\聊天杯标题.png" />
     <None Remove="Resources\maps\亡者之夜.png" />
     <None Remove="Resources\maps\克哈裂痕.png" />
     <None Remove="Resources\maps\净网行动.png" />
@@ -141,6 +142,7 @@
     <None Remove="Resources\maps\虚空降临.png" />
     <None Remove="Resources\maps\融火危机.png" />
     <None Remove="Resources\maps\黑暗杀星.png" />
+    <None Remove="Resources\R-C-16-9.jpg" />
     <None Remove="Resources\R-C.jpg" />
     <None Remove="Resources\先出指挥官列表.csv" />
     <None Remove="Resources\后出指挥官列表.csv" />
@@ -160,9 +162,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Logo\icon.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\R-C.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -490,6 +489,9 @@
     <Resource Include="Resources\factor\龙卷风暴.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Logo\聊天杯标题.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\maps\亡者之夜.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -533,6 +535,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\黑暗杀星.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\R-C-16-9.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\先出指挥官列表.csv">
