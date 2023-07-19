@@ -26,8 +26,6 @@
             <Image Source="./Resources/Logo/聊天杯标题.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
         
-        <Grid
-            Grid.Row="1">
             <StackPanel>
                 <Button Content="随机官突模式" 
                 Width="200" Height="60"
