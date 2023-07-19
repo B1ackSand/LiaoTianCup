@@ -45,6 +45,13 @@ namespace LiaoTian_Cup
             doublesModeWindow.Show();
             this.Hide();
         }
+
+        private void Button_Single_Click(object sender, RoutedEventArgs e)
+        {
+            SingleModeWindow singleModeWindow = new SingleModeWindow();
+            singleModeWindow.Show();
+            this.Hide();
+        }
     }
 
     

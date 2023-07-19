@@ -24,5 +24,16 @@ namespace LiaoTian_Cup.Helper
             }
             return result;
         }
+
+        //不重复的X个随机数
+        public int GenerateRandomFromNumToNum(int start, int range)
+        {
+            Random rand = new Random();
+            int temp;
+            
+            temp = rand.Next(start, range);
+               
+            return temp;
+        }
     }
 }

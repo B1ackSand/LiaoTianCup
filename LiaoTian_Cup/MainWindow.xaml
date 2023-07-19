@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
         Height="720" Width="980"
-        Title="聊天杯 v0.0.4 - Programmed by BlackSand"
+        Title="聊天杯 v0.1.0 - Programmed by BlackSand"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         Icon="./Resources/Logo/icon.ico"
@@ -19,7 +19,7 @@
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="280"/>
-            <RowDefinition Height="280"/>
+            <RowDefinition Height="340"/>
         </Grid.RowDefinitions>
         <Grid
             Grid.Row="0">
@@ -47,6 +47,12 @@
                 HorizontalAlignment="Center" 
                 VerticalAlignment="Center" 
                 FontSize="20" Click="Button_Doubles_Click"/>
+                <Button Content="正常单刷模式" 
+                Width="200" Height="60"
+                Margin="20,20,0,0" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center" 
+                FontSize="20" Click="Button_Single_Click"/>
             </StackPanel>
         </Grid>
     </Grid>

@@ -9,7 +9,7 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.0.4</Version>
+    <Version>0.1.0</Version>
 	<Authors>BlackSand</Authors>
   </PropertyGroup>
 
@@ -151,10 +151,6 @@
     <None Remove="Resources\突变列表整合（排除反面）.xlsx" />
     <None Remove="Resources\突变因子列表.csv" />
     <None Remove="Resources\自选突变列表.csv" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Resources\Logo\icon.ico" />
   </ItemGroup>
 
   <ItemGroup>
