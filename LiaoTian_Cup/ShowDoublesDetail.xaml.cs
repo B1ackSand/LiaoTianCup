@@ -18,7 +18,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// ShowDoublesDetail.xaml 的交互逻辑
     /// </summary>
-    public partial class ShowDoublesDetail : Window
+    public partial class ShowDoublesDetail : Page
     {
         private DoublesModeWindow m_parent;
         public ShowDoublesDetail(DoublesModeWindow parent)
@@ -59,15 +59,7 @@ namespace LiaoTian_Cup
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        //重写关闭窗口方法
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            m_parent.ResetFunc();
-            m_parent.Show();
+            this.NavigationService.GoBack();
         }
     }
 }

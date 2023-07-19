@@ -14,7 +14,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// SingleModeWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class SingleModeWindow : Window
+    public partial class SingleModeWindow : Page
     {
         //路径
         private readonly string scoreFactorPath = "./Resources/group_FactorList_Score.csv";
@@ -176,7 +176,7 @@ namespace LiaoTian_Cup
         //返回主页事件响应
         private void Button_BackMain_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.NavigationService.GoBack();
         }
 
         //随机地图显示
@@ -551,9 +551,7 @@ namespace LiaoTian_Cup
             {
                 Warn.Text = "";
             }
-            this.Hide();
-            ShowSingleDetail showSingleDetail = new ShowSingleDetail(this);
-            showSingleDetail.Show();
+            this.NavigationService.Navigate(new ShowSingleDetail(this));
         }
 
 
@@ -597,14 +595,6 @@ namespace LiaoTian_Cup
             AfterCommander1.Source = new BitmapImage();
             AfterCommander2.Source = new BitmapImage();
         }
-
-        //重写关闭窗口事件
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            Application.Current.MainWindow.Show();
-        }
-
 
         //实现绑定响应接口
         private void RaisePropertyChanged(string propertyName)

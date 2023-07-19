@@ -19,7 +19,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// ShowNegativeDetail.xaml 的交互逻辑
     /// </summary>
-    public partial class ShowNegativeDetail : Window
+    public partial class ShowNegativeDetail : Page
     {
         //上个窗口的参数，以方便引用窗口
         private NegativeFactorWindow m_parent;
@@ -57,15 +57,7 @@ namespace LiaoTian_Cup
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
-        }
-
-        //重写关闭窗口方法
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            m_parent.ResetFunc();
-            m_parent.Show();
+            this.NavigationService.GoBack();
         }
     }
 }

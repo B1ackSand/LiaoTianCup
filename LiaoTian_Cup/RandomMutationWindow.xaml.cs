@@ -14,7 +14,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// RandomMutationWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class RandomMutationWindow : Window, INotifyPropertyChanged
+    public partial class RandomMutationWindow : Page, INotifyPropertyChanged
     {
         //路径
         private readonly string mutationFilePath = "./Resources/自选突变列表.csv";
@@ -163,7 +163,7 @@ namespace LiaoTian_Cup
         //返回主页事件响应
         private void Button_BackMain_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.NavigationService.GoBack();
         }
 
         //开始随机事件响应
@@ -247,9 +247,8 @@ namespace LiaoTian_Cup
             {
                 CommanderWarn.Text = "";
             }
-            this.Hide();
-            ShowRMDetail showRMDetail = new ShowRMDetail(this);
-            showRMDetail.Show();
+
+            this.NavigationService.Navigate(new ShowRMDetail(this));
         }
 
         //刷新已选择的因子
@@ -272,13 +271,6 @@ namespace LiaoTian_Cup
             {
                 HasSelectCommander.Source = hasSelectCommander.Source;
             }
-        }
-
-        //重写关闭窗口事件
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            Application.Current.MainWindow.Show();
         }
 
         //刷新窗口的方法

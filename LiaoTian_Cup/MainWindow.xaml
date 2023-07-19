@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
-        Height="720" Width="980"
+        Height="910" Width="1180"
         Title="聊天杯 v0.1.0 - Programmed by BlackSand"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
@@ -14,44 +14,5 @@
     <Window.Background>
         <ImageBrush ImageSource="Resources/R-C-16-9.jpg" Opacity="0.9" Stretch="UniformToFill"/>
     </Window.Background>
-    
-    
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="280"/>
-            <RowDefinition Height="340"/>
-        </Grid.RowDefinitions>
-        <Grid
-            Grid.Row="0">
-            <Image Source="./Resources/Logo/聊天杯标题.png" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-        </Grid>
-        
-            <StackPanel>
-                <Button Content="随机官突模式" 
-                Width="200" Height="60"
-                Margin="20,10,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_RandomMutation_Click"/>
-                <Button Content="纯正面因子模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Negative_Click"/>
-                <Button Content="双打模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Doubles_Click"/>
-                <Button Content="正常单刷模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Single_Click"/>
-            </StackPanel>
-        </Grid>
-    </Grid>
+    <Frame x:Name="load_frame" NavigationUIVisibility="Hidden" Source="MainPage.xaml"/>
 </Window>

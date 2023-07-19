@@ -20,7 +20,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// NegativeFactorWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class NegativeFactorWindow : Window, INotifyPropertyChanged
+    public partial class NegativeFactorWindow : Page, INotifyPropertyChanged
     {
         //路径
         private readonly string baseNegativeFactorFilePath = "./Resources/纯正面因子基础库.csv";
@@ -172,7 +172,7 @@ namespace LiaoTian_Cup
         //返回主页事件响应
         private void Button_BackMain_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            NavigationService.GoBack();
         }
 
         //开始随机事件响应
@@ -483,12 +483,6 @@ namespace LiaoTian_Cup
             }
         }
 
-        //重写关闭窗口事件
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            Application.Current.MainWindow.Show();
-        }
 
         //确认按钮事件响应
         private void Button_Confirm_Click(object sender, RoutedEventArgs e)
@@ -518,9 +512,7 @@ namespace LiaoTian_Cup
             {
                 CommanderWarn.Text = "";
             }
-            this.Hide();
-            ShowNegativeDetail showNegativeDetail = new ShowNegativeDetail(this);
-            showNegativeDetail.Show();
+            this.NavigationService.Navigate(new ShowNegativeDetail(this));
         }
 
         private void Button_Reset_Click(object sender, RoutedEventArgs e)

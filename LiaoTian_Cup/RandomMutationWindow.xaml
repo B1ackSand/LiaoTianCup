@@ -1,4 +1,4 @@
-﻿<Window
+﻿<Page
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -6,12 +6,12 @@
         xmlns:local="clr-namespace:LiaoTian_Cup"
         xmlns:Helper="clr-namespace:LiaoTian_Cup.Helper" x:Class="LiaoTian_Cup.RandomMutationWindow"
         mc:Ignorable="d"
-        Height="780" Width="960"
+        Height="880" Width="1180"
         Title="聊天杯 - 官突随机因子模式"
-        Background="white"
-        ResizeMode="CanMinimize"
+        Background="white">
+    <!--ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Icon="./Resources/Logo/icon.ico">
+        Icon="./Resources/Logo/icon.ico"-->
 
     <!--<Page.Background>
         <ImageBrush ImageSource="Resources/R-C.jpg" Opacity="0.8"/>
@@ -116,7 +116,7 @@
                 </StackPanel>
 
 
-                <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
+                <StackPanel Orientation="Horizontal" Margin="0,58,0,0">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
                     <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
@@ -125,9 +125,9 @@
             </StackPanel>
 
 
-            <Label Content="自选因子由系统随机出8个因子，选手可以随意选择，数量不限。"  Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="14" FontWeight="Bold"/>
+            <Label Content="自选因子由系统随机出8个因子，选手可以随意选择，数量不限。"  Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="16" FontWeight="Bold"/>
             <Button Content="确认" Width="120" Height="30" Margin="0,0,75,28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
         </Grid>
 
     </Grid>
-</Window>
+</Page>

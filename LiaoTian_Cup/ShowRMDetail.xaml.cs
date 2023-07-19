@@ -18,7 +18,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// ShowRMDetail.xaml 的交互逻辑
     /// </summary>
-    public partial class ShowRMDetail : Window
+    public partial class ShowRMDetail : Page
     {
         public ShowRMDetail()
         {
@@ -32,7 +32,6 @@ namespace LiaoTian_Cup
             m_parent = parent;
             InitializeComponent();
             showSelect();
-            
         }
 
 
@@ -66,17 +65,7 @@ namespace LiaoTian_Cup
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.NavigationService.GoBack();
         }
-
-        //重写关闭窗口方法
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            m_parent.reflashSelectItem();
-            m_parent.Show();
-        }
-
-
     }
 }

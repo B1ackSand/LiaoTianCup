@@ -16,15 +16,13 @@ using System.Windows.Shapes;
 namespace LiaoTian_Cup
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Page1.xaml 的交互逻辑
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Page1 : Page
     {
-        public MainWindow()
+        public Page1()
         {
             InitializeComponent();
         }
     }
-
-    
 }

@@ -21,7 +21,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// DoublesModeWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class DoublesModeWindow : Window, INotifyPropertyChanged
+    public partial class DoublesModeWindow : Page, INotifyPropertyChanged
     {
         //路径
         private readonly string baseNegativeFactorFilePath = "./Resources/纯正面因子基础库.csv";
@@ -173,7 +173,7 @@ namespace LiaoTian_Cup
         //返回主页事件响应
         private void Button_BackMain_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            this.NavigationService.GoBack();
         }
 
         //随机地图显示
@@ -534,9 +534,7 @@ namespace LiaoTian_Cup
                 Warn.Text = "";
             }
 
-            this.Hide();
-            ShowDoublesDetail showDoublesDetail = new ShowDoublesDetail(this);
-            showDoublesDetail.Show();
+            this.NavigationService.Navigate(new ShowDoublesDetail(this));
         }
 
 
@@ -634,13 +632,6 @@ namespace LiaoTian_Cup
 
 
 
-
-        //重写关闭窗口事件
-        protected override void OnClosing(CancelEventArgs e)
-        {
-            base.OnClosing(e);
-            Application.Current.MainWindow.Show();
-        }
 
         //实现绑定响应接口
         private void RaisePropertyChanged(string propertyName)
