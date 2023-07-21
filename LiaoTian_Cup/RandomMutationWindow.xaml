@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Height="880" Width="1180"
         Title="聊天杯 - 官突随机因子模式"
-        Background="white">
+        Background="#ACFFFFFF">
     <!--ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         Icon="./Resources/Logo/icon.ico"-->
@@ -32,9 +32,11 @@
         <StackPanel Orientation="Horizontal">
             <Label Content="选手名称："  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
-            <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
-            <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BackMain_Click"/>
+            <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="电脑AI随机" Width="120" Height="30" Margin="0,10,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
+            <CheckBox x:Name="ChkDoubles" IsChecked="{Binding Path=isDoubles, Mode=TwoWay}" Content="双打模式" Width="120" Height="30" Margin="0,10,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
             <Button Content="开始随机" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Random_Click"/>
+            <Button Content="锁定重置" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_Reset_Click"/>
+            <Button Content="返回主页" Width="120" Height="30" Margin="0,0,35,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BackMain_Click"/>
         </StackPanel>
 
 
@@ -95,9 +97,11 @@
                 <Image x:Name="BeforeCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="BeforeCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="BeforeCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
+                <Image x:Name="BeforeCommander5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Label Content="后出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="10,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="AfterCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
+                <Image x:Name="AfterCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
             </StackPanel>
         </Grid>
         <Grid
@@ -118,7 +122,8 @@
 
                 <StackPanel Orientation="Horizontal" Margin="0,58,0,0">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
+                    <Image x:Name="HasSelectCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
+                    <Image x:Name="HasSelectCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
                     <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
                 
@@ -126,7 +131,7 @@
 
 
             <Label Content="自选因子由系统随机出8个因子，选手可以随意选择，数量不限。"  Margin="18,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="16" FontWeight="Bold"/>
-            <Button Content="确认" Width="120" Height="30" Margin="0,0,75,28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
+            <Button Content="确认" Width="120" Height="30" Margin="0,0,33,28" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
         </Grid>
 
     </Grid>

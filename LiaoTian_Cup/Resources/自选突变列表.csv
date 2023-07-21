@@ -12,8 +12,6 @@
 黑暗仪式 Dark Ritual,往日神庙,灵能爆表,速度狂魔,
 燃烧军团 Burning Legion,天界封锁,复仇战士,焦土政策,虚空裂隙
 三重威胁 Triple Threat,虚空降临,激光钻机,轨道轰炸,丧尸大战
-烈焰战场 World on Fire,熔火危机,核弹打击,飞弹大战,净化光束
-失心疯 Flipping Out,升格之链,闪避机动,无边恐惧,迷失方向
 威胁递增 Growing Threat ,机会渺茫,异形寄生,相互摧毁,力量蜕变
 造恶之息 Breath of Destruction ,机会渺茫,进攻部署,复仇战士,速度狂魔
 玩火自焚 Conflagration,往日神庙,异形寄生,焦土政策,行尸走肉
@@ -27,7 +25,6 @@
 乌历新年 Ulnar New Year,天界封锁,焰火秀,幸运红包,
 旧忆重惊 Blast from the Past ,往日神庙,强行征用,相互摧毁,
 星门异动 Portal Power,虚空撕裂,灵能爆表,虚空裂隙,
-强行霸占 Hostile Takeover,克哈裂痕,强行征用,激光钻机,飞弹大战
 死亡危机 Grave Danger ,往日神庙,力量蜕变,虚空重生者,行尸走肉
 黑暗时刻 The Injustice League,克哈裂痕,坚强意志,风暴英雄,鼓舞人心
 疫鬼狂潮 The Quick and the Dead ,亡者之夜,黑死病,速度狂魔,
@@ -35,30 +32,23 @@
 蚀骨之寒 Frostbite,亡者之夜,暴风雪,强磁雷场,
 无间死局 Certain Demise ,升格之链,复仇战士,虚空重生者,
 火线快递 Delivery Guaranteed ,虚空降临,减伤屏障,核弹打击,给我死吧
-烈火金刚 Dead Heat,熔火危机,致命勾引,自毁程序,行尸走肉
 寒冷即使虚空 Cold is the Void,湮灭快车,暴风雪,虚空重生者,虚空裂隙
 异形进击 Futile Resistance,天界封锁,震荡攻击,同化体,时空立场
 疫区逃生 Charnel House,营救矿工,暗无天日,光子过载,黑死病
 步步为营 Slow and Steady ,机会渺茫,时间扭曲,速度狂魔,震荡攻击
 现世现报 Instant Karma,升格之链,双重压力,相互摧毁,自毁程序
 仁至义尽 Worn Out Welcome,往日神庙,鼓舞人心,给我死吧,超远视距
-飞蛾扑火 Moths to the Flame ,克哈裂痕,异形寄生,致命勾引,净化光束
 火海惊魂 Fear and Lava,熔火危机,无边恐惧,虚空裂隙,
-磁性牵引 Magnetic Attraction,虚空撕裂,致命勾引,强磁雷场,来去无踪
 地发杀机 Death from Below,营救矿工,岩浆爆发,扫雷专家,焦土政策
-天发杀机 Watch the Skies,虚空降临,进攻部署,飞弹大战,轨道轰炸
 兵贵神速 Think Fast ,克哈裂痕,同化体,速度狂魔,
 自作自受 What Goes Around,黑暗杀星,双重压力,相互摧毁,
 封禁行为 Bannable Offense ,净网行动,闪避机动,灵能爆表,
 嗜血夜魔 Masters of Midnight ,聚铁成兵,无边恐惧,生命汲取,短视症
-雷场夜战 Night Drive,死亡摇篮,惧怕黑暗,强磁雷场,
 极限压迫 Get Out More,亡者之夜,强行征用,晶矿护盾,自毁程序
 时空气象站 Unstable Environment ,黑暗杀星,岩浆爆发,时间扭曲,龙卷风暴
 死亡无声 Rest in Peace,虚空撕裂,默哀,同化体,
 无尽感染 Endless Infection,虚空降临,异形寄生,黑死病,行尸走肉
-顽强作战 Battle Hardened,升格之链,坚强意志,鼓舞人心,飞弹大战
 寒冷适应 Chilling Adaptation,营救矿工,暴风雪,力量蜕变,
-消极增援 Negative Reinforcement ,聚铁成兵,复仇战士,致命勾引,
 报应不爽 Retribution,机会渺茫,双重压力,虚空裂隙,
 灰烬重生 Rise from the Ashes ,黑暗杀星,岩浆爆发,自毁程序,虚空重生者
 折越战区 Warp Zone,天界封锁,时空立场,时间扭曲,龙卷风暴
@@ -74,7 +64,6 @@
 辐射区 Radiation Zone,克哈裂痕,黑死病,核弹打击,丧尸大战
 内部力量 Inner Power ,往日神庙,异形寄生,灵能爆表,
 梦魇敌酋 Memorable Boss,虚空降临,风暴英雄,默哀,
-基地颠倒 Flip My Base,机会渺茫,强行征用,飞弹大战,净化光束
 防火墙 Firewall,净网行动,减伤屏障,岩浆爆发,扫雷专家
 感痛身受 Rubber and Glue ,虚空降临,伤害散射,双重压力,时空立场
 地狱列车 Hell Train,湮灭快车,给我死吧,焦土政策,
@@ -86,17 +75,13 @@
 烈火营救 Burning Evacuation,营救矿工,复仇战士,强行征用,焦土政策
 复仇者集结 Assembly of Vengeance ,往日神庙,风暴英雄,复仇战士,
 敌对领地 Hostile Territory,亡者之夜,减伤屏障,光子过载,灵能爆表
-媒体抹黑 Media Blackout,熔火危机,暗无天日,飞弹大战,来去无踪
 雷霆穹顶 Thunder Dome,天界封锁,风暴英雄,强磁雷场,
 躲灾避祸 Dodge This,黑暗杀星,暗无天日,核弹打击,轨道轰炸
 升格蜕变 The Ascended,升格之链,鼓舞人心,力量蜕变,
 森严壁垒 Enhanced Defenses ,死亡摇篮,减伤屏障,核弹打击,光子过载
 星沉地裂 And Drops And Rifts,聚铁成兵,进攻部署,虚空裂隙,
-赶夜车 Catch the Train,湮灭快车,惧怕黑暗,短视症,速度狂魔
-恐惧神庙 Temple of Terror,往日神庙,惧怕黑暗,异形寄生,无边恐惧
 光炫神迷 Shining Bright,机会渺茫,震荡攻击,激光钻机,净化光束
 无尽花火 Endless Sparkles,营救矿工,异形寄生,自毁程序,
-坟场夜班 Graveyard Shift,亡者之夜,惧怕黑暗,净化光束,
 机器重生 Robotic Revival,聚铁成兵,无边恐惧,给我死吧,激光钻机
 秘密突击 Secret Storm,天界封锁,进攻部署,龙卷风暴,来去无踪
 暗地破坏 Undermined,克哈裂痕,扫雷专家,虚空裂隙,
@@ -111,7 +96,6 @@
 火焰净化 By Fire Be Purged,湮灭快车,核弹打击,岩浆爆发,焦土政策
 急速增援 Timely Reinforcements,营救矿工,时空立场,虚空裂隙,
 进击壁垒 Barrier to Entry,天界封锁,减伤屏障,给我死吧,晶矿护盾
-虫人海啸 Like Swatting Insects,死亡摇篮,异形寄生,飞弹大战,丧尸大战
 夜半敲门 Knock Knock,亡者之夜,复仇战士,同化体,
 舞舞生疯 Dance Dance Evolution ,机会渺茫,默哀,速度狂魔,力量蜕变
 痛苦列车 Train of Pain,湮灭快车,双重压力,核弹打击,相互摧毁
@@ -121,12 +105,10 @@
 侵袭强征 Aggressive Recruitment ,净网行动,同化体,速度狂魔,来去无踪
 虚空召唤 Call of the Void ,虚空撕裂,虚空重生者,虚空裂隙,
 因爱之名 In the Name of Love,死亡摇篮,震荡攻击,净化光束,时间扭曲
-雷劫难逃 Of Mines and Miners ,营救矿工,强磁雷场,扫雷专家,飞弹大战
 恶棍联盟 The League of Vermillians,熔火危机,闪避机动,风暴英雄,
 爆炸之链 Chain Explosion,升格之链,岩浆爆发,行尸走肉,
 冰与火之歌 Hot n Cold,虚空降临,暴风雪,岩浆爆发,自毁程序
 吸血鬼生活 What We Do in the Shadows,虚空撕裂,暗无天日,短视症,来去无踪
-分担痛苦 Shared Pain,聚铁成兵,伤害散射,致命勾引,
 漫漫长夜 The Longest Night,亡者之夜,给我死吧,超远视距,光子过载
 迅捷亡尸 The Quick and the Undead,黑暗杀星,速度狂魔,虚空重生者,
 征战十年 Decade of Decadence ,克哈裂痕,焰火秀,幸运红包,礼尚往来

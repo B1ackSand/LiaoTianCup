@@ -110,7 +110,7 @@ namespace LiaoTian_Cup
         private void RandomCommanderInfo()
         {
             List<int> beforeRandNum = rk.GenerateXRandomNum(4, beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(2, afterCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(4, afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
             BeforeCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
@@ -120,6 +120,8 @@ namespace LiaoTian_Cup
 
             AfterCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
             AfterCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander3.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
+            AfterCommander4.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[3]] + ".png", UriKind.Relative));
         }
 
         //随机先出和后出指挥官清除显示
@@ -133,6 +135,8 @@ namespace LiaoTian_Cup
 
             AfterCommander1.Source = new BitmapImage();
             AfterCommander2.Source = new BitmapImage();
+            AfterCommander3.Source = new BitmapImage();
+            AfterCommander4.Source = new BitmapImage();
         }
 
         //是否随机AI的处理逻辑
@@ -187,12 +191,12 @@ namespace LiaoTian_Cup
         {
             if (hasSelectMap == null || hasSelectMap.Source == null || hasSelectMap.Source.Equals(""))
             {
-                CommanderWarn.Text = "未选择地图";
+                Warn.Text = "未选择地图";
                 return;
             }
             else
             {
-                CommanderWarn.Text = "";
+                Warn.Text = "";
             }
             SetRandMapEnable(false);
             ShowBaseFactor();
@@ -201,7 +205,7 @@ namespace LiaoTian_Cup
         //点击地图图片事件响应
         private void Maps_MouseDown(object sender, MouseEventArgs e)
         {
-            CommanderWarn.Text = "";
+            Warn.Text = "";
             Image selectMap = (Image)sender;
             if(selectMap != null)
             {
@@ -270,7 +274,7 @@ namespace LiaoTian_Cup
         //点击基础因子图片事件响应
         private void Base_MouseDown(object sender, MouseEventArgs e)
         {
-            FactorWarn.Text = "";
+            Warn.Text = "";
             Image selectBase = (Image)sender;
             if (selectBase != null)
             {
@@ -314,15 +318,15 @@ namespace LiaoTian_Cup
 
         private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
         {
-            FactorWarn.Text = "";
+            Warn.Text = "";
             if (_modeName.Equals("3因子模式") && hasSelectBase.Count < 1)
             {
-                FactorWarn.Text = "未选择足够的基础因子";
+                Warn.Text = "未选择足够的基础因子";
                 return;
             }
             if(_modeName.Equals("5因子模式") && hasSelectBase.Count < 2)
             {
-                FactorWarn.Text = "未选择足够的基础因子";
+                Warn.Text = "未选择足够的基础因子";
                 return;
             }
             SetBaseFactorEnable(false);
@@ -373,7 +377,7 @@ namespace LiaoTian_Cup
 
                 factorListClone.Remove(currentFactor);
             }
-            List<int> randNum = rk.GenerateXRandomNum(5, factorListClone.Count);
+            List<int> randNum = rk.GenerateXRandomNum(8, factorListClone.Count);
 
             //相对路径URI显示5个因子的图片
             SelectFactor1.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[0]] + ".png", UriKind.Relative));
@@ -381,6 +385,9 @@ namespace LiaoTian_Cup
             SelectFactor3.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[2]] + ".png", UriKind.Relative));
             SelectFactor4.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[3]] + ".png", UriKind.Relative));
             SelectFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[4]] + ".png", UriKind.Relative));
+            SelectFactor6.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[5]] + ".png", UriKind.Relative));
+            SelectFactor7.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[6]] + ".png", UriKind.Relative));
+            SelectFactor8.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[7]] + ".png", UriKind.Relative));
         }
 
         private void ClearRandomFactor()
@@ -391,12 +398,15 @@ namespace LiaoTian_Cup
             SelectFactor3.Source = new BitmapImage();
             SelectFactor4.Source = new BitmapImage();
             SelectFactor5.Source = new BitmapImage();
+            SelectFactor6.Source = new BitmapImage();
+            SelectFactor7.Source = new BitmapImage();
+            SelectFactor8.Source = new BitmapImage();
         }
 
         //点击自选因子事件响应
         private void Factor_MouseDown(object sender, RoutedEventArgs e)
         {
-            FactorWarn.Text = "";
+            Warn.Text = "";
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
@@ -453,7 +463,7 @@ namespace LiaoTian_Cup
         //点击自选指挥官事件响应
         private void Commander_MouseDown(object sender, RoutedEventArgs e)
         {
-            CommanderWarn.Text = "";
+            Warn.Text = "";
             Image selectCommander = (Image)sender;
             if (selectCommander != null)
             {
@@ -492,12 +502,12 @@ namespace LiaoTian_Cup
             {
                 if (_modeName.Equals("3因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 2)
                 {
-                    FactorWarn.Text = "3因子模式需要至少自选2个因子";
+                    Warn.Text = "3因子模式需要至少自选2个因子";
                     return;
                 }
                 else if(_modeName.Equals("5因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 3)
                 {
-                    FactorWarn.Text = "5因子模式需要至少自选3个因子";
+                    Warn.Text = "5因子模式需要至少自选3个因子";
                     return;
                 }
                 
@@ -505,12 +515,12 @@ namespace LiaoTian_Cup
 
             if (hasSelectCommander == null || hasSelectCommander.Source == null || hasSelectCommander.Source.Equals(""))
             {
-                CommanderWarn.Text = "未选择指挥官";
+                Warn.Text = "未选择指挥官";
                 return;
             }
             else
             {
-                CommanderWarn.Text = "";
+                Warn.Text = "";
             }
             this.NavigationService.Navigate(new ShowNegativeDetail(this));
         }

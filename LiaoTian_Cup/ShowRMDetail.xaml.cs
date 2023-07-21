@@ -32,6 +32,10 @@ namespace LiaoTian_Cup
             m_parent = parent;
             InitializeComponent();
             showSelect();
+
+            //返回时重置显示
+            parent.MutationBox.Text = "";
+            parent.MapBox.Text = "";
         }
 
 
@@ -43,6 +47,7 @@ namespace LiaoTian_Cup
 
             MutationBox.Text = m_parent.MutationBox.Text;
             MapBox.Text = m_parent.MapBox.Text;
+            ChkDoubles.IsChecked = m_parent.ChkDoubles.IsChecked;
 
             MapImg.Source = m_parent.MapImg.Source;
             Factor1.Source = m_parent.Factor1.Source;
@@ -58,9 +63,12 @@ namespace LiaoTian_Cup
             HasSelectFactor7.Source = m_parent.HasSelectFactor7.Source;
             HasSelectFactor8.Source = m_parent.HasSelectFactor8.Source;
 
-            HasSelectCommander.Source = m_parent.HasSelectCommander.Source;
+            HasSelectCommander1.Source = m_parent.HasSelectCommander1.Source;
+            HasSelectCommander2.Source = m_parent.HasSelectCommander2.Source;
 
             AIBox.Text = m_parent.botName;
+
+            
         }
 
         private void Button_Back_Click(object sender, RoutedEventArgs e)

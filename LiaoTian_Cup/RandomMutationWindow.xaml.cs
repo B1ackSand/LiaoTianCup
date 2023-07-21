@@ -41,7 +41,7 @@ namespace LiaoTian_Cup
 
         //链表，存放自选因子
         private List<Image> hasSelectFactor = new List<Image>(8);
-        private Image hasSelectCommander = new Image();
+        private List<Image> hasSelectCommander = new List<Image>(2);
 
         //初始化
         RandomKit rk = new RandomKit();
@@ -55,6 +55,18 @@ namespace LiaoTian_Cup
             {
                 _isRandAI = value;
                 RaisePropertyChanged(nameof(isRandAI));
+            }
+        }
+
+        //是否为双打模式
+        private bool _isDoubles;
+        public bool isDoubles
+        {
+            get { return _isDoubles; }
+            set
+            {
+                _isDoubles = value;
+                RaisePropertyChanged(nameof(isDoubles));
             }
         }
 
@@ -130,8 +142,8 @@ namespace LiaoTian_Cup
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(4, beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(2, afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(5, beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(3, afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
             BeforeCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
@@ -141,6 +153,13 @@ namespace LiaoTian_Cup
 
             AfterCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
             AfterCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+
+            //双打模式先后各多显示一名指挥官
+            if(_isDoubles)
+            {
+                BeforeCommander5.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[4]] + ".png", UriKind.Relative));
+                AfterCommander3.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
+            }
         }
 
         
@@ -160,17 +179,28 @@ namespace LiaoTian_Cup
             }
         }
 
-        //返回主页事件响应
-        private void Button_BackMain_Click(object sender, RoutedEventArgs e)
-        {
-            this.NavigationService.GoBack();
-        }
+        
 
         //开始随机事件响应
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
+            ChkDoubles.IsEnabled = false;
             reflashSelectItem();
             RandomMutationFunc();
+        }
+
+        //重置时间响应
+        private void Button_Reset_Click(object sender, RoutedEventArgs e)
+        {
+            reflashSelectItem();
+            ResetFunc();
+        }
+
+
+        //返回主页事件响应
+        private void Button_BackMain_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.GoBack();
         }
 
         //点击自选因子事件响应
@@ -215,9 +245,21 @@ namespace LiaoTian_Cup
         {
             CommanderWarn.Text = "";
             Image selectCommander = (Image)sender;
-            if (selectCommander != null)
+            if(selectCommander != null && !_isDoubles)
             {
-                hasSelectCommander = selectCommander;
+                if(hasSelectCommander.Count < 1)
+                {
+                    hasSelectCommander.Add(selectCommander);
+                }
+            }
+
+
+            else if (selectCommander != null && _isDoubles)
+            {
+                if(hasSelectCommander.Count < 2)
+                {
+                    hasSelectCommander.Add(selectCommander);
+                }   
             }
             FlashHasSelectCommander();
         }
@@ -228,7 +270,14 @@ namespace LiaoTian_Cup
             Image cancelCommander = (Image)sender;
             if (cancelCommander != null)
             {
-                hasSelectCommander = new Image();
+                for (int i = 0; i < hasSelectCommander.Count; i++)
+                {
+                    if (hasSelectCommander[i] != null
+                        && hasSelectCommander[i].Source.ToString().Equals(cancelCommander.Source.ToString()))
+                    {
+                        hasSelectCommander.RemoveAt(i);
+                    }
+                }
             }
             else { return; }
             FlashHasSelectCommander();
@@ -238,7 +287,12 @@ namespace LiaoTian_Cup
         private void Button_Confirm_Click(object sender, RoutedEventArgs e)
         {
             botName = IsRandAIFunc();
-            if(hasSelectCommander == null || hasSelectCommander.Source == null || hasSelectCommander.Source.Equals(""))
+            if (hasSelectCommander == null ||(_isDoubles && hasSelectCommander.Count < 2))
+            {
+                CommanderWarn.Text = "双打模式需选择两名指挥官";
+                return;
+            }
+            else if(hasSelectCommander == null || (!_isDoubles && hasSelectCommander.Count < 1))
             {
                 CommanderWarn.Text = "未选择指挥官";
                 return;
@@ -269,7 +323,8 @@ namespace LiaoTian_Cup
         {
             if (hasSelectCommander != null)
             {
-                HasSelectCommander.Source = hasSelectCommander.Source;
+                HasSelectCommander1.Source = hasSelectCommander.Count < 1 ? null : hasSelectCommander[0].Source;
+                HasSelectCommander2.Source = hasSelectCommander.Count < 2 ? null : hasSelectCommander[1].Source;
             }
         }
 
@@ -277,10 +332,44 @@ namespace LiaoTian_Cup
         internal void reflashSelectItem()
         {
             hasSelectFactor.Clear();
-            hasSelectCommander = new Image();
+            hasSelectCommander.Clear();
             //刷新
             FlashHasSelectFactor();
             FlashHasSelectCommander();
+        }
+
+        public void ResetFunc()
+        {
+            CommanderWarn.Text = "";
+            ChkDoubles.IsEnabled = true;
+            isDoubles = false;
+
+            MutationBox.Text = string.Empty;
+            MapBox.Text = string.Empty;
+
+            Factor1.Source = new BitmapImage();
+            Factor2.Source = new BitmapImage();
+            Factor3.Source = new BitmapImage();
+            MapImg.Source = new BitmapImage();
+
+            SelectFactor1.Source = new BitmapImage();
+            SelectFactor2.Source = new BitmapImage();
+            SelectFactor3.Source = new BitmapImage();
+            SelectFactor4.Source = new BitmapImage();
+            SelectFactor5.Source = new BitmapImage();
+            SelectFactor6.Source = new BitmapImage();
+            SelectFactor7.Source = new BitmapImage();
+            SelectFactor8.Source = new BitmapImage();
+
+            BeforeCommander1.Source = new BitmapImage();
+            BeforeCommander2.Source = new BitmapImage();
+            BeforeCommander3.Source = new BitmapImage();
+            BeforeCommander4.Source = new BitmapImage();
+            BeforeCommander5.Source = new BitmapImage();
+
+            AfterCommander1.Source = new BitmapImage();
+            AfterCommander2.Source = new BitmapImage();
+            AfterCommander3.Source = new BitmapImage();
         }
 
         //实现绑定响应接口

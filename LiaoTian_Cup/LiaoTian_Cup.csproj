@@ -9,7 +9,7 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.1.0</Version>
+    <Version>0.1.1</Version>
 	<Authors>BlackSand</Authors>
   </PropertyGroup>
 
@@ -124,6 +124,7 @@
     <None Remove="Resources\factor\默哀.png" />
     <None Remove="Resources\factor\鼓舞人心.png" />
     <None Remove="Resources\factor\龙卷风暴.png" />
+    <None Remove="Resources\group_FactorList_Score.csv" />
     <None Remove="Resources\Logo\icon.ico" />
     <None Remove="Resources\Logo\聊天杯标题.png" />
     <None Remove="Resources\maps\亡者之夜.png" />
@@ -148,13 +149,15 @@
     <None Remove="Resources\后出指挥官列表.csv" />
     <None Remove="Resources\正面因子库.csv" />
     <None Remove="Resources\电脑AI.csv" />
-    <None Remove="Resources\突变列表整合（排除反面）.xlsx" />
     <None Remove="Resources\突变因子列表.csv" />
     <None Remove="Resources\自选突变列表.csv" />
   </ItemGroup>
 
   <ItemGroup>
     <Resource Include="Resources\factor\耐力挑战.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\group_FactorList_Score.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Logo\icon.ico">
@@ -546,9 +549,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\电脑AI.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\突变列表整合（排除反面）.xlsx">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\突变因子列表.csv">

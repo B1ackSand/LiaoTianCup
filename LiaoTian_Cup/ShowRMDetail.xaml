@@ -7,7 +7,7 @@
       mc:Ignorable="d" 
       Height="880" Width="1180"
       Title="聊天杯 - 随机官突模式已确认"
-      Background="White">
+      Background="#ACFFFFFF">
 
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
@@ -20,6 +20,7 @@
         <StackPanel Orientation="Horizontal">
             <Label Content="选手名称：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text=""  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27.4" Width="230" Margin="0,0,35,0" Focusable="False"/>
+            <CheckBox x:Name="ChkDoubles" Content="双打模式" Width="120" Height="30" Margin="0,10,35,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" IsEnabled="False"/>
         </StackPanel>
 
         <Grid
@@ -68,7 +69,8 @@
                 Grid.Row="1">
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
-                    <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Stretch="Fill"/>
+                    <Image x:Name="HasSelectCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Stretch="Fill"/>
+                    <Image x:Name="HasSelectCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                 </StackPanel>
             </Grid>
             <Grid

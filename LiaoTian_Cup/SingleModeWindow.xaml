@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
         Height="910" Width="1180"
-        Background="white">
+        Background="#ACFFFFFF">
     <Grid ShowGridLines="True">
 
         <Grid.RowDefinitions>
@@ -20,7 +20,8 @@
             <Label Content="选手名称："  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
             <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
-            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False"
+                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
             </ComboBox>

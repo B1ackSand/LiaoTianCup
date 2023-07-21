@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
         Height="910" Width="1180"
-        Title="聊天杯 v0.1.0 - Programmed by BlackSand"
+        Title="聊天杯 v0.1.1 - Programmed by BlackSand"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         Icon="./Resources/Logo/icon.ico"

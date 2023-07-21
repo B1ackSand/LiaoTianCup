@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
-        Height="910" Width="1180"
-        Background="white">
+        Height="880" Width="1180"
+        Background="#ACFFFFFF">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="80" />
@@ -21,7 +21,8 @@
             <Label Content="选手名称："  HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="auto" Width="230" Margin="0,0,35,0" />
             <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Width="120" Height="30" Margin="0,10,10,0" VerticalAlignment="Center" HorizontalAlignment="Right" FontSize="16" RenderTransformOrigin="0.5,0.5"/>
-            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False">
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" Height="30" Width="125" HorizontalAlignment="Center" VerticalAlignment="Center" IsEditable="False"
+                      HorizontalContentAlignment="Center" VerticalContentAlignment="Center">
                 <ComboBoxItem>3因子模式</ComboBoxItem>
                 <ComboBoxItem>5因子模式</ComboBoxItem>
             </ComboBox>
@@ -57,7 +58,7 @@
                 <Image x:Name="Factor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
                 <Image x:Name="Factor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
                 <Image x:Name="Factor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill" Cursor="Hand" MouseLeftButtonDown="Base_MouseDown"/>
-                <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="448,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BaseConfirm_Click" IsEnabled="False"/>
+                <Button x:Name="BaseConfirmBtn" Content="确认基础因子" Width="120" Height="30" Margin="449,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" Click="Button_BaseConfirm_Click" IsEnabled="False"/>
             </StackPanel>
         </Grid>
 
@@ -70,6 +71,9 @@
                 <Image x:Name="SelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
                 <Image x:Name="SelectFactor4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
                 <Image x:Name="SelectFactor5" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
+                <Image x:Name="SelectFactor6" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
+                <Image x:Name="SelectFactor7" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
+                <Image x:Name="SelectFactor8" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Factor_MouseDown" Stretch="Fill"/>
             </StackPanel>
         </Grid>
 
@@ -84,6 +88,8 @@
                 <Label Content="后出指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="AfterCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
                 <Image x:Name="AfterCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
+                <Image x:Name="AfterCommander3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
+                <Image x:Name="AfterCommander4" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="Commander_MouseDown" Stretch="Fill"/>
             </StackPanel>
         </Grid>
 
@@ -103,21 +109,17 @@
                     <Image x:Name="HasSelectFactor1" Height="60" Width="60" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
                     <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelFactor_MouseDown"/>
-                    <TextBlock x:Name="FactorWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    <TextBlock x:Name="Warn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
 
 
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
                     <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="18,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectCommander" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Cursor="Hand" MouseLeftButtonDown="CancelCommander_MouseDown" Stretch="Fill"/>
-                    <TextBlock x:Name="CommanderWarn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    <Button Content="确认" Width="120" Height="30" Margin="795,0,0,0" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
                 </StackPanel>
-
+                
             </StackPanel>
-
-
-            
-            <Button Content="确认" Width="120" Height="30" Margin="0,0,17,40" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Confirm_Click"/>
         </Grid>
     </Grid>
 </Page>

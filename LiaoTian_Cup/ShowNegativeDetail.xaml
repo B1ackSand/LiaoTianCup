@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Height="880" Width="1180"
         Title="聊天杯 - 纯正面因子模式已确认"
-        Background="White">
+        Background="#ACFFFFFF">
     <Grid ShowGridLines="True">
         <Grid.RowDefinitions>
             <RowDefinition Height="80"/>
