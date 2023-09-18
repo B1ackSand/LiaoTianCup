@@ -13,40 +13,40 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="280"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
         <Grid
             Grid.Row="0">
-            <Image Source="./Resources/Logo/聊天杯标题.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+            <Image Source="/LiaoTian_Cup;component/Resources/Logo/聊天杯标题.png" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Grid>
 
         <Grid
             Grid.Row="1">
             <StackPanel>
-                <Button Content="随机官突模式" 
-                Width="200" Height="60"
-                Margin="20,50,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_RandomMutation_Click"/>
-                <Button Content="纯正面因子模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Negative_Click"/>
-                <Button Content="双打模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Doubles_Click"/>
-                <Button Content="正常单刷模式" 
-                Width="200" Height="60"
-                Margin="20,20,0,0" 
-                HorizontalAlignment="Center" 
-                VerticalAlignment="Center" 
-                FontSize="20" Click="Button_Single_Click"/>
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Height" Value="60"></Setter>
+                        <Setter Property="Margin" Value="20,20,0,0"></Setter>
+                        <Setter Property="HorizontalAlignment" Value="Center"></Setter>
+                        <Setter Property="VerticalAlignment" Value="Center"></Setter>
+                        <Setter Property="FontSize" Value="20"></Setter>
+                    </Style>
+                </StackPanel.Resources>
+                <Button Content="随机官突模式" Margin="20,50,0,0" Click="Button_RandomMutation_Click"/>
+                <Button Content="纯正面因子模式" Click="Button_Negative_Click"/>
+                <Button Content="双打模式" Click="Button_Doubles_Click"/>
+                <Button Content="正常单刷模式" Click="Button_Single_Click"/>
             </StackPanel>
+        </Grid>
+
+        <Grid
+            Grid.Row="2">
+            <Button Content="English" 
+                Width="120" Height="40"
+                Margin="20,0,0,0"
+                HorizontalAlignment="Left"
+                FontSize="15"/>
         </Grid>
     </Grid>
 </Page>

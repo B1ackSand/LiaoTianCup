@@ -1,0 +1,184 @@
+﻿<Page x:Class="LiaoTian_Cup.SingleModeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LiaoTian_Cup"
+        mc:Ignorable="d"
+        Height="910" Width="1180"
+        Background="#ACFFFFFF">
+
+    <Page.Resources>
+        <Style TargetType="Button" BasedOn="{StaticResource BaseButton}"/>
+        <Style TargetType="CheckBox" BasedOn="{StaticResource BaseCheckBox}"/>
+        <Style TargetType="Label" BasedOn="{StaticResource BaseLabel}"/>
+        <Style TargetType="TextBox" BasedOn="{StaticResource BaseTextBox}"/>
+    </Page.Resources>
+
+    <Grid ShowGridLines="True">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="220" />
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.Resources>
+            <Style TargetType="Image" BasedOn="{StaticResource GridMinImage}"/>
+        </Grid.Resources>
+
+        <StackPanel Orientation="Horizontal">
+            <Label Content="选手名称：" Margin="30,0,0,0"/>
+            <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" Width="230" Margin="0,0,35,0" Focusable="True"/>
+            <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Margin="0,10,10,0"/>
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" IsEditable="False" Style="{StaticResource BaseComboBox}">
+                <ComboBoxItem>3因子模式</ComboBoxItem>
+                <ComboBoxItem>5因子模式</ComboBoxItem>
+            </ComboBox>
+            <Button x:Name="RandStartBtn" Content="开始随机" Margin="55,0,35,0" Click="Button_Random_Click"/>
+            <Button Content="锁定重置" Margin="0,0,35,0" Click="Button_Reset_Click"/>
+            <Button Content="返回主页" Margin="0,0,35,0" Click="Button_BackMain_Click"/>
+        </StackPanel>
+
+        <Grid
+            Grid.Row="1">
+            <StackPanel Orientation="Horizontal">
+                <StackPanel.Resources>
+                    <Style TargetType="Image" BasedOn="{StaticResource MapImg}">
+                        <Setter Property="Margin" Value="10,0,0,0"/>
+                        <Setter Property="Cursor" Value="Hand"/>
+                        <EventSetter Event="MouseLeftButtonDown" Handler="Maps_MouseDown"/>
+                    </Style>
+                </StackPanel.Resources>
+                
+                <Label Content="随机地图：" Foreground="Red" Margin="30,0,0,0"/>
+                <Image x:Name="MapImg1" Margin="0,0,0,0"/>
+                <Image x:Name="MapImg2"/>
+                <Image x:Name="MapImg3"/>
+                <Button x:Name="MapConfirmBtn" Content="确认地图" Margin="10,0,0,0" Click="Button_MapConfirm_Click"/>
+            </StackPanel>
+        </Grid>
+        <Grid
+			Grid.Row="2">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="80"/>
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <Grid
+                    Grid.Row="0">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Image" BasedOn="{StaticResource ClickableImg}">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="Factor_MouseDown"/>
+                                <EventSetter Event="MouseRightButtonDown" Handler="Ban_MouseDown"/>
+                            </Style>
+                        </StackPanel.Resources>
+                        <Label Content="自选因子：" Margin="30,0,0,0"/>
+                        <Image x:Name="SelectFactor1" Margin="0,0,0,0"/>
+                        <Image x:Name="SelectFactor2"/>
+                        <Image x:Name="SelectFactor3"/>
+                        <Image x:Name="SelectFactor4"/>
+                        <Image x:Name="SelectFactor5"/>
+                        <Image x:Name="SelectFactor6"/>
+                        <Image x:Name="SelectFactor7"/>
+                        <Image x:Name="SelectFactor8"/>
+                        <Image x:Name="SelectFactor9"/>
+                        <Image x:Name="SelectFactor10"/>
+                        <TextBlock Text="右键BAN选因子" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid
+                    Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style TargetType="Image" BasedOn="{StaticResource ClickableImg}">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="Commander_MouseDown"/>
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <Label Content="先出指挥官：" Margin="10,0,0,0"/>
+                        <Image x:Name="BeforeCommander1" Margin="0,0,0,0"/>
+                        <Image x:Name="BeforeCommander2"/>
+                        <Image x:Name="BeforeCommander3"/>
+                        <Image x:Name="BeforeCommander4"/>
+                        <Label Content="后出指挥官：" Margin="18,0,0,0"/>
+                        <Image x:Name="AfterCommander1" Margin="0,0,0,0"/>
+                        <Image x:Name="AfterCommander2"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <Grid
+			Grid.Row="3">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="120"/>
+                <RowDefinition Height="80"/>
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <Grid
+                Grid.Row="0">
+                <Line X1="0" Y1="0" X2="1180" Y2="0" Stroke="Gray" StrokeThickness="6"></Line>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="已选地图：" Margin="18,10,0,0"/>
+                    <Image x:Name="HasSelectMap" Margin="10,0,0,0" Style="{StaticResource MapImg}"/>
+                </StackPanel>
+            </Grid>
+
+            <Grid
+                Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Image" BasedOn="{StaticResource ClickableImg}">
+                            <EventSetter Event="MouseLeftButtonDown" Handler="CancelBan_MouseDown"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <Label Content="BAN选因子：" Margin="18,0,0,0"/>
+                    <Image x:Name="HasSelectBanFactor1" Margin="0,0,0,0"/>
+                    <Image x:Name="HasSelectBanFactor2"/>
+                    <Image x:Name="HasSelectBanFactor3"/>
+                    <Image x:Name="HasSelectBanFactor4"/>
+                    <Image x:Name="HasSelectBanFactor5"/>
+                </StackPanel>
+            </Grid>
+            
+            <Grid
+                Grid.Row="2">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel.Resources>
+                        <Style TargetType="Image" BasedOn="{StaticResource ClickableImg}">
+                            <EventSetter Event="MouseLeftButtonDown" Handler="CancelFactor_MouseDown"/>
+                        </Style>
+                    </StackPanel.Resources>
+                    
+                    <Label Content="已自选因子：" Margin="18,0,0,0"/>
+                    <Image x:Name="HasSelectFactor1" Margin="0,0,0,0"/>
+                    <Image x:Name="HasSelectFactor2"/>
+                    <Image x:Name="HasSelectFactor3"/>
+                    <Image x:Name="HasSelectFactor4"/>
+                    <Image x:Name="HasSelectFactor5"/>
+                    <TextBlock Text="因子总分为：" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    <TextBlock x:Name="Score" Text="{Binding Path=score}" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    <TextBlock x:Name="Warn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                </StackPanel>
+            </Grid>
+
+
+            <Grid
+                Grid.Row="3">
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="已选指挥官：" Margin="18,0,0,0"/>
+                    <Image x:Name="HasSelectCommander" Margin="0,0,0,0" MouseLeftButtonDown="CancelCommander_MouseDown" Style="{StaticResource ClickableImg}"/>
+                    <Button Content="确认" Margin="817,0,0,0" Click="Button_Confirm_Click"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
