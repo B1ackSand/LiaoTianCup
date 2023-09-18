@@ -185,9 +185,10 @@ namespace LiaoTian_Cup
             hasSelectMap = new Image();
             FlashHasSelectMap();
             List<int> randNums = rk.GenerateXRandomNum(3, mapsInfo.Count);
-            MapImg1.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri("./Resources/maps/" + mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            var mapDir = "/LiaoTian_Cup;component/Resources/maps/";
+            MapImg1.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[2]] + ".png", UriKind.Relative));
         }
 
         //点击地图图片事件响应
@@ -262,12 +263,13 @@ namespace LiaoTian_Cup
                 List<int> randNum = rk.GenerateXRandomNum(6, factorListClone.Count);
 
                 //相对路径URI显示6个因子的图片
-                SelectFactor1.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[0]][1] + ".png", UriKind.Relative));
-                SelectFactor2.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[1]][1] + ".png", UriKind.Relative));
-                SelectFactor3.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[2]][1] + ".png", UriKind.Relative));
-                SelectFactor4.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[3]][1] + ".png", UriKind.Relative));
-                SelectFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[4]][1] + ".png", UriKind.Relative));
-                SelectFactor6.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum[5]][1] + ".png", UriKind.Relative));
+                var factorDir = "/LiaoTian_Cup;component/Resources/factor/";
+                SelectFactor1.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[0]][1] + ".png", UriKind.Relative));
+                SelectFactor2.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[1]][1] + ".png", UriKind.Relative));
+                SelectFactor3.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[2]][1] + ".png", UriKind.Relative));
+                SelectFactor4.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[3]][1] + ".png", UriKind.Relative));
+                SelectFactor5.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[4]][1] + ".png", UriKind.Relative));
+                SelectFactor6.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[5]][1] + ".png", UriKind.Relative));
             }
             else if (_modeName.Equals("5因子模式"))
             {
@@ -293,16 +295,17 @@ namespace LiaoTian_Cup
                     }
                 }
 
-                SelectFactor1.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(0)][1] + ".png", UriKind.Relative));
-                SelectFactor2.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(1)][1] + ".png", UriKind.Relative));
-                SelectFactor3.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(2)][1] + ".png", UriKind.Relative));
-                SelectFactor4.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(3)][1] + ".png", UriKind.Relative));
-                SelectFactor5.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(4)][1] + ".png", UriKind.Relative));
-                SelectFactor6.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(5)][1] + ".png", UriKind.Relative));
-                SelectFactor7.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(6)][1] + ".png", UriKind.Relative));
-                SelectFactor8.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(7)][1] + ".png", UriKind.Relative));
-                SelectFactor9.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(8)][1] + ".png", UriKind.Relative));
-                SelectFactor10.Source = new BitmapImage(new Uri("./Resources/factor/" + factorListClone[randNum.ElementAt(9)][1] + ".png", UriKind.Relative));
+                var factorDir = "/LiaoTian_Cup;component/Resources/factor/";
+                SelectFactor1.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(0)][1] + ".png", UriKind.Relative));
+                SelectFactor2.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(1)][1] + ".png", UriKind.Relative));
+                SelectFactor3.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(2)][1] + ".png", UriKind.Relative));
+                SelectFactor4.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(3)][1] + ".png", UriKind.Relative));
+                SelectFactor5.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(4)][1] + ".png", UriKind.Relative));
+                SelectFactor6.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(5)][1] + ".png", UriKind.Relative));
+                SelectFactor7.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(6)][1] + ".png", UriKind.Relative));
+                SelectFactor8.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(7)][1] + ".png", UriKind.Relative));
+                SelectFactor9.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(8)][1] + ".png", UriKind.Relative));
+                SelectFactor10.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(9)][1] + ".png", UriKind.Relative));
             }
         }
 
@@ -312,7 +315,7 @@ namespace LiaoTian_Cup
         {
             
             var selectName = (img.Source as BitmapImage).UriSource.ToString()
-                        .Replace("./Resources/factor/", "").Replace(".png", "");
+                        .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
             for (int i = 0; i < scoreFactorList.Count; i++)
             {
@@ -400,7 +403,7 @@ namespace LiaoTian_Cup
 
                 //因子总分数计算
                 var selectName = (cancelFactor.Source as BitmapImage).UriSource.ToString()
-                            .Replace("./Resources/factor/", "").Replace(".png", "");
+                            .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
                 for (int i = 0; i < scoreFactorList.Count; i++)
                 {
@@ -479,13 +482,14 @@ namespace LiaoTian_Cup
             List<int> afterRandNum = rk.GenerateXRandomNum(2, afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            BeforeCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri("./Resources/commander/" + beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            var commanderDir = "/LiaoTian_Cup;component/Resources/commander/";
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri("./Resources/commander/" + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
         }
 
         //点击自选指挥官事件响应

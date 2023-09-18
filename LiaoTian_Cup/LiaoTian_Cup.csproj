@@ -9,9 +9,20 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.1.1</Version>
+    <Version>0.1.2</Version>
 	<Authors>BlackSand</Authors>
   </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Model\**" />
+    <Compile Remove="ViewModel\**" />
+    <EmbeddedResource Remove="Model\**" />
+    <EmbeddedResource Remove="ViewModel\**" />
+    <None Remove="Model\**" />
+    <None Remove="ViewModel\**" />
+    <Page Remove="Model\**" />
+    <Page Remove="ViewModel\**" />
+  </ItemGroup>
 
   <ItemGroup>
     <None Remove="Resources\commander\凯拉克斯.png" />
@@ -163,12 +174,6 @@
     <Resource Include="Resources\Logo\icon.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\" />
-    <Folder Include="View\" />
-    <Folder Include="ViewModel\" />
   </ItemGroup>
 
   <ItemGroup>

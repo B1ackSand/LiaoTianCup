@@ -26,22 +26,22 @@ namespace LiaoTian_Cup
         }
         private void Button_RandomMutation_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("RandomMutationWindow.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/RandomMutationWindow.xaml", UriKind.Relative));
         }
 
         private void Button_Negative_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("NegativeFactorWindow.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/NegativeFactorWindow.xaml", UriKind.Relative));
         }
 
         private void Button_Doubles_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("DoublesModeWindow.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/DoublesModeWindow.xaml", UriKind.Relative));
         }
 
         private void Button_Single_Click(object sender, RoutedEventArgs e)
         {
-            this.NavigationService.Navigate(new Uri("SingleModeWindow.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/SingleModeWindow.xaml", UriKind.Relative));
         }
     }
 }

@@ -25,6 +25,4 @@ namespace LiaoTian_Cup
             InitializeComponent();
         }
     }
-
-    
 }

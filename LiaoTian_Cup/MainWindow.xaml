@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
         Height="910" Width="1180"
-        Title="聊天杯 v0.1.1 - Programmed by BlackSand"
+        Title="聊天杯 v0.1.2 - Programmed by B1ackSand"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
-        Icon="./Resources/Logo/icon.ico"
+        Icon="/LiaoTian_Cup;component/Resources/Logo/icon.ico"
         >
     <Window.Background>
-        <ImageBrush ImageSource="Resources/R-C-16-9.jpg" Opacity="0.9" Stretch="UniformToFill"/>
+        <ImageBrush ImageSource="/LiaoTian_Cup;component/Resources/R-C-16-9.jpg" Opacity="0.9" Stretch="UniformToFill"/>
     </Window.Background>
     <Frame x:Name="load_frame" NavigationUIVisibility="Hidden" Source="MainPage.xaml"/>
 </Window>
