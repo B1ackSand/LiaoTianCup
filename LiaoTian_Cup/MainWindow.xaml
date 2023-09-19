@@ -5,8 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LiaoTian_Cup"
         mc:Ignorable="d"
-        Height="910" Width="1180"
-        Title="聊天杯 v0.1.2 - Programmed by B1ackSand"
+        Title="聊天杯 LiaoTian_Cup v0.1.3 - Programmed by B1ackSand"
         ResizeMode="CanMinimize"
         WindowStartupLocation="CenterScreen"
         Icon="/LiaoTian_Cup;component/Resources/Logo/icon.ico"
@@ -14,5 +13,8 @@
     <Window.Background>
         <ImageBrush ImageSource="/LiaoTian_Cup;component/Resources/R-C-16-9.jpg" Opacity="0.9" Stretch="UniformToFill"/>
     </Window.Background>
-    <Frame x:Name="load_frame" NavigationUIVisibility="Hidden" Source="MainPage.xaml"/>
+
+    <Viewbox>
+        <Frame x:Name="load_frame" NavigationUIVisibility="Hidden" Source="MainPage.xaml" Height="880" Width="1180"/>
+    </Viewbox>
 </Window>

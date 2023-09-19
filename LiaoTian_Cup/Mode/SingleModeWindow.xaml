@@ -46,16 +46,28 @@
             <StackPanel Orientation="Horizontal">
                 <StackPanel.Resources>
                     <Style TargetType="Image" BasedOn="{StaticResource MapImg}">
-                        <Setter Property="Margin" Value="10,0,0,0"/>
+                        <Setter Property="Margin" Value="10,10,0,0"/>
                         <Setter Property="Cursor" Value="Hand"/>
                         <EventSetter Event="MouseLeftButtonDown" Handler="Maps_MouseDown"/>
+                    </Style>
+                    <Style TargetType="TextBlock" BasedOn="{StaticResource MapName}">
+                        <Setter Property="Margin" Value="5,10,0,0"/>
                     </Style>
                 </StackPanel.Resources>
                 
                 <Label Content="随机地图：" Foreground="Red" Margin="30,0,0,0"/>
-                <Image x:Name="MapImg1" Margin="0,0,0,0"/>
-                <Image x:Name="MapImg2"/>
-                <Image x:Name="MapImg3"/>
+                <StackPanel>
+                    <Image x:Name="MapImg1" Margin="0,10,0,0"/>
+                    <TextBlock x:Name="MapName1" Margin="0,10,0,0"/>
+                </StackPanel>
+                <StackPanel>
+                    <Image x:Name="MapImg2"/>
+                    <TextBlock x:Name="MapName2"/>
+                </StackPanel>
+                <StackPanel>
+                    <Image x:Name="MapImg3"/>
+                    <TextBlock x:Name="MapName3"/>
+                </StackPanel>
                 <Button x:Name="MapConfirmBtn" Content="确认地图" Margin="10,0,0,0" Click="Button_MapConfirm_Click"/>
             </StackPanel>
         </Grid>

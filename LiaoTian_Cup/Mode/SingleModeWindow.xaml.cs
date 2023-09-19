@@ -146,6 +146,9 @@ namespace LiaoTian_Cup
             MapImg1.Source = new BitmapImage();
             MapImg2.Source = new BitmapImage();
             MapImg3.Source = new BitmapImage();
+            MapName1.Text = "";
+            MapName2.Text = "";
+            MapName3.Text = "";
         }
 
         //返回主页事件响应
@@ -163,6 +166,10 @@ namespace LiaoTian_Cup
             MapImg1.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
             MapImg2.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
             MapImg3.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+
+            MapName1.Text = fd.mapsInfo[randNums[0]];
+            MapName2.Text = fd.mapsInfo[randNums[1]];
+            MapName3.Text = fd.mapsInfo[randNums[2]];
         }
 
         //点击地图图片事件响应

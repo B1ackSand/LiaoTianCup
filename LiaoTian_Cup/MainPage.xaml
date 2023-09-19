@@ -8,12 +8,11 @@
       d:DesignHeight="880" d:DesignWidth="1180"
       Title="MainPage"
       Background="Transparent">
-
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="280"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
         <Grid
             Grid.Row="0">
@@ -42,11 +41,19 @@
 
         <Grid
             Grid.Row="2">
-            <Button Content="English" 
+            <StackPanel>
+                <Button Content="关于" 
                 Width="120" Height="40"
-                Margin="20,0,0,0"
+                Margin="20,0,0,10"
+                HorizontalAlignment="Left"
+                FontSize="15"
+                Click="AboutMeBtn"/>
+                <Button Content="English" 
+                Width="120" Height="40"
+                Margin="20,0,0,10"
                 HorizontalAlignment="Left"
                 FontSize="15"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </Page>

@@ -11,6 +11,7 @@
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
     <Version>0.1.2</Version>
 	<Authors>B1ackSand</Authors>
+	<ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
 
   <ItemGroup>
