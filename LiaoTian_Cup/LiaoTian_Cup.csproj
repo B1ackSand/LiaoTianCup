@@ -10,7 +10,7 @@
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
     <Version>0.1.2</Version>
-	<Authors>BlackSand</Authors>
+	<Authors>B1ackSand</Authors>
   </PropertyGroup>
 
   <ItemGroup>
@@ -562,6 +562,39 @@
     <Resource Include="Resources\自选突变列表.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Dictionary\FilePath.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>FilePath.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Dictionary\Lang\en-us.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>en-us.resx</DependentUpon>
+    </Compile>
+    <Compile Update="Dictionary\Lang\zh-cn.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>zh-cn.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Dictionary\FilePath.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>FilePath.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dictionary\Lang\en-us.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>en-us.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Dictionary\Lang\zh-cn.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>zh-cn.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
