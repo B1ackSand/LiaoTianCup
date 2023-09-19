@@ -1,6 +1,8 @@
-﻿using LiaoTian_Cup.Helper;
+﻿using LiaoTian_Cup.Dictionary.I18n;
+using LiaoTian_Cup.Helper;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -25,6 +27,26 @@ namespace LiaoTian_Cup
         {
             InitializeComponent();
         }
+
+        // i18n
+        /// <summary>
+        /// 点击按钮赋值语言的类型
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void I18nBtn(object sender, RoutedEventArgs e)
+        {
+            if((sender as Button).Content.ToString().Equals("English"))
+            {
+                LanguageManager.Instance.ChangeLanguage(new CultureInfo("en-US"));
+            }
+            else
+            {
+                LanguageManager.Instance.ChangeLanguage(new CultureInfo("zh-CN"));
+            }
+           
+        }
+
         private void Button_RandomMutation_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/RandomMutationWindow.xaml", UriKind.Relative));

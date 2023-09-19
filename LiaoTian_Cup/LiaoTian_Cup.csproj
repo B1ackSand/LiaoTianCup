@@ -9,7 +9,7 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.1.2</Version>
+    <Version>0.2.0-beta1</Version>
 	<Authors>B1ackSand</Authors>
 	<ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -571,15 +571,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>FilePath.resx</DependentUpon>
     </Compile>
-    <Compile Update="Dictionary\Lang\en-us.Designer.cs">
+    <Compile Update="Dictionary\I18n\Lang.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>en-us.resx</DependentUpon>
+      <DependentUpon>Lang.resx</DependentUpon>
     </Compile>
-    <Compile Update="Dictionary\Lang\zh-cn.Designer.cs">
+    <Compile Update="Dictionary\I18n\Lang.zh.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>zh-cn.resx</DependentUpon>
+      <DependentUpon>Lang.zh.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -588,13 +588,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>FilePath.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Dictionary\Lang\en-us.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>en-us.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Dictionary\I18n\Lang.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Update="Dictionary\Lang\zh-cn.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>zh-cn.Designer.cs</LastGenOutput>
+    <EmbeddedResource Update="Dictionary\I18n\Lang.zh.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Lang.zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 

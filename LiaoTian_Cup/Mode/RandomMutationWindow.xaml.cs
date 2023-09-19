@@ -16,7 +16,7 @@ namespace LiaoTian_Cup
     /// </summary>
     public partial class RandomMutationWindow : Page, INotifyPropertyChanged
     {
-        public string botName = "暂未随机AI";
+        public string botName = Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
 
         //链表，存放自选因子
         private List<Image> hasSelectFactor = new List<Image>(8);
@@ -150,10 +150,7 @@ namespace LiaoTian_Cup
                 int number = rand.Next(0, fd.botInfo.Count);
                 return fd.botInfo[number];
             }
-            else
-            {
-                return "暂未随机AI";
-            }
+            return Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
         }
 
         
@@ -166,7 +163,7 @@ namespace LiaoTian_Cup
             RandomMutationFunc();
         }
 
-        //重置时间响应
+        //重置当前界面响应
         private void Button_Reset_Click(object sender, RoutedEventArgs e)
         {
             reflashSelectItem();
@@ -266,12 +263,12 @@ namespace LiaoTian_Cup
             botName = IsRandAIFunc();
             if (hasSelectCommander == null ||(_isDoubles && hasSelectCommander.Count < 2))
             {
-                CommanderWarn.Text = "双打模式需选择两名指挥官";
+                CommanderWarn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("CommanderWarn1");
                 return;
             }
             else if(hasSelectCommander == null || (!_isDoubles && hasSelectCommander.Count < 1))
             {
-                CommanderWarn.Text = "未选择指挥官";
+                CommanderWarn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("CommanderWarn2");
                 return;
             }
             else

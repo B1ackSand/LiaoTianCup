@@ -2,8 +2,9 @@
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LiaoTian_Cup"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:LiaoTian_Cup.Dictionary.I18n"
+      xmlns:res="clr-namespace:System.Windows.Resources;assembly=PresentationFramework"
       mc:Ignorable="d" 
       d:DesignHeight="880" d:DesignWidth="1180"
       Title="MainPage"
@@ -24,7 +25,7 @@
             <StackPanel>
                 <StackPanel.Resources>
                     <Style TargetType="Button">
-                        <Setter Property="Width" Value="200"></Setter>
+                        <Setter Property="Width" Value="300"></Setter>
                         <Setter Property="Height" Value="60"></Setter>
                         <Setter Property="Margin" Value="20,20,0,0"></Setter>
                         <Setter Property="HorizontalAlignment" Value="Center"></Setter>
@@ -32,27 +33,27 @@
                         <Setter Property="FontSize" Value="20"></Setter>
                     </Style>
                 </StackPanel.Resources>
-                <Button Content="随机官突模式" Margin="20,50,0,0" Click="Button_RandomMutation_Click"/>
-                <Button Content="纯正面因子模式" Click="Button_Negative_Click"/>
-                <Button Content="双打模式" Click="Button_Doubles_Click"/>
-                <Button Content="正常单刷模式" Click="Button_Single_Click"/>
+                <Button Content="{Binding [RandMutationsMode], Source={x:Static local:LanguageManager.Instance}}" Margin="20,50,0,0" Click="Button_RandomMutation_Click"/>
+                <Button Content="{Binding [NegativeMutatorsMode], Source={x:Static local:LanguageManager.Instance}}" Click="Button_Negative_Click"/>
+                <Button Content="{Binding [DoublesMode], Source={x:Static local:LanguageManager.Instance}}" Click="Button_Doubles_Click"/>
+                <Button Content="{Binding [SingleMode], Source={x:Static local:LanguageManager.Instance}}" Click="Button_Single_Click"/>
             </StackPanel>
         </Grid>
 
         <Grid
             Grid.Row="2">
             <StackPanel>
-                <Button Content="关于" 
+                <Button Content="{Binding [About], Source={x:Static local:LanguageManager.Instance}}" 
                 Width="120" Height="40"
                 Margin="20,0,0,10"
                 HorizontalAlignment="Left"
                 FontSize="15"
                 Click="AboutMeBtn"/>
-                <Button Content="English" 
+                <Button Content="{Binding [LangBtn], Source={x:Static local:LanguageManager.Instance}}" 
                 Width="120" Height="40"
                 Margin="20,0,0,10"
                 HorizontalAlignment="Left"
-                FontSize="15"/>
+                FontSize="15" Click="I18nBtn"/>
             </StackPanel>
         </Grid>
     </Grid>
