@@ -97,6 +97,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 you need to pick more basic mutators 的本地化字符串。
+        /// </summary>
+        public static string BaseMutatorsWarn {
+            get {
+                return ResourceManager.GetString("BaseMutatorsWarn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 you need to pick two commanders in Co-op mode 的本地化字符串。
         /// </summary>
         public static string CommanderWarn1 {
@@ -115,11 +124,29 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Confirm base&apos;s 的本地化字符串。
+        /// </summary>
+        public static string ConfirmBaseBtn {
+            get {
+                return ResourceManager.GetString("ConfirmBaseBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Confirm 的本地化字符串。
         /// </summary>
         public static string ConfirmBtn {
             get {
                 return ResourceManager.GetString("ConfirmBtn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Confirm map 的本地化字符串。
+        /// </summary>
+        public static string ConfirmMapBtn {
+            get {
+                return ResourceManager.GetString("ConfirmMapBtn", resourceCulture);
             }
         }
         
@@ -133,6 +160,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 5 mutators mode 的本地化字符串。
+        /// </summary>
+        public static string FiveMutatorsMode {
+            get {
+                return ResourceManager.GetString("FiveMutatorsMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Free choice mutators: 的本地化字符串。
         /// </summary>
         public static string FreeMutator {
@@ -142,7 +178,34 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Commanders picked: 的本地化字符串。
+        ///   查找类似 3 mutators mode will need you pick 2 free choice mutators 的本地化字符串。
+        /// </summary>
+        public static string FreeMutatorsWarn1 {
+            get {
+                return ResourceManager.GetString("FreeMutatorsWarn1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 5 mutators mode will need you pick 3 free choice mutators 的本地化字符串。
+        /// </summary>
+        public static string FreeMutatorsWarn2 {
+            get {
+                return ResourceManager.GetString("FreeMutatorsWarn2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Base mutators picked: 的本地化字符串。
+        /// </summary>
+        public static string HasSelectBaseMutators {
+            get {
+                return ResourceManager.GetString("HasSelectBaseMutators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Commander(s) picked: 的本地化字符串。
         /// </summary>
         public static string HasSelectCommanders {
             get {
@@ -160,6 +223,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Map picked: 的本地化字符串。
+        /// </summary>
+        public static string HasSelectMap {
+            get {
+                return ResourceManager.GetString("HasSelectMap", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 中文(简体) 的本地化字符串。
         /// </summary>
         public static string LangBtn {
@@ -169,11 +241,29 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.0 - Programmed by B1ackSand 的本地化字符串。
+        /// </summary>
+        public static string MainWindowTitle {
+            get {
+                return ResourceManager.GetString("MainWindowTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Map name: 的本地化字符串。
         /// </summary>
         public static string MapName {
             get {
                 return ResourceManager.GetString("MapName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 you need to pick map 的本地化字符串。
+        /// </summary>
+        public static string MapWarn {
+            get {
+                return ResourceManager.GetString("MapWarn", resourceCulture);
             }
         }
         
@@ -196,7 +286,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Awesome Commander: 的本地化字符串。
+        ///   查找类似 Awesome Commanders: 的本地化字符串。
         /// </summary>
         public static string NewCommander {
             get {
@@ -205,7 +295,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Suck Commander: 的本地化字符串。
+        ///   查找类似 Suck Commanders: 的本地化字符串。
         /// </summary>
         public static string OldCommander {
             get {
@@ -291,6 +381,150 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string SingleMode {
             get {
                 return ResourceManager.GetString("SingleMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 3 mutators mode 的本地化字符串。
+        /// </summary>
+        public static string ThreeMutatorsMode {
+            get {
+                return ResourceManager.GetString("ThreeMutatorsMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dead of Night 的本地化字符串。
+        /// </summary>
+        public static string 亡者之夜 {
+            get {
+                return ResourceManager.GetString("亡者之夜", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Rifts to Korhal 的本地化字符串。
+        /// </summary>
+        public static string 克哈裂痕 {
+            get {
+                return ResourceManager.GetString("克哈裂痕", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Malwarfare 的本地化字符串。
+        /// </summary>
+        public static string 净网行动 {
+            get {
+                return ResourceManager.GetString("净网行动", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Chain of Ascension 的本地化字符串。
+        /// </summary>
+        public static string 升格之链 {
+            get {
+                return ResourceManager.GetString("升格之链", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Lock &amp; load 的本地化字符串。
+        /// </summary>
+        public static string 天界封锁 {
+            get {
+                return ResourceManager.GetString("天界封锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Temple of the Past 的本地化字符串。
+        /// </summary>
+        public static string 往日神庙 {
+            get {
+                return ResourceManager.GetString("往日神庙", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Mist Opportunities 的本地化字符串。
+        /// </summary>
+        public static string 机会渺茫 {
+            get {
+                return ResourceManager.GetString("机会渺茫", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cradle of Death 的本地化字符串。
+        /// </summary>
+        public static string 死亡摇篮 {
+            get {
+                return ResourceManager.GetString("死亡摇篮", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Oblivion Express 的本地化字符串。
+        /// </summary>
+        public static string 湮灭快车 {
+            get {
+                return ResourceManager.GetString("湮灭快车", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 The Vermillion Problem 的本地化字符串。
+        /// </summary>
+        public static string 熔火危机 {
+            get {
+                return ResourceManager.GetString("熔火危机", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Part &amp; Parcel 的本地化字符串。
+        /// </summary>
+        public static string 聚铁成兵 {
+            get {
+                return ResourceManager.GetString("聚铁成兵", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Miner Evacuation 的本地化字符串。
+        /// </summary>
+        public static string 营救矿工 {
+            get {
+                return ResourceManager.GetString("营救矿工", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Void Thrashing 的本地化字符串。
+        /// </summary>
+        public static string 虚空撕裂 {
+            get {
+                return ResourceManager.GetString("虚空撕裂", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Void Launch 的本地化字符串。
+        /// </summary>
+        public static string 虚空降临 {
+            get {
+                return ResourceManager.GetString("虚空降临", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Scythe of Amon 的本地化字符串。
+        /// </summary>
+        public static string 黑暗杀星 {
+            get {
+                return ResourceManager.GetString("黑暗杀星", resourceCulture);
             }
         }
     }

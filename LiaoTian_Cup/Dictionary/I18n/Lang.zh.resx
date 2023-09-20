@@ -195,4 +195,82 @@
   <data name="CommanderWarn2" xml:space="preserve">
     <value>未选择指挥官</value>
   </data>
+  <data name="MainWindowTitle" xml:space="preserve">
+    <value>聊天杯 LiaoTian_Cup v0.2.0 - Programmed by B1ackSand</value>
+  </data>
+  <data name="ThreeMutatorsMode" xml:space="preserve">
+    <value>3因子模式</value>
+  </data>
+  <data name="FiveMutatorsMode" xml:space="preserve">
+    <value>5因子模式</value>
+  </data>
+  <data name="ConfirmMapBtn" xml:space="preserve">
+    <value>确认地图</value>
+  </data>
+  <data name="ConfirmBaseBtn" xml:space="preserve">
+    <value>确认基础因子</value>
+  </data>
+  <data name="HasSelectMap" xml:space="preserve">
+    <value>已选地图：</value>
+  </data>
+  <data name="HasSelectBaseMutators" xml:space="preserve">
+    <value>已选基础因子：</value>
+  </data>
+  <data name="MapWarn" xml:space="preserve">
+    <value>未选择地图</value>
+  </data>
+  <data name="BaseMutatorsWarn" xml:space="preserve">
+    <value>未选择足够的基础因子</value>
+  </data>
+  <data name="FreeMutatorsWarn1" xml:space="preserve">
+    <value>3因子模式需要至少自选2个因子</value>
+  </data>
+  <data name="FreeMutatorsWarn2" xml:space="preserve">
+    <value>5因子模式需要至少自选3个因子</value>
+  </data>
+  <data name="克哈裂痕" xml:space="preserve">
+    <value>克哈裂痕</value>
+  </data>
+  <data name="虚空撕裂" xml:space="preserve">
+    <value>虚空撕裂</value>
+  </data>
+  <data name="虚空降临" xml:space="preserve">
+    <value>虚空降临</value>
+  </data>
+  <data name="升格之链" xml:space="preserve">
+    <value>升格之链</value>
+  </data>
+  <data name="净网行动" xml:space="preserve">
+    <value>净网行动</value>
+  </data>
+  <data name="营救矿工" xml:space="preserve">
+    <value>营救矿工</value>
+  </data>
+  <data name="机会渺茫" xml:space="preserve">
+    <value>机会渺茫</value>
+  </data>
+  <data name="湮灭快车" xml:space="preserve">
+    <value>湮灭快车</value>
+  </data>
+  <data name="聚铁成兵" xml:space="preserve">
+    <value>聚铁成兵</value>
+  </data>
+  <data name="天界封锁" xml:space="preserve">
+    <value>天界封锁</value>
+  </data>
+  <data name="黑暗杀星" xml:space="preserve">
+    <value>黑暗杀星</value>
+  </data>
+  <data name="熔火危机" xml:space="preserve">
+    <value>熔火危机</value>
+  </data>
+  <data name="往日神庙" xml:space="preserve">
+    <value>往日神庙</value>
+  </data>
+  <data name="死亡摇篮" xml:space="preserve">
+    <value>死亡摇篮</value>
+  </data>
+  <data name="亡者之夜" xml:space="preserve">
+    <value>亡者之夜</value>
+  </data>
 </root>

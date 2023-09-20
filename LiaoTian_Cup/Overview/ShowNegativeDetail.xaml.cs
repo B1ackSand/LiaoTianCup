@@ -43,6 +43,7 @@ namespace LiaoTian_Cup
             modeName.Text = m_parent.modeName;
 
             HasSelectMap.Source = m_parent.HasSelectMap.Source;
+            MapTip.Text = m_parent.MapTip.Text;
             HasSelectBaseFactor1.Source = m_parent.HasSelectBaseFactor1.Source;
             HasSelectBaseFactor2.Source = m_parent.HasSelectBaseFactor2.Source;
 
