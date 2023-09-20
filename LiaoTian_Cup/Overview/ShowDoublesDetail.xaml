@@ -72,7 +72,7 @@
                 Grid.Row="2">
                 <StackPanel Orientation="Horizontal">
                     <Label Content="{Binding [RandomBotStr], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,30" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="bottom" FontWeight="Bold"/>
-                    <TextBox x:Name="AIBox" Text="{Binding [RandomBotStrTip], Source={x:Static local:LanguageManager.Instance},Mode=OneWay}" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="auto" Width="200" Margin="0,0,0,33" FontWeight="Bold" Focusable="False"/>
+                    <TextBox x:Name="AIBox" Text="{Binding [RandomBotStrTip], Source={x:Static local:LanguageManager.Instance},Mode=OneWay}" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="auto" Width="250" Margin="0,0,0,33" FontWeight="Bold" Focusable="False"/>
                 </StackPanel>                
                 <Button Content="{Binding [BackBtn], Source={x:Static local:LanguageManager.Instance}}" Width="120" Height="30" Margin="0,0,20,33" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Back_Click"/>
             </Grid>

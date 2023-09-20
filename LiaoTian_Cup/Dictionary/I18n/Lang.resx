@@ -297,4 +297,61 @@
   <data name="MutatorsCost" xml:space="preserve">
     <value>Total cost: </value>
   </data>
+  <data name="大师机械" xml:space="preserve">
+    <value>Masters and Machines</value>
+  </data>
+  <data name="步战机甲" xml:space="preserve">
+    <value>Towering Walkers</value>
+  </data>
+  <data name="袭扰炮击" xml:space="preserve">
+    <value>Disruptive Artillery</value>
+  </data>
+  <data name="卡莱的希望" xml:space="preserve">
+    <value>Hope of the Khalai</value>
+  </data>
+  <data name="风暴迫临" xml:space="preserve">
+    <value>Siege of Storms</value>
+  </data>
+  <data name="暗影袭扰" xml:space="preserve">
+    <value>Shadow Disruption</value>
+  </data>
+  <data name="肆虐扩散" xml:space="preserve">
+    <value>Ravaging Infestation</value>
+  </data>
+  <data name="滋生腐化" xml:space="preserve">
+    <value>Brooding Corruption</value>
+  </data>
+  <data name="爆炸威胁" xml:space="preserve">
+    <value>Explosive Threats</value>
+  </data>
+  <data name="突击团" xml:space="preserve">
+    <value>Raiding Party</value>
+  </data>
+  <data name="暗影科技团" xml:space="preserve">
+    <value>Shadow Tech</value>
+  </data>
+  <data name="战争机械团" xml:space="preserve">
+    <value>Machines of War</value>
+  </data>
+  <data name="帝国战斗群" xml:space="preserve">
+    <value>Dominion Battlegroup</value>
+  </data>
+  <data name="旧世步兵团" xml:space="preserve">
+    <value>Classic Infantry</value>
+  </data>
+  <data name="旧世机械团" xml:space="preserve">
+    <value>Classic Mech</value>
+  </data>
+  <data name="侵略虫群" xml:space="preserve">
+    <value>Invasionary Swarm</value>
+  </data>
+  <data name="遮天蔽日" xml:space="preserve">
+    <value>Devouring Scourge</value>
+  </data>
+  <data name="艾尔先锋" xml:space="preserve">
+    <value>Vanguard of Aiur</value>
+  </data>
+  <data name="族长之军" xml:space="preserve">
+    <value>Fleet of the Matriarch</value>
+  </data>
 </root>

@@ -475,6 +475,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Invasionary Swarm 的本地化字符串。
+        /// </summary>
+        public static string 侵略虫群 {
+            get {
+                return ResourceManager.GetString("侵略虫群", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Rifts to Korhal 的本地化字符串。
         /// </summary>
         public static string 克哈裂痕 {
@@ -502,11 +511,38 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Hope of the Khalai 的本地化字符串。
+        /// </summary>
+        public static string 卡莱的希望 {
+            get {
+                return ResourceManager.GetString("卡莱的希望", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Masters and Machines 的本地化字符串。
+        /// </summary>
+        public static string 大师机械 {
+            get {
+                return ResourceManager.GetString("大师机械", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Lock &amp; load 的本地化字符串。
         /// </summary>
         public static string 天界封锁 {
             get {
                 return ResourceManager.GetString("天界封锁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Dominion Battlegroup 的本地化字符串。
+        /// </summary>
+        public static string 帝国战斗群 {
+            get {
+                return ResourceManager.GetString("帝国战斗群", resourceCulture);
             }
         }
         
@@ -520,11 +556,74 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Machines of War 的本地化字符串。
+        /// </summary>
+        public static string 战争机械团 {
+            get {
+                return ResourceManager.GetString("战争机械团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fleet of the Matriarch 的本地化字符串。
+        /// </summary>
+        public static string 族长之军 {
+            get {
+                return ResourceManager.GetString("族长之军", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Classic Mech 的本地化字符串。
+        /// </summary>
+        public static string 旧世机械团 {
+            get {
+                return ResourceManager.GetString("旧世机械团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Classic Infantry 的本地化字符串。
+        /// </summary>
+        public static string 旧世步兵团 {
+            get {
+                return ResourceManager.GetString("旧世步兵团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shadow Tech 的本地化字符串。
+        /// </summary>
+        public static string 暗影科技团 {
+            get {
+                return ResourceManager.GetString("暗影科技团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Shadow Disruption 的本地化字符串。
+        /// </summary>
+        public static string 暗影袭扰 {
+            get {
+                return ResourceManager.GetString("暗影袭扰", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Mist Opportunities 的本地化字符串。
         /// </summary>
         public static string 机会渺茫 {
             get {
                 return ResourceManager.GetString("机会渺茫", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Towering Walkers 的本地化字符串。
+        /// </summary>
+        public static string 步战机甲 {
+            get {
+                return ResourceManager.GetString("步战机甲", resourceCulture);
             }
         }
         
@@ -547,6 +646,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Brooding Corruption 的本地化字符串。
+        /// </summary>
+        public static string 滋生腐化 {
+            get {
+                return ResourceManager.GetString("滋生腐化", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 The Vermillion Problem 的本地化字符串。
         /// </summary>
         public static string 熔火危机 {
@@ -556,11 +664,47 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Explosive Threats 的本地化字符串。
+        /// </summary>
+        public static string 爆炸威胁 {
+            get {
+                return ResourceManager.GetString("爆炸威胁", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Raiding Party 的本地化字符串。
+        /// </summary>
+        public static string 突击团 {
+            get {
+                return ResourceManager.GetString("突击团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Part &amp; Parcel 的本地化字符串。
         /// </summary>
         public static string 聚铁成兵 {
             get {
                 return ResourceManager.GetString("聚铁成兵", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Ravaging Infestation 的本地化字符串。
+        /// </summary>
+        public static string 肆虐扩散 {
+            get {
+                return ResourceManager.GetString("肆虐扩散", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Vanguard of Aiur 的本地化字符串。
+        /// </summary>
+        public static string 艾尔先锋 {
+            get {
+                return ResourceManager.GetString("艾尔先锋", resourceCulture);
             }
         }
         
@@ -588,6 +732,33 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 虚空降临 {
             get {
                 return ResourceManager.GetString("虚空降临", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Disruptive Artillery 的本地化字符串。
+        /// </summary>
+        public static string 袭扰炮击 {
+            get {
+                return ResourceManager.GetString("袭扰炮击", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Devouring Scourge 的本地化字符串。
+        /// </summary>
+        public static string 遮天蔽日 {
+            get {
+                return ResourceManager.GetString("遮天蔽日", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Siege of Storms 的本地化字符串。
+        /// </summary>
+        public static string 风暴迫临 {
+            get {
+                return ResourceManager.GetString("风暴迫临", resourceCulture);
             }
         }
         

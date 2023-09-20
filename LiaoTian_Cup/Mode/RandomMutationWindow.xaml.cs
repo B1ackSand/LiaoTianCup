@@ -148,7 +148,7 @@ namespace LiaoTian_Cup
             {
                 Random rand = new Random();
                 int number = rand.Next(0, fd.botInfo.Count);
-                return fd.botInfo[number];
+                return Dictionary.I18n.Lang.ResourceManager.GetString(fd.botInfo[number]);
             }
             return Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
         }
