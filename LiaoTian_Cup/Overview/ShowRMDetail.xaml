@@ -3,7 +3,7 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:LiaoTian_Cup"
+      xmlns:local="clr-namespace:LiaoTian_Cup.Dictionary.I18n"
       mc:Ignorable="d" 
       Height="880" Width="1180"
       Title="聊天杯 - 随机官突模式已确认"
@@ -18,17 +18,17 @@
         </Grid.RowDefinitions>
 
         <StackPanel Orientation="Horizontal">
-            <Label Content="选手名称：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+            <Label Content="{Binding [PlayerName], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
             <TextBox Text=""  x:Name="PlayerName" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Center" Height="27.4" Width="230" Margin="0,0,35,0" Focusable="False"/>
-            <CheckBox x:Name="ChkDoubles" Content="双打模式" Width="120" Height="30" Margin="0,10,35,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" IsEnabled="False"/>
+            <CheckBox x:Name="ChkDoubles" Content="{Binding [DoublesMode], Source={x:Static local:LanguageManager.Instance}}" Width="auto" Height="30" Margin="0,10,35,0" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" IsEnabled="False"/>
         </StackPanel>
 
         <Grid
             Grid.Row="1">
             <StackPanel Orientation="Horizontal">
-                <Label Content="突变名称：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Label Content="{Binding [MutationName], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <TextBox x:Name="MutationBox" TextWrapping="Wrap"  VerticalAlignment="Center" Width="367" FontSize="20" SelectionOpacity="-2" Focusable="False"/>
-                <Label Content="地图名称：" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Label Content="{Binding [MapName], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="50,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <TextBox x:Name="MapBox" VerticalAlignment="Center" Width="217" FontSize="20" Focusable="False"/>
             </StackPanel>
         </Grid>
@@ -36,7 +36,7 @@
         <Grid
 			Grid.Row="2">
             <StackPanel Orientation="Horizontal">
-                <Label Content="基础因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                <Label Content="{Binding [BaseMutator], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                 <Image x:Name="Factor1" Height="60" Width="60" HorizontalAlignment="Left" Stretch="Fill"/>
                 <Image x:Name="Factor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                 <Image x:Name="Factor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
@@ -54,7 +54,7 @@
             <Grid
                 Grid.Row="0">
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选自选因子：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="{Binding [HasSelectFreeMutators], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectFactor1" Height="60" Width="60" Stretch="Fill"/>
                     <Image x:Name="HasSelectFactor2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                     <Image x:Name="HasSelectFactor3" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
@@ -68,16 +68,18 @@
             <Grid
                 Grid.Row="1">
                 <StackPanel Orientation="Horizontal" Margin="0,18,0,0">
-                    <Label Content="已选择指挥官：" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
+                    <Label Content="{Binding [HasSelectCommanders], Source={x:Static local:LanguageManager.Instance}}" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Center" FontSize="20" FontWeight="Bold"/>
                     <Image x:Name="HasSelectCommander1" Height="60" Width="60" HorizontalAlignment="Left" Margin="0,0,0,0" Stretch="Fill"/>
                     <Image x:Name="HasSelectCommander2" Height="60" Width="60" HorizontalAlignment="Left" Margin="15,0,0,0" Stretch="Fill"/>
                 </StackPanel>
             </Grid>
             <Grid
                 Grid.Row="2">
-                <Label Content="随机AI为：" Margin="30,0,0,30" HorizontalAlignment="Left" VerticalAlignment="bottom" FontSize="20" FontWeight="Bold"/>
-                <TextBox x:Name="AIBox" Text="暂无随机AI" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="bottom" Height="auto" Width="200" Margin="132,0,0,32" FontWeight="Bold" Focusable="False"/>
-                <Button Content="返回" Width="120" Height="30" Margin="0,0,75,30" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Back_Click"/>
+                <StackPanel Orientation="Horizontal">
+                    <Label Content="{Binding [RandomBotStr], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,30" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="bottom" FontWeight="Bold"/>
+                    <TextBox x:Name="AIBox" Text="{Binding [RandomBotStrTip], Source={x:Static local:LanguageManager.Instance},Mode=OneWay}" FontSize="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="auto" Width="250" Margin="0,0,0,33" Focusable="False"/>
+                </StackPanel>
+                <Button Content="{Binding [BackBtn], Source={x:Static local:LanguageManager.Instance}}" Width="120" Height="30" Margin="0,0,20,33" VerticalAlignment="Bottom" HorizontalAlignment="Right" Click="Button_Back_Click"/>
             </Grid>
         </Grid>
     </Grid>

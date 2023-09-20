@@ -16,27 +16,7 @@ namespace LiaoTian_Cup
     /// </summary>
     public partial class SingleModeWindow : Page
     {
-        //路径
-        private readonly string scoreFactorPath = "./Resources/group_FactorList_Score.csv";
-        private readonly string beforeCommanderFilePath = "./Resources/先出指挥官列表.csv";
-        private readonly string afterCommanderFilePath = "./Resources/后出指挥官列表.csv";
-        private readonly string aIFilePath = "./Resources/电脑AI.csv";
-        private readonly string mapsFilePath = "./Resources/所有地图.csv";
-
-        //存放因子库CSV中得到的数据
-        private List<string[]> scoreFactorList = new List<string[]>();
-
-        //存放先出指挥官CSV中得到的数据
-        private List<string> beforeCommanderInfo = new List<string>();
-        //存放后出指挥官CSV中得到的数据
-        private List<string> afterCommanderInfo = new List<string>();
-
-        //存放所有的人机CSV中得到的数据
-        private List<string> botInfo = new List<string>();
-        public string botName = "暂未随机AI";
-
-        //存放地图数据
-        private List<string> mapsInfo = new List<string>();
+        public string botName = Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
 
         //链表，存放自选因子
         private Image hasSelectMap = new Image();
@@ -44,21 +24,16 @@ namespace LiaoTian_Cup
         private List<Image> hasSelectFactor = new List<Image>();
         private Image hasSelectCommander = new Image();
 
-        //显示当前选择的因子总分
-
-        //初始化
-        RandomKit rk = new RandomKit();
+        //初始化工具
+        readonly FileData fd = new FileData();
+        readonly RandomKit rk = new RandomKit();
+        string factorDir = Dictionary.FilePath.factorDir;
+        string mapDir = Dictionary.FilePath.mapDir;
+        string commanderDir = Dictionary.FilePath.commanderDir;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public SingleModeWindow()
         {
-            //初始化窗口时即拿数据
-            CSVKit.Csv2Dt(scoreFactorPath, scoreFactorList);
-
-            CSVKit.Csv2Dt(beforeCommanderFilePath, beforeCommanderInfo);
-            CSVKit.Csv2Dt(afterCommanderFilePath, afterCommanderInfo);
-            CSVKit.Csv2Dt(aIFilePath, botInfo);
-            CSVKit.Csv2Dt(mapsFilePath, mapsInfo);
             InitializeComponent();
             this.DataContext = this;
         }
@@ -89,7 +64,7 @@ namespace LiaoTian_Cup
         }
 
         //模式选择（3因子模式,5因子模式）数据
-        private string _modeName = "3因子模式";
+        private string _modeName = Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode");
         public string modeName
         {
             get { return _modeName; }
@@ -118,12 +93,12 @@ namespace LiaoTian_Cup
             if (isRandAI)
             {
                 Random rand = new Random();
-                int number = rand.Next(0, botInfo.Count);
-                return botInfo[number];
+                int number = rand.Next(0, fd.botInfo.Count);
+                return Dictionary.I18n.Lang.ResourceManager.GetString(fd.botInfo[number]);
             }
             else
             {
-                return "暂未随机AI";
+                return Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
             }
         }
 
@@ -135,6 +110,7 @@ namespace LiaoTian_Cup
         public void ResetFunc()
         {
             Warn.Text = "";
+            MapTip.Text = "";
             ModeBox.IsEnabled = true;
             SetRandMapEnable(true);
 
@@ -171,6 +147,9 @@ namespace LiaoTian_Cup
             MapImg1.Source = new BitmapImage();
             MapImg2.Source = new BitmapImage();
             MapImg3.Source = new BitmapImage();
+            MapName1.Text = "";
+            MapName2.Text = "";
+            MapName3.Text = "";
         }
 
         //返回主页事件响应
@@ -184,17 +163,19 @@ namespace LiaoTian_Cup
         {
             hasSelectMap = new Image();
             FlashHasSelectMap();
-            List<int> randNums = rk.GenerateXRandomNum(3, mapsInfo.Count);
-            var mapDir = "/LiaoTian_Cup;component/Resources/maps/";
-            MapImg1.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri(mapDir + mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            List<int> randNums = rk.GenerateXRandomNum(3, fd.mapsInfo.Count);
+            MapImg1.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[0]]);
+            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[1]]);
+            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[2]]);
         }
 
         //点击地图图片事件响应
         private void Maps_MouseDown(object sender, MouseEventArgs e)
         {
-            Warn.Text = "";
+            MapTip.Text = "";
             Image selectMap = (Image)sender;
             if (selectMap != null)
             {
@@ -203,7 +184,7 @@ namespace LiaoTian_Cup
             FlashHasSelectMap();
         }
 
-        //取消当前选择的地图事件响应
+        //取消当前选择的地图事件响应(Unused)
         private void CancelMap_MouseDown(Object sender, RoutedEventArgs e)
         {
             Image cancelMap = (Image)sender;
@@ -218,9 +199,20 @@ namespace LiaoTian_Cup
         //刷新选择的地图
         private void FlashHasSelectMap()
         {
-            if (hasSelectMap != null)
+            HasSelectMap.Source = hasSelectMap.Source;
+            MapTip.Text = "";
+            if (hasSelectMap.Source != null)
             {
-                HasSelectMap.Source = hasSelectMap.Source;
+                var currentMapName = (hasSelectMap.Source as BitmapImage).UriSource.ToString()
+                        .Replace("/LiaoTian_Cup;component/Resources/maps/", "").Replace(".png", "");
+                if (!string.IsNullOrEmpty(currentMapName))
+                {
+                    MapTip.Text = Dictionary.I18n.Lang.ResourceManager.GetString(currentMapName);
+                }
+                else
+                {
+                    MapTip.Text = "";
+                }
             }
         }
 
@@ -229,27 +221,20 @@ namespace LiaoTian_Cup
         {
             if (hasSelectMap == null || hasSelectMap.Source == null || hasSelectMap.Source.Equals(""))
             {
-                Warn.Text = "未选择地图";
+                MapTip.Text = Dictionary.I18n.Lang.ResourceManager.GetString("MapWarn");
                 return;
-            }
-            else
-            {
-                Warn.Text = "";
             }
             SetRandMapEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
         }
 
-
-
-
         //显示最多10个随机选择因子
         private void ShowRandomFactor()
         {
-            var factorListClone = scoreFactorList.DeepClone();
+            var factorListClone = fd.scoreFactorList.DeepClone();
 
-            if (_modeName.Equals("3因子模式"))
+            if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")))
             {
                 for (int i = 0; i < factorListClone.Count; i++)
                 {
@@ -263,7 +248,6 @@ namespace LiaoTian_Cup
                 List<int> randNum = rk.GenerateXRandomNum(6, factorListClone.Count);
 
                 //相对路径URI显示6个因子的图片
-                var factorDir = "/LiaoTian_Cup;component/Resources/factor/";
                 SelectFactor1.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[0]][1] + ".png", UriKind.Relative));
                 SelectFactor2.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[1]][1] + ".png", UriKind.Relative));
                 SelectFactor3.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[2]][1] + ".png", UriKind.Relative));
@@ -271,7 +255,7 @@ namespace LiaoTian_Cup
                 SelectFactor5.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[4]][1] + ".png", UriKind.Relative));
                 SelectFactor6.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[5]][1] + ".png", UriKind.Relative));
             }
-            else if (_modeName.Equals("5因子模式"))
+            else if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")))
             {
                 //3% 18% 79%
                 SortedSet<int> randNum = new SortedSet<int>();
@@ -295,7 +279,6 @@ namespace LiaoTian_Cup
                     }
                 }
 
-                var factorDir = "/LiaoTian_Cup;component/Resources/factor/";
                 SelectFactor1.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(0)][1] + ".png", UriKind.Relative));
                 SelectFactor2.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(1)][1] + ".png", UriKind.Relative));
                 SelectFactor3.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(2)][1] + ".png", UriKind.Relative));
@@ -313,15 +296,15 @@ namespace LiaoTian_Cup
         //因子总分数计算
         private void CalFactorScore(Image img)
         {
-            
+
             var selectName = (img.Source as BitmapImage).UriSource.ToString()
                         .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-            for (int i = 0; i < scoreFactorList.Count; i++)
+            for (int i = 0; i < fd.scoreFactorList.Count; i++)
             {
-                if (scoreFactorList[i][1].Equals(selectName))
+                if (fd.scoreFactorList[i][1].Equals(selectName))
                 {
-                    _score += Convert.ToInt32(scoreFactorList[i][2]);
+                    _score += Convert.ToInt32(fd.scoreFactorList[i][2]);
                     Score.Text = _score.ToString();
                     break;
                 }
@@ -335,7 +318,7 @@ namespace LiaoTian_Cup
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
-                if (_modeName.Equals("3因子模式") && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor) && !hasSelectBanFactor.Contains(selectFactor))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")) && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor) && !hasSelectBanFactor.Contains(selectFactor))
                 {
                     if (hasSelectFactor.Count < 3)
                     {
@@ -345,7 +328,7 @@ namespace LiaoTian_Cup
 
                 }
 
-                if (_modeName.Equals("5因子模式") && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor) && !hasSelectBanFactor.Contains(selectFactor))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor) && !hasSelectBanFactor.Contains(selectFactor))
                 {
                     if (hasSelectFactor.Count < 5)
                     {
@@ -365,7 +348,7 @@ namespace LiaoTian_Cup
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
-                if (_modeName.Equals("3因子模式") && hasSelectBanFactor != null && !hasSelectBanFactor.Contains(selectFactor) && !hasSelectFactor.Contains(selectFactor))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")) && hasSelectBanFactor != null && !hasSelectBanFactor.Contains(selectFactor) && !hasSelectFactor.Contains(selectFactor))
                 {
                     if (hasSelectBanFactor.Count < 3)
                     {
@@ -374,7 +357,7 @@ namespace LiaoTian_Cup
 
                 }
 
-                if (_modeName.Equals("5因子模式") && hasSelectBanFactor != null && !hasSelectBanFactor.Contains(selectFactor) && !hasSelectFactor.Contains(selectFactor))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectBanFactor != null && !hasSelectBanFactor.Contains(selectFactor) && !hasSelectFactor.Contains(selectFactor))
                 {
                     if (hasSelectBanFactor.Count < 5)
                     {
@@ -405,11 +388,11 @@ namespace LiaoTian_Cup
                 var selectName = (cancelFactor.Source as BitmapImage).UriSource.ToString()
                             .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-                for (int i = 0; i < scoreFactorList.Count; i++)
+                for (int i = 0; i < fd.scoreFactorList.Count; i++)
                 {
-                    if (scoreFactorList[i][1].Equals(selectName))
+                    if (fd.scoreFactorList[i][1].Equals(selectName))
                     {
-                        _score -= Convert.ToInt32(scoreFactorList[i][2]);
+                        _score -= Convert.ToInt32(fd.scoreFactorList[i][2]);
                         Score.Text = _score.ToString();
                         break;
                     }
@@ -448,7 +431,7 @@ namespace LiaoTian_Cup
                 HasSelectFactor2.Source = hasSelectFactor.Count < 2 ? null : hasSelectFactor[1].Source;
                 HasSelectFactor3.Source = hasSelectFactor.Count < 3 ? null : hasSelectFactor[2].Source;
 
-                if (_modeName.Equals("5因子模式"))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")))
                 {
                     HasSelectFactor4.Source = hasSelectFactor.Count < 4 ? null : hasSelectFactor[3].Source;
                     HasSelectFactor5.Source = hasSelectFactor.Count < 5 ? null : hasSelectFactor[4].Source;
@@ -465,7 +448,7 @@ namespace LiaoTian_Cup
                 HasSelectBanFactor2.Source = hasSelectBanFactor.Count < 2 ? null : hasSelectBanFactor[1].Source;
                 HasSelectBanFactor3.Source = hasSelectBanFactor.Count < 3 ? null : hasSelectBanFactor[2].Source;
 
-                if (_modeName.Equals("5因子模式"))
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")))
                 {
                     HasSelectBanFactor4.Source = hasSelectBanFactor.Count < 4 ? null : hasSelectBanFactor[3].Source;
                     HasSelectBanFactor5.Source = hasSelectBanFactor.Count < 5 ? null : hasSelectBanFactor[4].Source;
@@ -478,18 +461,17 @@ namespace LiaoTian_Cup
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(4, beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(2, afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(4, fd.beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(2, fd.afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            var commanderDir = "/LiaoTian_Cup;component/Resources/commander/";
-            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
         }
 
         //点击自选指挥官事件响应
@@ -533,14 +515,14 @@ namespace LiaoTian_Cup
             botName = IsRandAIFunc();
             if (hasSelectFactor != null)
             {
-                if (_modeName.Equals("3因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 3)
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")) && hasSelectFactor != null && hasSelectFactor.Count != 3)
                 {
-                    Warn.Text = "3因子模式需要至少选择3个因子";
+                    Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("FreeMutatorsWarn1");
                     return;
                 }
-                else if (_modeName.Equals("5因子模式") && hasSelectFactor != null && hasSelectFactor.Count != 5)
+                else if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectFactor != null && hasSelectFactor.Count != 5)
                 {
-                    Warn.Text = "5因子模式需要至少选择5个因子";
+                    Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("FreeMutatorsWarn2");
                     return;
                 }
 
@@ -548,7 +530,7 @@ namespace LiaoTian_Cup
 
             if (hasSelectCommander == null || hasSelectCommander.Source == null || hasSelectCommander.Source.Equals(""))
             {
-                Warn.Text = "未选择指挥官";
+                Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("CommanderWarn2");
                 return;
             }
             else
