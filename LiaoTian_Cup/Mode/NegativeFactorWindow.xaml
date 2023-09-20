@@ -59,7 +59,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <Label Content="{Binding [MapName], Source={x:Static local:LanguageManager.Instance}}" Foreground="Red" Margin="30,0,0,0"/>
+                <Label Content="{Binding [RandMap], Source={x:Static local:LanguageManager.Instance}}" Foreground="Red" Margin="30,0,0,0"/>
                 <StackPanel>
                     <Image x:Name="MapImg1" Margin="0,10,0,0"/>
                     <TextBlock x:Name="MapName1" Margin="0,10,0,0"/>
@@ -124,7 +124,7 @@
                     </Style>
                 </StackPanel.Resources>
 
-                <Label Content="{Binding [OldCommander], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,0"/>
+                <Label Content="{Binding [OldCommander], Source={x:Static local:LanguageManager.Instance}}" Margin="30,0,0,0"/>
                 <Image x:Name="BeforeCommander1" Margin="0,0,0,0"/>
                 <Image x:Name="BeforeCommander2"/>
                 <Image x:Name="BeforeCommander3"/>

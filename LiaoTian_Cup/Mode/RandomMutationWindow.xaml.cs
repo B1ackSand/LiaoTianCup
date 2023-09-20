@@ -82,7 +82,7 @@ namespace LiaoTian_Cup
 
             string[] randMutationInfo = fd.mutationList[number];
             MutationBox.Text = randMutationInfo[0];//突变名称
-            MapBox.Text = randMutationInfo[1];//地图名称
+            MapBox.Text = Dictionary.I18n.Lang.ResourceManager.GetString(randMutationInfo[1]);//地图名称
 
             //相对路径URI指定随机突变地图和因子图片来源
             MapImg.Source = new BitmapImage(new Uri(mapDir + randMutationInfo[1] + ".png", UriKind.Relative));

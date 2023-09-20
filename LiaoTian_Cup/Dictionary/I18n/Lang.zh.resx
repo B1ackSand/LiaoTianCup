@@ -154,10 +154,10 @@
     <value>后出指挥官：</value>
   </data>
   <data name="HasSelectFreeMutators" xml:space="preserve">
-    <value>已选自选因子：</value>
+    <value>已自选因子：</value>
   </data>
   <data name="HasSelectCommanders" xml:space="preserve">
-    <value>已选择指挥官：</value>
+    <value>已选指挥官：</value>
   </data>
   <data name="RandomBot" xml:space="preserve">
     <value>电脑AI随机</value>
@@ -272,5 +272,29 @@
   </data>
   <data name="亡者之夜" xml:space="preserve">
     <value>亡者之夜</value>
+  </data>
+  <data name="NegativeMutators" xml:space="preserve">
+    <value>正面因子：</value>
+  </data>
+  <data name="MultilineMutators" xml:space="preserve">
+    <value>多线因子：</value>
+  </data>
+  <data name="EightMutatorsMode" xml:space="preserve">
+    <value>8因子模式</value>
+  </data>
+  <data name="FreeMutatorsWarn3" xml:space="preserve">
+    <value>8因子模式需要至少自选5个因子</value>
+  </data>
+  <data name="RandMap" xml:space="preserve">
+    <value>随机地图：</value>
+  </data>
+  <data name="BanTip" xml:space="preserve">
+    <value>右键BAN选因子</value>
+  </data>
+  <data name="HasBanMutators" xml:space="preserve">
+    <value>BAN选因子：</value>
+  </data>
+  <data name="MutatorsCost" xml:space="preserve">
+    <value>因子总分为：</value>
   </data>
 </root>

@@ -88,6 +88,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Right click to ban a mutator 的本地化字符串。
+        /// </summary>
+        public static string BanTip {
+            get {
+                return ResourceManager.GetString("BanTip", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Basic mutators: 的本地化字符串。
         /// </summary>
         public static string BaseMutator {
@@ -106,7 +115,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 you need to pick two commanders in Co-op mode 的本地化字符串。
+        ///   查找类似 you need to pick 2 Cmdrs. in Co-op mode 的本地化字符串。
         /// </summary>
         public static string CommanderWarn1 {
             get {
@@ -160,6 +169,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 8 mutators mode 的本地化字符串。
+        /// </summary>
+        public static string EightMutatorsMode {
+            get {
+                return ResourceManager.GetString("EightMutatorsMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 5 mutators mode 的本地化字符串。
         /// </summary>
         public static string FiveMutatorsMode {
@@ -192,6 +210,24 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string FreeMutatorsWarn2 {
             get {
                 return ResourceManager.GetString("FreeMutatorsWarn2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 8 mutators mode will need you pick 5 free choice mutators 的本地化字符串。
+        /// </summary>
+        public static string FreeMutatorsWarn3 {
+            get {
+                return ResourceManager.GetString("FreeMutatorsWarn3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Banned mutators: 的本地化字符串。
+        /// </summary>
+        public static string HasBanMutators {
+            get {
+                return ResourceManager.GetString("HasBanMutators", resourceCulture);
             }
         }
         
@@ -268,11 +304,38 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Multitask mutators: 的本地化字符串。
+        /// </summary>
+        public static string MultilineMutators {
+            get {
+                return ResourceManager.GetString("MultilineMutators", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Weekly mutation name: 的本地化字符串。
         /// </summary>
         public static string MutationName {
             get {
                 return ResourceManager.GetString("MutationName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Total cost:  的本地化字符串。
+        /// </summary>
+        public static string MutatorsCost {
+            get {
+                return ResourceManager.GetString("MutatorsCost", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Negatvie mutators: 的本地化字符串。
+        /// </summary>
+        public static string NegativeMutators {
+            get {
+                return ResourceManager.GetString("NegativeMutators", resourceCulture);
             }
         }
         
@@ -286,7 +349,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Awesome Commanders: 的本地化字符串。
+        ///   查找类似 Awesome Cmdrs.: 的本地化字符串。
         /// </summary>
         public static string NewCommander {
             get {
@@ -295,7 +358,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Suck Commanders: 的本地化字符串。
+        ///   查找类似 Suck Cmdrs.: 的本地化字符串。
         /// </summary>
         public static string OldCommander {
             get {
@@ -309,6 +372,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string PlayerName {
             get {
                 return ResourceManager.GetString("PlayerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 RandMap: 的本地化字符串。
+        /// </summary>
+        public static string RandMap {
+            get {
+                return ResourceManager.GetString("RandMap", resourceCulture);
             }
         }
         

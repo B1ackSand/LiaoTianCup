@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:LiaoTian_Cup"
+        xmlns:local="clr-namespace:LiaoTian_Cup.Dictionary.I18n"
         mc:Ignorable="d"
         Height="910" Width="1180"
         Background="#ACFFFFFF">
@@ -29,16 +29,16 @@
         </Grid.Resources>
 
         <StackPanel Orientation="Horizontal">
-            <Label Content="选手名称：" Margin="30,0,0,0"/>
+            <Label Content="{Binding [PlayerName], Source={x:Static local:LanguageManager.Instance}}" Margin="30,0,0,0"/>
             <TextBox Text="{Binding Path=playName}"  x:Name="PlayerName" Width="230" Margin="0,0,35,0" Focusable="True"/>
-            <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="是否AI随机" Margin="0,10,10,0"/>
-            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" IsEditable="False" Style="{StaticResource BaseComboBox}">
-                <ComboBoxItem>3因子模式</ComboBoxItem>
-                <ComboBoxItem>5因子模式</ComboBoxItem>
+            <CheckBox x:Name="ChkRandAI" IsChecked="{Binding Path=isRandAI, Mode=TwoWay}" Content="{Binding [RandomBot], Source={x:Static local:LanguageManager.Instance}}" Margin="0,10,10,0"/>
+            <ComboBox x:Name="ModeBox" Text="{Binding Path=modeName}" IsEditable="False" Style="{StaticResource BaseComboBox}" Width="130">
+                <ComboBoxItem Content="{Binding [ThreeMutatorsMode], Source={x:Static local:LanguageManager.Instance}}"></ComboBoxItem>
+                <ComboBoxItem Content="{Binding [FiveMutatorsMode], Source={x:Static local:LanguageManager.Instance}}"></ComboBoxItem>
             </ComboBox>
-            <Button x:Name="RandStartBtn" Content="开始随机" Margin="55,0,35,0" Click="Button_Random_Click"/>
-            <Button Content="锁定重置" Margin="0,0,35,0" Click="Button_Reset_Click"/>
-            <Button Content="返回主页" Margin="0,0,35,0" Click="Button_BackMain_Click"/>
+            <Button x:Name="RandStartBtn" Content="{Binding [RandomStartBtn], Source={x:Static local:LanguageManager.Instance}}" Margin="55,0,35,0" Click="Button_Random_Click"/>
+            <Button Content="{Binding [ResetBtn], Source={x:Static local:LanguageManager.Instance}}" Margin="0,0,35,0" Click="Button_Reset_Click"/>
+            <Button Content="{Binding [BackMenuBtn], Source={x:Static local:LanguageManager.Instance}}" Margin="0,0,35,0" Click="Button_BackMain_Click"/>
         </StackPanel>
 
         <Grid
@@ -54,8 +54,8 @@
                         <Setter Property="Margin" Value="5,10,0,0"/>
                     </Style>
                 </StackPanel.Resources>
-                
-                <Label Content="随机地图：" Foreground="Red" Margin="30,0,0,0"/>
+
+                <Label Content="{Binding [RandMap], Source={x:Static local:LanguageManager.Instance}}" Foreground="Red" Margin="30,0,0,0"/>
                 <StackPanel>
                     <Image x:Name="MapImg1" Margin="0,10,0,0"/>
                     <TextBlock x:Name="MapName1" Margin="0,10,0,0"/>
@@ -68,8 +68,8 @@
                     <Image x:Name="MapImg3"/>
                     <TextBlock x:Name="MapName3"/>
                 </StackPanel>
-                <Button x:Name="MapConfirmBtn" Content="确认地图" Margin="10,0,0,0" Click="Button_MapConfirm_Click"/>
             </StackPanel>
+            <Button x:Name="MapConfirmBtn" Content="{Binding [ConfirmMapBtn], Source={x:Static local:LanguageManager.Instance}}" Margin="0,0,30,0" HorizontalAlignment="Right" Click="Button_MapConfirm_Click"/>
         </Grid>
         <Grid
 			Grid.Row="2">
@@ -88,7 +88,7 @@
                                 <EventSetter Event="MouseRightButtonDown" Handler="Ban_MouseDown"/>
                             </Style>
                         </StackPanel.Resources>
-                        <Label Content="自选因子：" Margin="30,0,0,0"/>
+                        <Label Content="{Binding [FreeMutator], Source={x:Static local:LanguageManager.Instance}}" Margin="30,0,0,0"/>
                         <Image x:Name="SelectFactor1" Margin="0,0,0,0"/>
                         <Image x:Name="SelectFactor2"/>
                         <Image x:Name="SelectFactor3"/>
@@ -99,7 +99,6 @@
                         <Image x:Name="SelectFactor8"/>
                         <Image x:Name="SelectFactor9"/>
                         <Image x:Name="SelectFactor10"/>
-                        <TextBlock Text="右键BAN选因子" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                     </StackPanel>
                 </Grid>
 
@@ -112,15 +111,16 @@
                             </Style>
                         </StackPanel.Resources>
 
-                        <Label Content="先出指挥官：" Margin="10,0,0,0"/>
+                        <Label Content="{Binding [OldCommander], Source={x:Static local:LanguageManager.Instance}}" Margin="30,0,0,0"/>
                         <Image x:Name="BeforeCommander1" Margin="0,0,0,0"/>
                         <Image x:Name="BeforeCommander2"/>
                         <Image x:Name="BeforeCommander3"/>
                         <Image x:Name="BeforeCommander4"/>
-                        <Label Content="后出指挥官：" Margin="18,0,0,0"/>
+                        <Label Content="{Binding [NewCommander], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,0"/>
                         <Image x:Name="AfterCommander1" Margin="0,0,0,0"/>
                         <Image x:Name="AfterCommander2"/>
                     </StackPanel>
+                    <TextBlock Text="{Binding [BanTip], Source={x:Static local:LanguageManager.Instance}}" Margin="0,0,30,0" VerticalAlignment="Center" HorizontalAlignment="Right" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </Grid>
             </Grid>
         </Grid>
@@ -138,8 +138,9 @@
                 Grid.Row="0">
                 <Line X1="0" Y1="0" X2="1180" Y2="0" Stroke="Gray" StrokeThickness="6"></Line>
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="已选地图：" Margin="18,10,0,0"/>
+                    <Label Content="{Binding [HasSelectMap], Source={x:Static local:LanguageManager.Instance}}" Margin="18,10,0,0"/>
                     <Image x:Name="HasSelectMap" Margin="10,0,0,0" Style="{StaticResource MapImg}"/>
+                    <TextBlock x:Name="MapTip" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold"/>
                 </StackPanel>
             </Grid>
 
@@ -151,13 +152,14 @@
                             <EventSetter Event="MouseLeftButtonDown" Handler="CancelBan_MouseDown"/>
                         </Style>
                     </StackPanel.Resources>
-                    
-                    <Label Content="BAN选因子：" Margin="18,0,0,0"/>
+
+                    <Label Content="{Binding [HasBanMutators], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,0"/>
                     <Image x:Name="HasSelectBanFactor1" Margin="0,0,0,0"/>
                     <Image x:Name="HasSelectBanFactor2"/>
                     <Image x:Name="HasSelectBanFactor3"/>
                     <Image x:Name="HasSelectBanFactor4"/>
                     <Image x:Name="HasSelectBanFactor5"/>
+                    <TextBlock x:Name="Warn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
             </Grid>
             
@@ -169,16 +171,15 @@
                             <EventSetter Event="MouseLeftButtonDown" Handler="CancelFactor_MouseDown"/>
                         </Style>
                     </StackPanel.Resources>
-                    
-                    <Label Content="已自选因子：" Margin="18,0,0,0"/>
+
+                    <Label Content="{Binding [HasSelectFreeMutators], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,0"/>
                     <Image x:Name="HasSelectFactor1" Margin="0,0,0,0"/>
                     <Image x:Name="HasSelectFactor2"/>
                     <Image x:Name="HasSelectFactor3"/>
                     <Image x:Name="HasSelectFactor4"/>
                     <Image x:Name="HasSelectFactor5"/>
-                    <TextBlock Text="因子总分为：" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
+                    <TextBlock Text="{Binding [MutatorsCost], Source={x:Static local:LanguageManager.Instance}}" Margin="10,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                     <TextBlock x:Name="Score" Text="{Binding Path=score}" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
-                    <TextBlock x:Name="Warn" Text="" Margin="50,0,0,0" VerticalAlignment="Center" Foreground="Red" FontSize="20" FontWeight="Bold" />
                 </StackPanel>
             </Grid>
 
@@ -186,10 +187,10 @@
             <Grid
                 Grid.Row="3">
                 <StackPanel Orientation="Horizontal">
-                    <Label Content="已选指挥官：" Margin="18,0,0,0"/>
+                    <Label Content="{Binding [HasSelectCommanders], Source={x:Static local:LanguageManager.Instance}}" Margin="18,0,0,0"/>
                     <Image x:Name="HasSelectCommander" Margin="0,0,0,0" MouseLeftButtonDown="CancelCommander_MouseDown" Style="{StaticResource ClickableImg}"/>
-                    <Button Content="确认" Margin="817,0,0,0" Click="Button_Confirm_Click"/>
                 </StackPanel>
+                <Button Content="{Binding [ConfirmBtn], Source={x:Static local:LanguageManager.Instance}}" Margin="0,0,30,0" Click="Button_Confirm_Click"/>
             </Grid>
         </Grid>
     </Grid>
