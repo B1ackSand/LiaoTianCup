@@ -9,7 +9,7 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.2.0</Version>
+    <Version>0.2.1</Version>
 	<Authors>B1ackSand</Authors>
 	<ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
@@ -26,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="log4net.config" />
     <None Remove="Resources\commander\凯拉克斯.png" />
     <None Remove="Resources\commander\凯瑞甘.png" />
     <None Remove="Resources\commander\德哈卡.png" />
@@ -166,6 +167,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <Resource Include="Resources\factor\耐力挑战.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -179,6 +186,7 @@
 
   <ItemGroup>
     <PackageReference Include="DeepCloner" Version="0.10.4" />
+    <PackageReference Include="log4net" Version="2.0.15" />
   </ItemGroup>
 
   <ItemGroup>
