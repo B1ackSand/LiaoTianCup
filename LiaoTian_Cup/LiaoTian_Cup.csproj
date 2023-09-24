@@ -118,7 +118,6 @@
     <None Remove="Resources\factor\虚空裂隙.png" />
     <None Remove="Resources\factor\虚空重生者.png" />
     <None Remove="Resources\factor\行尸走肉.png" />
-    <None Remove="Resources\factor\贴因子用的框架.png" />
     <None Remove="Resources\factor\超远视距.png" />
     <None Remove="Resources\factor\轨道轰炸.png" />
     <None Remove="Resources\factor\进攻部署.png" />
@@ -223,19 +222,10 @@
     <Resource Include="Resources\commander\米拉.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\commander\自选.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Resource Include="Resources\commander\菲尼克斯.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\commander\蒙斯克.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\commander\蒙斯克A.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\commander\蒙斯克B.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\commander\诺娃.png">
@@ -443,9 +433,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\行尸走肉.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\factor\贴因子用的框架.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\超远视距.png">
