@@ -166,4 +166,13 @@
     <value>./Resources/group_FactorList_Score.csv</value>
     <comment>分组因子极其对应分数</comment>
   </data>
+  <data name="usuckFactorPath" xml:space="preserve">
+    <value>./Resources/USuck突变因子列表.csv</value>
+  </data>
+  <data name="usuckMultiPath" xml:space="preserve">
+    <value>./Resources/USuck多线因子基础库.csv</value>
+  </data>
+  <data name="usuckNegativePath" xml:space="preserve">
+    <value>./Resources/USuck纯正面因子基础库.csv</value>
+  </data>
 </root>

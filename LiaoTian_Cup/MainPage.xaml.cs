@@ -67,6 +67,16 @@ namespace LiaoTian_Cup
             this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/SingleModeWindow.xaml", UriKind.Relative));
         }
 
+        private void Button_USuck_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/USuckModeWindow.xaml", UriKind.Relative));
+        }
+
+        private void Button_Hub_Click(object sender, RoutedEventArgs e)
+        {
+            //this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubModeWindow.xaml", UriKind.Relative));
+        }
+
         private void AboutMeBtn(object sender, RoutedEventArgs e)
         {
             string url = "https://github.com/B1ackSand";

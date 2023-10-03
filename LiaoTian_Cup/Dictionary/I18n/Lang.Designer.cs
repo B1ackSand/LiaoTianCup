@@ -268,6 +268,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Hub Mode 的本地化字符串。
+        /// </summary>
+        public static string HubMode {
+            get {
+                return ResourceManager.GetString("HubMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 中文(简体) 的本地化字符串。
         /// </summary>
         public static string LangBtn {
@@ -277,7 +286,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.0 - Programmed by B1ackSand 的本地化字符串。
+        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.2 - Programmed by B1ackSand 的本地化字符串。
         /// </summary>
         public static string MainWindowTitle {
             get {
@@ -462,6 +471,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string ThreeMutatorsMode {
             get {
                 return ResourceManager.GetString("ThreeMutatorsMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Usuck mode 的本地化字符串。
+        /// </summary>
+        public static string USuckMode {
+            get {
+                return ResourceManager.GetString("USuckMode", resourceCulture);
             }
         }
         

@@ -14,7 +14,7 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 
 + [x] Support English language.
 
-+ [ ] Improve Image quality.
++ [x] Improve Image quality.
 
 + [ ] Optimize UI for StarCraft2 theme.
 

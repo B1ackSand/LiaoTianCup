@@ -9,9 +9,10 @@
 	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
     <UseWPF>true</UseWPF>
     <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.2.1</Version>
+    <Version>0.2.2</Version>
 	<Authors>B1ackSand</Authors>
 	<ApplicationManifest>app.manifest</ApplicationManifest>
+	<PackageReadmeFile>README.md</PackageReadmeFile>
   </PropertyGroup>
 
   <ItemGroup>
@@ -61,6 +62,7 @@
     <None Remove="Resources\factor\前赴后继.png" />
     <None Remove="Resources\factor\剧毒之种.png" />
     <None Remove="Resources\factor\力量蜕变.png" />
+    <None Remove="Resources\factor\力量退变.png" />
     <None Remove="Resources\factor\双重压力.png" />
     <None Remove="Resources\factor\变形者.png" />
     <None Remove="Resources\factor\同化体.png" />
@@ -71,15 +73,21 @@
     <None Remove="Resources\factor\小捞油水.png" />
     <None Remove="Resources\factor\岩浆爆发.png" />
     <None Remove="Resources\factor\幸运红包.png" />
+    <None Remove="Resources\factor\废土计划.png" />
     <None Remove="Resources\factor\异形寄生.png" />
+    <None Remove="Resources\factor\异形灾难.png" />
     <None Remove="Resources\factor\弥散之雾.png" />
     <None Remove="Resources\factor\强磁雷场.png" />
     <None Remove="Resources\factor\强行征用.png" />
+    <None Remove="Resources\factor\怒火难平.png" />
     <None Remove="Resources\factor\惧怕黑暗.png" />
     <None Remove="Resources\factor\感染地带.png" />
+    <None Remove="Resources\factor\战争狂热.png" />
     <None Remove="Resources\factor\扫雷专家.png" />
+    <None Remove="Resources\factor\扭曲幻象.png" />
     <None Remove="Resources\factor\拿钱说话.png" />
     <None Remove="Resources\factor\排斥立场.png" />
+    <None Remove="Resources\factor\撕裂现实.png" />
     <None Remove="Resources\factor\无边恐惧.png" />
     <None Remove="Resources\factor\时空力场.png" />
     <None Remove="Resources\factor\时空立场.png" />
@@ -99,6 +107,7 @@
     <None Remove="Resources\factor\激光钻机.png" />
     <None Remove="Resources\factor\灵能爆表.png" />
     <None Remove="Resources\factor\炸弹机器人.png" />
+    <None Remove="Resources\factor\炽热天空.png" />
     <None Remove="Resources\factor\烟火秀.png" />
     <None Remove="Resources\factor\焦土政策.png" />
     <None Remove="Resources\factor\焰火秀.png" />
@@ -110,7 +119,10 @@
     <None Remove="Resources\factor\石像狂热者.png" />
     <None Remove="Resources\factor\礼尚往来.png" />
     <None Remove="Resources\factor\给我死吧.png" />
+    <None Remove="Resources\factor\绝对统御.png" />
     <None Remove="Resources\factor\耐力挑战.png" />
+    <None Remove="Resources\factor\耐力训练.png" />
+    <None Remove="Resources\factor\腐败瘴气.png" />
     <None Remove="Resources\factor\自毁程序.png" />
     <None Remove="Resources\factor\致命勾引.png" />
     <None Remove="Resources\factor\英雄祝福.png" />
@@ -121,8 +133,10 @@
     <None Remove="Resources\factor\超远视距.png" />
     <None Remove="Resources\factor\轨道轰炸.png" />
     <None Remove="Resources\factor\进攻部署.png" />
+    <None Remove="Resources\factor\远古血灵.png" />
     <None Remove="Resources\factor\迷失方向.png" />
     <None Remove="Resources\factor\速度狂魔.png" />
+    <None Remove="Resources\factor\重装上阵.png" />
     <None Remove="Resources\factor\长城.png" />
     <None Remove="Resources\factor\闪避机动.png" />
     <None Remove="Resources\factor\随机.png" />
@@ -172,7 +186,53 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\factor\力量退变.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\废土计划.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\异形灾难.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\怒火难平.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\战争狂热.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\扭曲幻象.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\撕裂现实.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\炽热天空.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\绝对统御.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\factor\耐力挑战.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\耐力训练.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\腐败瘴气.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\远古血灵.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\重装上阵.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\group_FactorList_Score.csv">

@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="LiaoTian_Cup.DoublesModeWindow"
+    x:Class="LiaoTian_Cup.Mode.USuckModeWindow"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -22,7 +22,7 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
             <RowDefinition Height="140" />
-            <RowDefinition Height="160" />
+            <RowDefinition Height="240" />
             <RowDefinition Height="80" />
             <RowDefinition Height="80" />
             <RowDefinition Height="*" />
@@ -114,7 +114,7 @@
         <Grid Grid.Row="2">
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*" />
+                    <RowDefinition Height="2*" />
                     <RowDefinition Height="*" />
                 </Grid.RowDefinitions>
                 <Grid.Resources>
@@ -123,20 +123,50 @@
                     </Style>
                 </Grid.Resources>
 
-                <Grid Grid.Row="0">
+                <Grid
+                    Grid.Row="0"
+                    Margin="0,12,0,0"
+                    VerticalAlignment="Top">
                     <StackPanel Orientation="Horizontal">
                         <Label
                             Margin="30,0,0,0"
                             Content="{Binding [NegativeMutators], Source={x:Static local:LanguageManager.Instance}}"
                             Foreground="Red" />
-                        <Image x:Name="NegativeFactor1" Margin="0,0,0,0" />
-                        <Image x:Name="NegativeFactor2" />
-                        <Image x:Name="NegativeFactor3" />
-                        <Image x:Name="NegativeFactor4" />
-                        <Image x:Name="NegativeFactor5" />
-                        <Image x:Name="NegativeFactor6" />
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+
+                            <Grid Row="0">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image x:Name="NegativeFactor1" Margin="0,0,0,0" />
+                                    <Image x:Name="NegativeFactor2" />
+                                    <Image x:Name="NegativeFactor3" />
+                                    <Image x:Name="NegativeFactor4" />
+                                    <Image x:Name="NegativeFactor5" />
+                                    <Image x:Name="NegativeFactor6" />
+                                </StackPanel>
+                            </Grid>
+                            <Grid Margin="0,15,0,0" Row="1">
+                                <StackPanel Orientation="Horizontal">
+                                    <Image x:Name="NegativeFactor7" Margin="0,0,0,0" />
+                                    <Image x:Name="NegativeFactor8" />
+                                    <Image x:Name="NegativeFactor9" />
+                                    <Image x:Name="NegativeFactor10" />
+                                    <Image x:Name="NegativeFactor11" />
+                                    <Image x:Name="NegativeFactor12" />
+                                    <Image x:Name="NegativeFactor13" />
+                                    <Image x:Name="NegativeFactor14" />
+                                </StackPanel>
+
+                            </Grid>
+
+                        </Grid>
+
                     </StackPanel>
                 </Grid>
+
                 <Grid Grid.Row="1">
                     <StackPanel Orientation="Horizontal">
                         <Label
@@ -148,6 +178,8 @@
                         <Image x:Name="MultiFactor3" />
                         <Image x:Name="MultiFactor4" />
                         <Image x:Name="MultiFactor5" />
+                        <Image x:Name="MultiFactor6" />
+                        <Image x:Name="MultiFactor7" />
                     </StackPanel>
                     <Button
                         x:Name="BaseConfirmBtn"
@@ -207,7 +239,6 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition Height="100" />
-                <RowDefinition Height="80" />
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
@@ -238,41 +269,44 @@
 
             <Grid Grid.Row="1">
                 <StackPanel Orientation="Horizontal">
-                    <StackPanel.Resources>
-                        <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
-                            <EventSetter Event="MouseLeftButtonDown" Handler="CancelBase_MouseDown" />
-                        </Style>
-                    </StackPanel.Resources>
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="CancelBase_MouseDown" />
+                            </Style>
+                        </StackPanel.Resources>
 
-                    <Label Margin="18,0,0,0" Content="{Binding [HasSelectBaseMutators], Source={x:Static local:LanguageManager.Instance}}" />
-                    <Image x:Name="HasSelectBaseFactor1" Margin="0,0,0,0" />
-                    <Image x:Name="HasSelectBaseFactor2" />
-                    <Image x:Name="HasSelectBaseFactor3" />
+                        <Label Margin="18,0,0,0" Content="{Binding [HasSelectBaseMutators], Source={x:Static local:LanguageManager.Instance}}" />
+                        <Image x:Name="HasSelectBaseFactor1" Margin="0,0,0,0" />
+                        <Image x:Name="HasSelectBaseFactor2" />
+                        <Image x:Name="HasSelectBaseFactor3" />
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="CancelFactor_MouseDown" />
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <Label
+                            Margin="18,0,0,0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Content="{Binding [HasSelectFreeMutators], Source={x:Static local:LanguageManager.Instance}}"
+                            FontSize="20"
+                            FontWeight="Bold" />
+                        <Image x:Name="HasSelectFactor1" Margin="0,0,0,0" />
+                        <Image x:Name="HasSelectFactor2" />
+                        <Image x:Name="HasSelectFactor3" />
+                        <Image x:Name="HasSelectFactor4" />
+                        <Image x:Name="HasSelectFactor5" />
+                    </StackPanel>
                 </StackPanel>
+
             </Grid>
 
-            <Grid Grid.Row="2">
-                <StackPanel Orientation="Horizontal">
-                    <StackPanel.Resources>
-                        <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
-                            <EventSetter Event="MouseLeftButtonDown" Handler="CancelFactor_MouseDown" />
-                        </Style>
-                    </StackPanel.Resources>
-
-                    <Label
-                        Margin="18,0,0,0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Content="{Binding [HasSelectFreeMutators], Source={x:Static local:LanguageManager.Instance}}"
-                        FontSize="20"
-                        FontWeight="Bold" />
-                    <Image x:Name="HasSelectFactor1" Margin="0,0,0,0" />
-                    <Image x:Name="HasSelectFactor2" />
-                    <Image x:Name="HasSelectFactor3" />
-                    <Image x:Name="HasSelectFactor4" />
-                    <Image x:Name="HasSelectFactor5" />
-                </StackPanel>
-            </Grid>
+            <Grid Grid.Row="2" />
 
             <Grid Grid.Row="3">
                 <StackPanel Orientation="Horizontal">

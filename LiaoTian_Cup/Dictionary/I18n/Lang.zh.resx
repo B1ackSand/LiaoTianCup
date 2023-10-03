@@ -196,7 +196,7 @@
     <value>未选择指挥官</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
-    <value>聊天杯 LiaoTian_Cup v0.2.1 - Programmed by B1ackSand</value>
+    <value>聊天杯 LiaoTian_Cup v0.2.2 - Programmed by B1ackSand</value>
   </data>
   <data name="ThreeMutatorsMode" xml:space="preserve">
     <value>3因子模式</value>
@@ -353,5 +353,11 @@
   </data>
   <data name="族长之军" xml:space="preserve">
     <value>族长之军</value>
+  </data>
+  <data name="USuckMode" xml:space="preserve">
+    <value>Usuck 模式</value>
+  </data>
+  <data name="HubMode" xml:space="preserve">
+    <value>枢纽模式</value>
   </data>
 </root>

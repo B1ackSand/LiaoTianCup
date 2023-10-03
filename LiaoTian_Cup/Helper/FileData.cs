@@ -31,6 +31,11 @@ namespace LiaoTian_Cup.Helper
         public List<string> negativeFactorInfo = new List<string>();
         public List<string[]> scoreFactorList = new List<string[]>();
 
+        //存放USuck模式的CSV数据
+        public List<string> usuckNegativeFactorInfo = new List<string>();
+        public List<string> usuckMultiFactorInfo = new List<string>();
+        public List<string> usuckFactorList = new List<string>();
+
         //存放地图数据
         public List<string> mapsInfo = new List<string>();
 
@@ -53,6 +58,11 @@ namespace LiaoTian_Cup.Helper
             CSVKit.Csv2Dt(Dictionary.FilePath.mapsFilePath, mapsInfo);
             CSVKit.Csv2Dt(Dictionary.FilePath.negativeFactorFilePath, negativeFactorInfo);
             CSVKit.Csv2Dt(Dictionary.FilePath.scoreFactorPath, scoreFactorList);
+
+            //USuck
+            CSVKit.Csv2Dt(Dictionary.FilePath.usuckFactorPath, usuckFactorList);
+            CSVKit.Csv2Dt(Dictionary.FilePath.usuckMultiPath, usuckMultiFactorInfo);
+            CSVKit.Csv2Dt(Dictionary.FilePath.usuckNegativePath, usuckNegativeFactorInfo);
         }
     }
 }
