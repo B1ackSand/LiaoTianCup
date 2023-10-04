@@ -360,4 +360,10 @@
   <data name="HubMode" xml:space="preserve">
     <value>枢纽模式</value>
   </data>
+  <data name="CommanderWarnUsuck" xml:space="preserve">
+    <value>Usuck模式需选择两名指挥官</value>
+  </data>
+  <data name="CommanderWarnHub" xml:space="preserve">
+    <value>Hub模式需选择两名指挥官</value>
+  </data>
 </root>

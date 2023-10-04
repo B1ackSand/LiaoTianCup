@@ -360,4 +360,10 @@
   <data name="HubMode" xml:space="preserve">
     <value>Hub Mode</value>
   </data>
+  <data name="CommanderWarnUsuck" xml:space="preserve">
+    <value>you need to pick 2 Cmdrs. in Usuck mode</value>
+  </data>
+  <data name="CommanderWarnHub" xml:space="preserve">
+    <value>you need to pick 2 Cmdrs. in Hub mode</value>
+  </data>
 </root>

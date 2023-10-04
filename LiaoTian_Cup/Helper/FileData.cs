@@ -36,6 +36,13 @@ namespace LiaoTian_Cup.Helper
         public static List<string> usuckMultiFactorInfo = new List<string>();
         public static List<string> usuckFactorList = new List<string>();
 
+        //Hub
+        public static List<string> hubNegativeFactorInfo = new List<string>();
+        public static List<string> hubMultiFactorInfo = new List<string>();
+        public static List<string> hubFactorList = new List<string>();
+        public static List<string> hubBeforeCommanderInfo = new List<string>();
+        public static List<string> hubAfterCommanderInfo = new List<string>();
+
         //存放地图数据
         public static List<string> mapsInfo = new List<string>();
 
@@ -43,27 +50,6 @@ namespace LiaoTian_Cup.Helper
         {
             ReadDataBase();
         }
-
-        //读取csv
-        //private void ReadCsv()
-        //{
-        //    //初始化窗口时即拿数据
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.mutationFilePath, mutationList);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.scoreFactorPath, scoreFactorList);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.mutationFactorPath, mutationFactorList);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.beforeCommanderFilePath, beforeCommanderInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.afterCommanderFilePath, afterCommanderInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.aIFilePath, botInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.baseNegativeFactorFilePath, baseNegativeFactorInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.baseMultiFactorFilePath, baseMultiFactorInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.mapsFilePath, mapsInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.negativeFactorFilePath, negativeFactorInfo);
-
-        //    //USuck
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.usuckFactorPath, usuckFactorList);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.usuckMultiPath, usuckMultiFactorInfo);
-        //    CSVKit.Csv2Dt(Dictionary.FilePath.usuckNegativePath, usuckNegativeFactorInfo);
-        //}
 
         //读取数据库
         private void ReadDataBase()
@@ -85,6 +71,12 @@ namespace LiaoTian_Cup.Helper
             DbHelper.GetColumnData("usuck_multilist", usuckMultiFactorInfo);
             DbHelper.GetColumnData("usuck_negativelist", usuckNegativeFactorInfo);
 
+            //Hub
+            DbHelper.GetColumnData("hub_mutatorlist", hubFactorList);
+            DbHelper.GetColumnData("hub_multilist", hubMultiFactorInfo);
+            DbHelper.GetColumnData("hub_negativelist", hubNegativeFactorInfo);
+            DbHelper.GetColumnData("hub_cmdroldlist", hubBeforeCommanderInfo);
+            DbHelper.GetColumnData("hub_cmdrnewlist", hubAfterCommanderInfo);
         }
     }
 }

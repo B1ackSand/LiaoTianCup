@@ -101,6 +101,7 @@ namespace LiaoTian_Cup
             SetBaseFactorEnable(true);
 
             hasSelectBase.Clear();
+            BaseConfirmBtn.IsEnabled = false;
             ClearBaseNegativeFactor();
             ClearBaseMultiFactor();
             FlashSelectBase();
