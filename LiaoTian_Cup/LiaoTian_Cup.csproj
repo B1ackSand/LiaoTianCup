@@ -189,17 +189,14 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Include="Resources\database.db">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Resources\database.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </EmbeddedResource>
     <Resource Include="Resources\factor\力量退变.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -638,6 +635,12 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Lang.zh.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="MainWindow.xaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Page>
   </ItemGroup>
 
 </Project>

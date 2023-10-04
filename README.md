@@ -1,6 +1,6 @@
 # LiaoTian_Cup
 
-LiaoTian Cup is an unofficial competition of StarCraftII.
+[LiaoTian Cup](https://github.com/B1ackSand/LiaoTianCup) is an unofficial competition of StarCraftII.
 
 This project is a competition tool created for my friend, based on WPF (C#/.NET 6.0).
 
@@ -20,7 +20,7 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 
 + [ ] Optimize UI for StarCraftII theme.
 
-+ [ ] ~~Modify this solution project to MVVM pattern.~~ (摆烂了)
++ [ ] ~~Modify this solution project to MVVM pattern.~~ (droppd)
 
 ##  Requirements
 + Only supports Windows System (64-bit).
