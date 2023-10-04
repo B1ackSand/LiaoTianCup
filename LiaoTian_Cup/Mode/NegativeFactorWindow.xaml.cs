@@ -85,10 +85,10 @@ namespace LiaoTian_Cup
             BeforeCommander3.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[2]]}.png", UriKind.Relative));
             BeforeCommander4.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[3]]}.png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[4]]}.png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[5]]}.png", UriKind.Relative));
-            AfterCommander3.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[6]]}.png", UriKind.Relative));
-            AfterCommander4.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[beforeRandNum[7]]}.png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[afterRandNum[0]]}.png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[afterRandNum[1]]}.png", UriKind.Relative));
+            AfterCommander3.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[afterRandNum[2]]}.png", UriKind.Relative));
+            AfterCommander4.Source = new BitmapImage(new Uri($"{commanderDir}{FileData.beforeCommanderInfo[afterRandNum[3]]}.png", UriKind.Relative));
         }
 
         //随机先出和后出指挥官清除显示

@@ -13,6 +13,7 @@
 	<Authors>B1ackSand</Authors>
 	<ApplicationManifest>app.manifest</ApplicationManifest>
 	<PackageReadmeFile>README.md</PackageReadmeFile>
+	<PlatformTarget>x64</PlatformTarget>
   </PropertyGroup>
 
   <ItemGroup>
