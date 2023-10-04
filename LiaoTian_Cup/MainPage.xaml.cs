@@ -62,7 +62,7 @@ namespace LiaoTian_Cup
 
         private void Button_Hub_Click(object sender, RoutedEventArgs e)
         {
-            //this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubModeWindow.xaml", UriKind.Relative));
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubModeWindow.xaml", UriKind.Relative));
         }
 
         private void AboutMeBtn(object sender, RoutedEventArgs e)

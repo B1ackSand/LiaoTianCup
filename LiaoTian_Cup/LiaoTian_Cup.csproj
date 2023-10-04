@@ -9,7 +9,7 @@
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
 	  <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-	  <Version>0.2.3</Version>
+	  <Version>0.2.4</Version>
 	  <Authors>B1ackSand</Authors>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -30,30 +30,44 @@
 
   <ItemGroup>
     <None Remove="log4net.config" />
+    <None Remove="Resources\commander\主宰.png" />
     <None Remove="Resources\commander\凯拉克斯.png" />
     <None Remove="Resources\commander\凯瑞甘.png" />
+    <None Remove="Resources\commander\卡拉斯.png" />
+    <None Remove="Resources\commander\吉娜拉.png" />
+    <None Remove="Resources\commander\塔萨达尔.png" />
+    <None Remove="Resources\commander\尼雅德拉.png" />
     <None Remove="Resources\commander\德哈卡.png" />
     <None Remove="Resources\commander\扎加拉.png" />
+    <None Remove="Resources\commander\托什.png" />
     <None Remove="Resources\commander\斯台特曼.png" />
     <None Remove="Resources\commander\斯图科夫.png" />
     <None Remove="Resources\commander\斯托科夫.png" />
     <None Remove="Resources\commander\斯旺.png" />
+    <None Remove="Resources\commander\杰拉德.png" />
+    <None Remove="Resources\commander\格式塔零.png" />
+    <None Remove="Resources\commander\欧雷加.png" />
+    <None Remove="Resources\commander\汉森.png" />
     <None Remove="Resources\commander\沃拉尊.png" />
     <None Remove="Resources\commander\泰凯斯.png" />
     <None Remove="Resources\commander\泽拉图.png" />
+    <None Remove="Resources\commander\瓦伦里安.png" />
     <None Remove="Resources\commander\米拉.png" />
+    <None Remove="Resources\commander\纳法许.png" />
     <None Remove="Resources\commander\自选.png" />
     <None Remove="Resources\commander\菲尼克斯.png" />
     <None Remove="Resources\commander\蒙斯克.png" />
     <None Remove="Resources\commander\蒙斯克A.png" />
     <None Remove="Resources\commander\蒙斯克B.png" />
     <None Remove="Resources\commander\诺娃.png" />
+    <None Remove="Resources\commander\赛兰蒂斯.png" />
     <None Remove="Resources\commander\阿塔尼斯.png" />
     <None Remove="Resources\commander\阿巴瑟.png" />
     <None Remove="Resources\commander\阿拉纳克.png" />
     <None Remove="Resources\commander\阿纳拉克.png" />
     <None Remove="Resources\commander\雷诺.png" />
     <None Remove="Resources\database.db" />
+    <None Remove="Resources\factor\万钧皇权.png" />
     <None Remove="Resources\factor\不给糖果就捣蛋.png" />
     <None Remove="Resources\factor\丧尸大战.png" />
     <None Remove="Resources\factor\乘胜追击.png" />
@@ -73,12 +87,14 @@
     <None Remove="Resources\factor\圣母舰.png" />
     <None Remove="Resources\factor\坚强意志.png" />
     <None Remove="Resources\factor\复仇战士.png" />
+    <None Remove="Resources\factor\夺魂之手.png" />
     <None Remove="Resources\factor\小捞油水.png" />
     <None Remove="Resources\factor\岩浆爆发.png" />
     <None Remove="Resources\factor\幸运红包.png" />
     <None Remove="Resources\factor\废土计划.png" />
     <None Remove="Resources\factor\异形寄生.png" />
     <None Remove="Resources\factor\异形灾难.png" />
+    <None Remove="Resources\factor\异端教廷.png" />
     <None Remove="Resources\factor\弥散之雾.png" />
     <None Remove="Resources\factor\强磁雷场.png" />
     <None Remove="Resources\factor\强行征用.png" />
@@ -105,6 +121,7 @@
     <None Remove="Resources\factor\极性不定.png" />
     <None Remove="Resources\factor\核弹地雷.png" />
     <None Remove="Resources\factor\核弹打击.png" />
+    <None Remove="Resources\factor\此面向敌.png" />
     <None Remove="Resources\factor\死灵之书.png" />
     <None Remove="Resources\factor\混乱工作室.png" />
     <None Remove="Resources\factor\激光钻机.png" />
@@ -127,6 +144,7 @@
     <None Remove="Resources\factor\耐力训练.png" />
     <None Remove="Resources\factor\腐败瘴气.png" />
     <None Remove="Resources\factor\自毁程序.png" />
+    <None Remove="Resources\factor\致命伙伴.png" />
     <None Remove="Resources\factor\致命勾引.png" />
     <None Remove="Resources\factor\英雄祝福.png" />
     <None Remove="Resources\factor\莫斯科套娃.png" />
@@ -197,13 +215,61 @@
       <PackagePath>\</PackagePath>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Resource Include="Resources\commander\主宰.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\卡拉斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\吉娜拉.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\塔萨达尔.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\尼雅德拉.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\托什.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\杰拉德.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\格式塔零.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\欧雷加.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\汉森.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\瓦伦里安.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\纳法许.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\commander\赛兰蒂斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\万钧皇权.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\factor\力量退变.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\夺魂之手.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\废土计划.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\异形灾难.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\异端教廷.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\怒火难平.png">
@@ -216,6 +282,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\撕裂现实.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\此面向敌.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\炽热天空.png">
@@ -231,6 +300,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\腐败瘴气.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\factor\致命伙伴.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\远古血灵.png">

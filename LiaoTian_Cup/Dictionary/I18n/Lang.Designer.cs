@@ -133,6 +133,24 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 you need to pick 2 Cmdrs. in Hub mode 的本地化字符串。
+        /// </summary>
+        public static string CommanderWarnHub {
+            get {
+                return ResourceManager.GetString("CommanderWarnHub", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 you need to pick 2 Cmdrs. in Usuck mode 的本地化字符串。
+        /// </summary>
+        public static string CommanderWarnUsuck {
+            get {
+                return ResourceManager.GetString("CommanderWarnUsuck", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Confirm base&apos;s 的本地化字符串。
         /// </summary>
         public static string ConfirmBaseBtn {
@@ -286,7 +304,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.3 - Programmed by B1ackSand 的本地化字符串。
+        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.4 - Programmed by B1ackSand 的本地化字符串。
         /// </summary>
         public static string MainWindowTitle {
             get {
