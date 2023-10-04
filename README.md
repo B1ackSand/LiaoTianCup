@@ -16,7 +16,9 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 
 + [x] Improve Image quality.
 
-+ [ ] Optimize UI for StarCraft2 theme.
++ [x] Add SQLite to store csv configuration files.
+
++ [ ] Optimize UI for StarCraftII theme.
 
 + [ ] ~~Modify this solution project to MVVM pattern.~~ (摆烂了)
 

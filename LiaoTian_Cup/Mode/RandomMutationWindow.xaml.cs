@@ -6,8 +6,6 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Xml.Linq;
 
 namespace LiaoTian_Cup
 {
@@ -24,7 +22,6 @@ namespace LiaoTian_Cup
 
         //初始化工具
         readonly RandomKit rk = new RandomKit();
-        readonly FileData fd = new FileData();
         string factorDir = Dictionary.FilePath.factorDir;
         string mapDir = Dictionary.FilePath.mapDir;
         string commanderDir = Dictionary.FilePath.commanderDir;
@@ -78,9 +75,9 @@ namespace LiaoTian_Cup
         {
             //TODO 有重复出现同一个突变的情况
             Random rand = new Random();
-            int number = rand.Next(0, fd.mutationList.Count);
+            int number = rand.Next(0, FileData.mutationList.Count);
 
-            string[] randMutationInfo = fd.mutationList[number];
+            string[] randMutationInfo = FileData.mutationList[number];
             MutationBox.Text = randMutationInfo[0];//突变名称
             MapBox.Text = Dictionary.I18n.Lang.ResourceManager.GetString(randMutationInfo[1]);//地图名称
 
@@ -98,7 +95,7 @@ namespace LiaoTian_Cup
         //随机8因子选择处理逻辑
         private void Random8Factor(string[] randMutationInfo)
         {
-            var factorListClone = fd.mutationFactorList.DeepClone();
+            var factorListClone = FileData.mutationFactorList.DeepClone();
             for (int i = 2; i < randMutationInfo.Length; i++)
             {
                 factorListClone.Remove(randMutationInfo[i]);
@@ -119,23 +116,23 @@ namespace LiaoTian_Cup
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(5, fd.beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(3, fd.afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(5, FileData.beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(3, FileData.afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
 
             //双打模式先后各多显示一名指挥官
             if(_isDoubles)
             {
-                BeforeCommander5.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[4]] + ".png", UriKind.Relative));
-                AfterCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
+                BeforeCommander5.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[4]] + ".png", UriKind.Relative));
+                AfterCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
             }
         }
 
@@ -147,8 +144,8 @@ namespace LiaoTian_Cup
             if (isRandAI)
             {
                 Random rand = new Random();
-                int number = rand.Next(0, fd.botInfo.Count);
-                return Dictionary.I18n.Lang.ResourceManager.GetString(fd.botInfo[number]);
+                int number = rand.Next(0, FileData.botInfo.Count);
+                return Dictionary.I18n.Lang.ResourceManager.GetString(FileData.botInfo[number]);
             }
             return Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
         }

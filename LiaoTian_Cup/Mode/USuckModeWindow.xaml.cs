@@ -26,7 +26,6 @@ namespace LiaoTian_Cup.Mode
 
 
         //初始化工具
-        readonly FileData fd = new FileData();
         readonly RandomKit rk = new RandomKit();
         string factorDir = Dictionary.FilePath.factorDir;
         string mapDir = Dictionary.FilePath.mapDir;
@@ -82,8 +81,8 @@ namespace LiaoTian_Cup.Mode
             if (isRandAI)
             {
                 Random rand = new Random();
-                int number = rand.Next(0, fd.botInfo.Count);
-                return Dictionary.I18n.Lang.ResourceManager.GetString(fd.botInfo[number]);
+                int number = rand.Next(0, FileData.botInfo.Count);
+                return Dictionary.I18n.Lang.ResourceManager.GetString(FileData.botInfo[number]);
             }
             else
             {
@@ -150,13 +149,13 @@ namespace LiaoTian_Cup.Mode
         {
             hasSelectMap = new Image();
             FlashHasSelectMap();
-            List<int> randNums = rk.GenerateXRandomNum(3, fd.mapsInfo.Count);
-            MapImg1.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
-            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[0]]);
-            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[1]]);
-            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[2]]);
+            List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
+            MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
+            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
+            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
         }
 
         //点击地图图片事件响应
@@ -221,32 +220,32 @@ namespace LiaoTian_Cup.Mode
         private void ShowBaseNegativeFactor()
         {
             //相对路径URI指定因子图片来源
-            NegativeFactor1.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[0] + ".png", UriKind.Relative));
-            NegativeFactor2.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[1] + ".png", UriKind.Relative));
-            NegativeFactor3.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[2] + ".png", UriKind.Relative));
-            NegativeFactor4.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[3] + ".png", UriKind.Relative));
-            NegativeFactor5.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[4] + ".png", UriKind.Relative));
-            NegativeFactor6.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[5] + ".png", UriKind.Relative));
-            NegativeFactor7.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[6] + ".png", UriKind.Relative));
-            NegativeFactor8.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[7] + ".png", UriKind.Relative));
-            NegativeFactor9.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[8] + ".png", UriKind.Relative));
-            NegativeFactor10.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[9] + ".png", UriKind.Relative));
-            NegativeFactor11.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[10] + ".png", UriKind.Relative));
-            NegativeFactor12.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[11] + ".png", UriKind.Relative));
-            NegativeFactor13.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[12] + ".png", UriKind.Relative));
-            NegativeFactor14.Source = new BitmapImage(new Uri(factorDir + fd.usuckNegativeFactorInfo[13] + ".png", UriKind.Relative));
+            NegativeFactor1.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[0] + ".png", UriKind.Relative));
+            NegativeFactor2.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[1] + ".png", UriKind.Relative));
+            NegativeFactor3.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[2] + ".png", UriKind.Relative));
+            NegativeFactor4.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[3] + ".png", UriKind.Relative));
+            NegativeFactor5.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[4] + ".png", UriKind.Relative));
+            NegativeFactor6.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[5] + ".png", UriKind.Relative));
+            NegativeFactor7.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[6] + ".png", UriKind.Relative));
+            NegativeFactor8.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[7] + ".png", UriKind.Relative));
+            NegativeFactor9.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[8] + ".png", UriKind.Relative));
+            NegativeFactor10.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[9] + ".png", UriKind.Relative));
+            NegativeFactor11.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[10] + ".png", UriKind.Relative));
+            NegativeFactor12.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[11] + ".png", UriKind.Relative));
+            NegativeFactor13.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[12] + ".png", UriKind.Relative));
+            NegativeFactor14.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[13] + ".png", UriKind.Relative));
         }
 
         //多线因子显示
         private void ShowBaseMultiFactor()
         {
-            MultiFactor1.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[0] + ".png", UriKind.Relative));
-            MultiFactor2.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[1] + ".png", UriKind.Relative));
-            MultiFactor3.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[2] + ".png", UriKind.Relative));
-            MultiFactor4.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[3] + ".png", UriKind.Relative));
-            MultiFactor5.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[4] + ".png", UriKind.Relative));
-            MultiFactor6.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[5] + ".png", UriKind.Relative));
-            MultiFactor7.Source = new BitmapImage(new Uri(factorDir + fd.usuckMultiFactorInfo[6] + ".png", UriKind.Relative));
+            MultiFactor1.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[0] + ".png", UriKind.Relative));
+            MultiFactor2.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[1] + ".png", UriKind.Relative));
+            MultiFactor3.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[2] + ".png", UriKind.Relative));
+            MultiFactor4.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[3] + ".png", UriKind.Relative));
+            MultiFactor5.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[4] + ".png", UriKind.Relative));
+            MultiFactor6.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[5] + ".png", UriKind.Relative));
+            MultiFactor7.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[6] + ".png", UriKind.Relative));
         }
 
         //点击基础因子(正面和多面)图片事件响应
@@ -328,7 +327,7 @@ namespace LiaoTian_Cup.Mode
         //显示最多8个随机选择因子
         private void ShowRandomFactor()
         {
-            var factorListClone = fd.usuckFactorList.DeepClone();
+            var factorListClone = FileData.usuckFactorList.DeepClone();
             for (int i = 0; i < hasSelectBase.Count; i++)
             {
                 // 去除风暴和风暴2同时出现的现象
@@ -432,21 +431,21 @@ namespace LiaoTian_Cup.Mode
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(6, fd.beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(4, fd.afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(6, FileData.beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(4, FileData.afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
-            BeforeCommander5.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[4]] + ".png", UriKind.Relative));
-            BeforeCommander6.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[5]] + ".png", UriKind.Relative));
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            BeforeCommander5.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[4]] + ".png", UriKind.Relative));
+            BeforeCommander6.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[5]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
-            AfterCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
-            AfterCommander4.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[3]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
+            AfterCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[3]] + ".png", UriKind.Relative));
         }
 
         //点击自选指挥官事件响应
