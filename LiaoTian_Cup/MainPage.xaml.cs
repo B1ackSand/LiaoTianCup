@@ -1,20 +1,8 @@
 ﻿using LiaoTian_Cup.Dictionary.I18n;
-using LiaoTian_Cup.Helper;
 using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace LiaoTian_Cup
 {
@@ -65,6 +53,16 @@ namespace LiaoTian_Cup
         private void Button_Single_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/SingleModeWindow.xaml", UriKind.Relative));
+        }
+
+        private void Button_USuck_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/USuckModeWindow.xaml", UriKind.Relative));
+        }
+
+        private void Button_Hub_Click(object sender, RoutedEventArgs e)
+        {
+            //this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubModeWindow.xaml", UriKind.Relative));
         }
 
         private void AboutMeBtn(object sender, RoutedEventArgs e)

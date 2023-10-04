@@ -176,5 +176,32 @@ namespace LiaoTian_Cup.Dictionary {
                 return ResourceManager.GetString("scoreFactorPath", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   查找类似 ./Resources/USuck突变因子列表.csv 的本地化字符串。
+        /// </summary>
+        internal static string usuckFactorPath {
+            get {
+                return ResourceManager.GetString("usuckFactorPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ./Resources/USuck多线因子基础库.csv 的本地化字符串。
+        /// </summary>
+        internal static string usuckMultiPath {
+            get {
+                return ResourceManager.GetString("usuckMultiPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ./Resources/USuck纯正面因子基础库.csv 的本地化字符串。
+        /// </summary>
+        internal static string usuckNegativePath {
+            get {
+                return ResourceManager.GetString("usuckNegativePath", resourceCulture);
+            }
+        }
     }
 }

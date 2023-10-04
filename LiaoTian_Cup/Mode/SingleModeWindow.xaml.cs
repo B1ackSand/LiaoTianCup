@@ -25,7 +25,6 @@ namespace LiaoTian_Cup
         private Image hasSelectCommander = new Image();
 
         //初始化工具
-        readonly FileData fd = new FileData();
         readonly RandomKit rk = new RandomKit();
         string factorDir = Dictionary.FilePath.factorDir;
         string mapDir = Dictionary.FilePath.mapDir;
@@ -93,8 +92,8 @@ namespace LiaoTian_Cup
             if (isRandAI)
             {
                 Random rand = new Random();
-                int number = rand.Next(0, fd.botInfo.Count);
-                return Dictionary.I18n.Lang.ResourceManager.GetString(fd.botInfo[number]);
+                int number = rand.Next(0, FileData.botInfo.Count);
+                return Dictionary.I18n.Lang.ResourceManager.GetString(FileData.botInfo[number]);
             }
             else
             {
@@ -163,13 +162,13 @@ namespace LiaoTian_Cup
         {
             hasSelectMap = new Image();
             FlashHasSelectMap();
-            List<int> randNums = rk.GenerateXRandomNum(3, fd.mapsInfo.Count);
-            MapImg1.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri(mapDir + fd.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
-            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[0]]);
-            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[1]]);
-            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(fd.mapsInfo[randNums[2]]);
+            List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
+            MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
+            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
+            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
         }
 
         //点击地图图片事件响应
@@ -232,7 +231,7 @@ namespace LiaoTian_Cup
         //显示最多10个随机选择因子
         private void ShowRandomFactor()
         {
-            var factorListClone = fd.scoreFactorList.DeepClone();
+            var factorListClone = FileData.scoreFactorList.DeepClone();
 
             if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")))
             {
@@ -300,11 +299,11 @@ namespace LiaoTian_Cup
             var selectName = (img.Source as BitmapImage).UriSource.ToString()
                         .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-            for (int i = 0; i < fd.scoreFactorList.Count; i++)
+            for (int i = 0; i < FileData.scoreFactorList.Count; i++)
             {
-                if (fd.scoreFactorList[i][1].Equals(selectName))
+                if (FileData.scoreFactorList[i][1].Equals(selectName))
                 {
-                    _score += Convert.ToInt32(fd.scoreFactorList[i][2]);
+                    _score += Convert.ToInt32(FileData.scoreFactorList[i][2]);
                     Score.Text = _score.ToString();
                     break;
                 }
@@ -388,11 +387,11 @@ namespace LiaoTian_Cup
                 var selectName = (cancelFactor.Source as BitmapImage).UriSource.ToString()
                             .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-                for (int i = 0; i < fd.scoreFactorList.Count; i++)
+                for (int i = 0; i < FileData.scoreFactorList.Count; i++)
                 {
-                    if (fd.scoreFactorList[i][1].Equals(selectName))
+                    if (FileData.scoreFactorList[i][1].Equals(selectName))
                     {
-                        _score -= Convert.ToInt32(fd.scoreFactorList[i][2]);
+                        _score -= Convert.ToInt32(FileData.scoreFactorList[i][2]);
                         Score.Text = _score.ToString();
                         break;
                     }
@@ -461,17 +460,17 @@ namespace LiaoTian_Cup
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(4, fd.beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(2, fd.afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(4, FileData.beforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(2, FileData.afterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + fd.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + fd.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
         }
 
         //点击自选指挥官事件响应
