@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using System.Reflection;
+using System.Windows;
 using LiaoTian_Cup.Helper;
 
 namespace LiaoTian_Cup

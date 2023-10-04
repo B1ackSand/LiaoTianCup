@@ -1,19 +1,20 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
-    <Nullable>enable</Nullable>
+	  <OutputType>WinExe</OutputType>
+	  <TargetFramework>net6.0-windows</TargetFramework>
+	  <Nullable>enable</Nullable>
 	<PublishSingleFile>true</PublishSingleFile>
-	<SelfContained>false</SelfContained>
-	<RuntimeIdentifier>win-x64</RuntimeIdentifier>
-    <UseWPF>true</UseWPF>
-    <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-    <Version>0.2.3</Version>
-	<Authors>B1ackSand</Authors>
-	<ApplicationManifest>app.manifest</ApplicationManifest>
-	<PackageReadmeFile>README.md</PackageReadmeFile>
-	<PlatformTarget>x64</PlatformTarget>
+	  <SelfContained>false</SelfContained>
+	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+	  <UseWPF>true</UseWPF>
+	  <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
+	  <Version>0.2.3</Version>
+	  <Authors>B1ackSand</Authors>
+	  <ApplicationManifest>app.manifest</ApplicationManifest>
+	  <PackageReadmeFile>README.md</PackageReadmeFile>
+	  <PlatformTarget>x64</PlatformTarget>
+	  <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
@@ -188,16 +189,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="..\README.md">
+    <Content Include="..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Resources\database.db">
+    <EmbeddedResource Include="Resources\database.db">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    </EmbeddedResource>
     <Resource Include="Resources\factor\力量退变.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -248,7 +250,7 @@
   <ItemGroup>
     <PackageReference Include="DeepCloner" Version="0.10.4" />
     <PackageReference Include="log4net" Version="2.0.15" />
-    <PackageReference Include="System.Data.SQLite.Core" Version="1.0.118" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
   </ItemGroup>
 
   <ItemGroup>
