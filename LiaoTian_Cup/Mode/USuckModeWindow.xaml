@@ -23,8 +23,7 @@
             <RowDefinition Height="60" />
             <RowDefinition Height="140" />
             <RowDefinition Height="240" />
-            <RowDefinition Height="80" />
-            <RowDefinition Height="80" />
+            <RowDefinition Height="160" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
@@ -193,49 +192,58 @@
         </Grid>
 
         <Grid Grid.Row="3">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
-                        <EventSetter Event="MouseLeftButtonDown" Handler="Factor_MouseDown" />
-                    </Style>
-                </StackPanel.Resources>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
 
-                <Label Margin="30,0,0,0" Content="{Binding [FreeMutator], Source={x:Static local:LanguageManager.Instance}}" />
-                <Image x:Name="SelectFactor1" Margin="0,0,0,0" />
-                <Image x:Name="SelectFactor2" />
-                <Image x:Name="SelectFactor3" />
-                <Image x:Name="SelectFactor4" />
-                <Image x:Name="SelectFactor5" />
-                <Image x:Name="SelectFactor6" />
-                <Image x:Name="SelectFactor7" />
-                <Image x:Name="SelectFactor8" />
-            </StackPanel>
+                <Grid Grid.Row="0">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="Factor_MouseDown" />
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <Label Margin="30,0,0,0" Content="{Binding [FreeMutator], Source={x:Static local:LanguageManager.Instance}}" />
+                        <Image x:Name="SelectFactor1" Margin="0,0,0,0" />
+                        <Image x:Name="SelectFactor2" />
+                        <Image x:Name="SelectFactor3" />
+                        <Image x:Name="SelectFactor4" />
+                        <Image x:Name="SelectFactor5" />
+                        <Image x:Name="SelectFactor6" />
+                        <Image x:Name="SelectFactor7" />
+                        <Image x:Name="SelectFactor8" />
+                    </StackPanel>
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <StackPanel.Resources>
+                            <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
+                                <EventSetter Event="MouseLeftButtonDown" Handler="Commander_MouseDown" />
+                            </Style>
+                        </StackPanel.Resources>
+
+                        <Label Margin="30,0,0,0" Content="{Binding [OldCommander], Source={x:Static local:LanguageManager.Instance}}" />
+                        <Image x:Name="BeforeCommander1" Margin="0,0,0,0" />
+                        <Image x:Name="BeforeCommander2" />
+                        <Image x:Name="BeforeCommander3" />
+                        <Image x:Name="BeforeCommander4" />
+                        <Image x:Name="BeforeCommander5" />
+                        <Image x:Name="BeforeCommander6" />
+                        <Label Margin="18,0,0,0" Content="{Binding [NewCommander], Source={x:Static local:LanguageManager.Instance}}" />
+                        <Image x:Name="AfterCommander1" Margin="0,0,0,0" />
+                        <Image x:Name="AfterCommander2" />
+                        <Image x:Name="AfterCommander3" />
+                        <Image x:Name="AfterCommander4" />
+                    </StackPanel>
+                </Grid>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="4">
-            <StackPanel Orientation="Horizontal">
-                <StackPanel.Resources>
-                    <Style BasedOn="{StaticResource ClickableImg}" TargetType="Image">
-                        <EventSetter Event="MouseLeftButtonDown" Handler="Commander_MouseDown" />
-                    </Style>
-                </StackPanel.Resources>
-
-                <Label Margin="30,0,0,0" Content="{Binding [OldCommander], Source={x:Static local:LanguageManager.Instance}}" />
-                <Image x:Name="BeforeCommander1" Margin="0,0,0,0" />
-                <Image x:Name="BeforeCommander2" />
-                <Image x:Name="BeforeCommander3" />
-                <Image x:Name="BeforeCommander4" />
-                <Image x:Name="BeforeCommander5" />
-                <Image x:Name="BeforeCommander6" />
-                <Label Margin="18,0,0,0" Content="{Binding [NewCommander], Source={x:Static local:LanguageManager.Instance}}" />
-                <Image x:Name="AfterCommander1" Margin="0,0,0,0" />
-                <Image x:Name="AfterCommander2" />
-                <Image x:Name="AfterCommander3" />
-                <Image x:Name="AfterCommander4" />
-            </StackPanel>
-        </Grid>
-
-        <Grid Grid.Row="5">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100" />
                 <RowDefinition Height="100" />
