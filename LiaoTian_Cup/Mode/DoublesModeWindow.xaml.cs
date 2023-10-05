@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace LiaoTian_Cup
@@ -22,10 +23,12 @@ namespace LiaoTian_Cup
         private List<Image> hasSelectFactor = new List<Image>();
         private List<Image> hasSelectCommander = new List<Image>(2);
         private Image hasSelectMap = new Image();
+        
 
 
         //初始化工具
         readonly RandomKit rk = new RandomKit();
+        readonly ImageToGray itg = new();
         string factorDir = Dictionary.FilePath.factorDir;
         string mapDir = Dictionary.FilePath.mapDir;
         string commanderDir = Dictionary.FilePath.commanderDir;
@@ -117,6 +120,13 @@ namespace LiaoTian_Cup
             hasSelectMap = new Image();
             ClearRandomMaps();
             FlashHasSelectMap();
+
+            MapLabel.Foreground = Brushes.Black;
+            NegativeLabel.Foreground = Brushes.Black;
+            MultilineLabel.Foreground = Brushes.Black;
+            FreeLabel.Foreground = Brushes.Black;
+            OldCmdrLabel.Foreground = Brushes.Black;
+            NewCmdrLabel.Foreground = Brushes.Black;
         }
 
         //开始随机事件响应
@@ -155,6 +165,7 @@ namespace LiaoTian_Cup
             MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
             MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
             MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+            MapLabel.Foreground = Brushes.Red;
         }
 
         //点击地图图片事件响应
@@ -209,6 +220,7 @@ namespace LiaoTian_Cup
                 Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("MapWarn");
                 return;
             }
+            MapLabel.Foreground = Brushes.Gray;
             SetRandMapEnable(false);
             ShowBaseNegativeFactor();
             ShowBaseMultiFactor();
@@ -225,6 +237,8 @@ namespace LiaoTian_Cup
             NegativeFactor4.Source = new BitmapImage(new Uri(factorDir + FileData.baseNegativeFactorInfo[3] + ".png", UriKind.Relative));
             NegativeFactor5.Source = new BitmapImage(new Uri(factorDir + FileData.baseNegativeFactorInfo[4] + ".png", UriKind.Relative));
             NegativeFactor6.Source = new BitmapImage(new Uri(factorDir + FileData.baseNegativeFactorInfo[5] + ".png", UriKind.Relative));
+
+            NegativeLabel.Foreground = Brushes.Red;
         }
 
         //多线因子显示
@@ -235,6 +249,8 @@ namespace LiaoTian_Cup
             MultiFactor3.Source = new BitmapImage(new Uri(factorDir + FileData.baseMultiFactorInfo[2] + ".png", UriKind.Relative));
             MultiFactor4.Source = new BitmapImage(new Uri(factorDir + FileData.baseMultiFactorInfo[3] + ".png", UriKind.Relative));
             MultiFactor5.Source = new BitmapImage(new Uri(factorDir + FileData.baseMultiFactorInfo[4] + ".png", UriKind.Relative));
+
+            MultilineLabel.Foreground = Brushes.Red;
         }
 
         //点击基础因子(正面和多面)图片事件响应
@@ -296,6 +312,8 @@ namespace LiaoTian_Cup
                 Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("BaseMutatorsWarn");
                 return;
             }
+            NegativeLabel.Foreground = Brushes.Gray;
+            MultilineLabel.Foreground = Brushes.Gray;
             SetBaseFactorEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
@@ -351,6 +369,8 @@ namespace LiaoTian_Cup
                 SelectFactor7.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[6]] + ".png", UriKind.Relative));
                 SelectFactor8.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[7]] + ".png", UriKind.Relative));
             }
+
+            FreeLabel.Foreground = Brushes.Red;
         }
 
         //点击自选因子事件响应
@@ -437,6 +457,9 @@ namespace LiaoTian_Cup
             AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
             AfterCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[2]] + ".png", UriKind.Relative));
             AfterCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[3]] + ".png", UriKind.Relative));
+
+            OldCmdrLabel.Foreground = Brushes.Red;
+            NewCmdrLabel.Foreground = Brushes.Red;
         }
 
         //点击自选指挥官事件响应
@@ -604,9 +627,6 @@ namespace LiaoTian_Cup
             AfterCommander3.Source = new BitmapImage();
             AfterCommander4.Source = new BitmapImage();
         }
-
-
-
 
 
         //实现绑定响应接口

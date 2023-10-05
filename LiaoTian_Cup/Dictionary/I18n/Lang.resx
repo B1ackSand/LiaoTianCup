@@ -154,7 +154,7 @@
     <value>Awesome Cmdrs.:</value>
   </data>
   <data name="HasSelectFreeMutators" xml:space="preserve">
-    <value>Free choice mutators picked:</value>
+    <value>Free mutators choiced:</value>
   </data>
   <data name="HasSelectCommanders" xml:space="preserve">
     <value>Commander(s) picked:</value>

@@ -268,7 +268,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Free choice mutators picked: 的本地化字符串。
+        ///   查找类似 Free mutators choiced: 的本地化字符串。
         /// </summary>
         public static string HasSelectFreeMutators {
             get {
