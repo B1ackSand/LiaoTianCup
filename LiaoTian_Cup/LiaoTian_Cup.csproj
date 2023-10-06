@@ -9,7 +9,7 @@
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
 	  <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-	  <Version>0.2.4</Version>
+	  <Version>0.2.5</Version>
 	  <Authors>B1ackSand</Authors>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
