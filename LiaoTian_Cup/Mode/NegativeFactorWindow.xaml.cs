@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace LiaoTian_Cup
@@ -133,6 +134,8 @@ namespace LiaoTian_Cup
             MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
             MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
             MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+
+            MapLabel.Foreground = Brushes.Red;
         }
 
         //随机地图显示清除
@@ -167,6 +170,7 @@ namespace LiaoTian_Cup
                 MapTip.Text = Dictionary.I18n.Lang.ResourceManager.GetString("MapWarn");
                 return;
             }
+            MapLabel.Foreground = Brushes.Gray;
             SetRandMapEnable(false);
             ShowBaseFactor();
         }
@@ -230,6 +234,7 @@ namespace LiaoTian_Cup
         //基础因子显示
         private void ShowBaseFactor()
         {
+            BaseLabel.Foreground = Brushes.Red;
             //相对路径URI指定因子图片来源
             Factor1.Source = new BitmapImage(new Uri(factorDir + FileData.baseNegativeFactorInfo[0] + ".png", UriKind.Relative));
             Factor2.Source = new BitmapImage(new Uri(factorDir + FileData.baseNegativeFactorInfo[1] + ".png", UriKind.Relative));
@@ -296,6 +301,7 @@ namespace LiaoTian_Cup
             FlashSelectBase();
         }
 
+        // 基础因子确认按钮
         private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
         {
             Warn.Text = "";
@@ -309,9 +315,15 @@ namespace LiaoTian_Cup
                 Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("BaseMutatorsWarn");
                 return;
             }
+            MapLabel.Foreground = Brushes.Gray;
             SetBaseFactorEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
+
+            BaseLabel.Foreground = Brushes.Gray;
+            FreeLabel.Foreground = Brushes.Red;
+            OldCmdrLabel.Foreground = Brushes.Red;
+            NewCmdrLabel.Foreground = Brushes.Red;
         }
 
         //刷新已选基础因子事件
@@ -532,6 +544,12 @@ namespace LiaoTian_Cup
             hasSelectMap = new Image();
             ClearRandomMaps();
             FlashHasSelectMap();
+
+            MapLabel.Foreground = Brushes.Black;
+            FreeLabel.Foreground = Brushes.Black;
+            BaseLabel.Foreground = Brushes.Black;
+            OldCmdrLabel.Foreground = Brushes.Black;
+            NewCmdrLabel.Foreground = Brushes.Black;
         }
 
         //实现绑定响应接口

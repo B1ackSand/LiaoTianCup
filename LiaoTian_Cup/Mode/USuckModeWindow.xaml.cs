@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using LiaoTian_Cup.Overview;
 
@@ -119,6 +120,13 @@ namespace LiaoTian_Cup.Mode
             hasSelectMap = new Image();
             ClearRandomMaps();
             FlashHasSelectMap();
+
+            MapLabel.Foreground = Brushes.Black;
+            NegativeLabel.Foreground = Brushes.Black;
+            MultilineLabel.Foreground = Brushes.Black;
+            FreeLabel.Foreground = Brushes.Black;
+            OldCmdrLabel.Foreground = Brushes.Black;
+            NewCmdrLabel.Foreground = Brushes.Black;
         }
 
         //开始随机事件响应
@@ -157,6 +165,7 @@ namespace LiaoTian_Cup.Mode
             MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
             MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
             MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+            MapLabel.Foreground = Brushes.Red;
         }
 
         //点击地图图片事件响应
@@ -214,12 +223,14 @@ namespace LiaoTian_Cup.Mode
             SetRandMapEnable(false);
             ShowBaseNegativeFactor();
             ShowBaseMultiFactor();
+            MapLabel.Foreground = Brushes.Gray;
         }
 
 
         //正面因子显示
         private void ShowBaseNegativeFactor()
         {
+            NegativeLabel.Foreground = Brushes.Red;
             //相对路径URI指定因子图片来源
             NegativeFactor1.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[0] + ".png", UriKind.Relative));
             NegativeFactor2.Source = new BitmapImage(new Uri(factorDir + FileData.usuckNegativeFactorInfo[1] + ".png", UriKind.Relative));
@@ -240,6 +251,7 @@ namespace LiaoTian_Cup.Mode
         //多线因子显示
         private void ShowBaseMultiFactor()
         {
+            MultilineLabel.Foreground = Brushes.Red;
             MultiFactor1.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[0] + ".png", UriKind.Relative));
             MultiFactor2.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[1] + ".png", UriKind.Relative));
             MultiFactor3.Source = new BitmapImage(new Uri(factorDir + FileData.usuckMultiFactorInfo[2] + ".png", UriKind.Relative));
@@ -311,6 +323,12 @@ namespace LiaoTian_Cup.Mode
             SetBaseFactorEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
+
+            NegativeLabel.Foreground = Brushes.Gray;
+            MultilineLabel.Foreground = Brushes.Gray;
+            FreeLabel.Foreground = Brushes.Red;
+            OldCmdrLabel.Foreground = Brushes.Red;
+            NewCmdrLabel.Foreground = Brushes.Red;
         }
 
         //刷新已选基础因子事件

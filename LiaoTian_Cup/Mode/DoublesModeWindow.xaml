@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:LiaoTian_Cup.Dictionary.I18n"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     Width="1180"
-    Height="890"
+    Height="880"
     Background="#ACFFFFFF"
     mc:Ignorable="d">
 
@@ -371,19 +371,6 @@
         </Grid>
 
         <Grid
-            Grid.Row="4"
-            Grid.Column="0"
-            Grid.ColumnSpan="7">
-            <Line
-                Stroke="Gray"
-                StrokeThickness="6"
-                X1="0"
-                X2="1180"
-                Y1="0"
-                Y2="0" />
-        </Grid>
-
-        <Grid
             Grid.Row="2"
             Grid.Column="0"
             Grid.ColumnSpan="7">
@@ -403,6 +390,19 @@
             <Line
                 Stroke="Gray"
                 StrokeThickness="1"
+                X1="0"
+                X2="1180"
+                Y1="0"
+                Y2="0" />
+        </Grid>
+
+        <Grid
+            Grid.Row="4"
+            Grid.Column="0"
+            Grid.ColumnSpan="7">
+            <Line
+                Stroke="Gray"
+                StrokeThickness="6"
                 X1="0"
                 X2="1180"
                 Y1="0"

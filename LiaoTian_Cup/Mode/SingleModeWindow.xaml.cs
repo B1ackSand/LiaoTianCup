@@ -7,6 +7,7 @@ using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace LiaoTian_Cup
@@ -129,6 +130,11 @@ namespace LiaoTian_Cup
             hasSelectMap = new Image();
             ClearRandomMaps();
             FlashHasSelectMap();
+
+            MapLabel.Foreground = Brushes.Black;
+            FreeLabel.Foreground = Brushes.Black;
+            OldCmdrLabel.Foreground = Brushes.Black;
+            NewCmdrLabel.Foreground = Brushes.Black;
         }
 
 
@@ -169,6 +175,7 @@ namespace LiaoTian_Cup
             MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
             MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
             MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+            MapLabel.Foreground = Brushes.Red;
         }
 
         //点击地图图片事件响应
@@ -226,6 +233,11 @@ namespace LiaoTian_Cup
             SetRandMapEnable(false);
             ShowRandomFactor();
             RandomCommanderInfo();
+
+            MapLabel.Foreground = Brushes.Gray;
+            FreeLabel.Foreground = Brushes.Red;
+            OldCmdrLabel.Foreground = Brushes.Red;
+            NewCmdrLabel.Foreground = Brushes.Red;
         }
 
         //显示最多10个随机选择因子
