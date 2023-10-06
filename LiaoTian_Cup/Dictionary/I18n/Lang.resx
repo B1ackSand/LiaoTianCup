@@ -136,7 +136,7 @@
     <value>Player(s): </value>
   </data>
   <data name="MutationName" xml:space="preserve">
-    <value>Weekly mutation name:</value>
+    <value>Weekly mutation:</value>
   </data>
   <data name="MapName" xml:space="preserve">
     <value>Map name:</value>

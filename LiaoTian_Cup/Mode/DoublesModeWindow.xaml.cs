@@ -28,7 +28,6 @@ namespace LiaoTian_Cup
 
         //初始化工具
         readonly RandomKit rk = new RandomKit();
-        readonly ImageToGray itg = new();
         string factorDir = Dictionary.FilePath.factorDir;
         string mapDir = Dictionary.FilePath.mapDir;
         string commanderDir = Dictionary.FilePath.commanderDir;
