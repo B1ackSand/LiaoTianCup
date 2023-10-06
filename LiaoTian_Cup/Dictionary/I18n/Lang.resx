@@ -136,7 +136,7 @@
     <value>Player(s): </value>
   </data>
   <data name="MutationName" xml:space="preserve">
-    <value>Weekly mutation name:</value>
+    <value>Weekly mutation:</value>
   </data>
   <data name="MapName" xml:space="preserve">
     <value>Map name:</value>
@@ -154,7 +154,7 @@
     <value>Awesome Cmdrs.:</value>
   </data>
   <data name="HasSelectFreeMutators" xml:space="preserve">
-    <value>Free choice mutators picked:</value>
+    <value>Free mutators choiced:</value>
   </data>
   <data name="HasSelectCommanders" xml:space="preserve">
     <value>Commander(s) picked:</value>
@@ -196,7 +196,7 @@
     <value>you need to pick commander</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
-    <value>聊天杯 LiaoTian_Cup v0.2.4 - Programmed by B1ackSand</value>
+    <value>聊天杯 LiaoTian_Cup v0.2.5 - Programmed by B1ackSand</value>
   </data>
   <data name="ThreeMutatorsMode" xml:space="preserve">
     <value>3 mutators mode</value>

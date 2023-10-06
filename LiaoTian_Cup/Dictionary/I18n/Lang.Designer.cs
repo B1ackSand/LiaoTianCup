@@ -268,7 +268,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Free choice mutators picked: 的本地化字符串。
+        ///   查找类似 Free mutators choiced: 的本地化字符串。
         /// </summary>
         public static string HasSelectFreeMutators {
             get {
@@ -304,7 +304,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.4 - Programmed by B1ackSand 的本地化字符串。
+        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.5 - Programmed by B1ackSand 的本地化字符串。
         /// </summary>
         public static string MainWindowTitle {
             get {
@@ -340,7 +340,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Weekly mutation name: 的本地化字符串。
+        ///   查找类似 Weekly mutation: 的本地化字符串。
         /// </summary>
         public static string MutationName {
             get {

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
 namespace LiaoTian_Cup
@@ -90,6 +91,9 @@ namespace LiaoTian_Cup
             Random8Factor(randMutationInfo);
             //随机先出和后出指挥官
             RandomCommanderInfo();
+            FreeLabel.Foreground = Brushes.Red;
+            OldCmdrLabel.Foreground = Brushes.Red;
+            NewCmdrLabel.Foreground = Brushes.Red;
         }
 
         //随机8因子选择处理逻辑
@@ -137,7 +141,6 @@ namespace LiaoTian_Cup
         }
 
         
-        
         //是否随机AI的处理逻辑
         private string IsRandAIFunc()
         {
@@ -151,7 +154,6 @@ namespace LiaoTian_Cup
         }
 
         
-
         //开始随机事件响应
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
@@ -341,6 +343,10 @@ namespace LiaoTian_Cup
             AfterCommander1.Source = new BitmapImage();
             AfterCommander2.Source = new BitmapImage();
             AfterCommander3.Source = new BitmapImage();
+
+            FreeLabel.Foreground = Brushes.Black;
+            OldCmdrLabel.Foreground = Brushes.Black;
+            NewCmdrLabel.Foreground = Brushes.Black;
         }
 
         //实现绑定响应接口

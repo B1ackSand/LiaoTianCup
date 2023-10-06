@@ -9,7 +9,7 @@
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
 	  <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-	  <Version>0.2.4</Version>
+	  <Version>0.2.5</Version>
 	  <Authors>B1ackSand</Authors>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -320,6 +320,7 @@
     <PackageReference Include="DeepCloner" Version="0.10.4" />
     <PackageReference Include="log4net" Version="2.0.15" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
+    <PackageReference Include="System.Drawing.Common" Version="7.0.0" />
   </ItemGroup>
 
   <ItemGroup>
