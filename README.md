@@ -27,3 +27,8 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 + Only supports Windows 7 SP1 or higher (64-bit).
 + If your Windows System Version is lower than Windows 10, maybe you need to install some [additonal dependencies](https://learn.microsoft.com/en-us/dotnet/core/install/windows?tabs=net70#additional-deps).
 + You need to have [.NET Desktop Runtime](https://dotnet.microsoft.com/en-us/download/dotnet/6.0) 6.0.18 or higher installed.
+
+## 许可补充说明
++ 根据GPL3许可证协议你可以自行修改源代码，但无论以何种方式修改或者使用代码，都需要开源。
++ 由于此工具为聊天杯 - “星际争霸2”非官方比赛工具，开源目的是供社区学习使用和软件逻辑公开。
++ 禁止任何人通过修改工具代码，在聊天杯比赛中达成利益目的。
