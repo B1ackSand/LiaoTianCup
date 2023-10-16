@@ -9,7 +9,7 @@
 	  <RuntimeIdentifier>win-x64</RuntimeIdentifier>
 	  <UseWPF>true</UseWPF>
 	  <ApplicationIcon>Resources\Logo\icon.ico</ApplicationIcon>
-	  <Version>0.2.5</Version>
+	  <Version>0.3.0</Version>
 	  <Authors>B1ackSand</Authors>
 	  <ApplicationManifest>app.manifest</ApplicationManifest>
 	  <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -176,19 +176,25 @@
     <None Remove="Resources\Logo\聊天杯标题.png" />
     <None Remove="Resources\maps\亡者之夜.png" />
     <None Remove="Resources\maps\克哈裂痕.png" />
+    <None Remove="Resources\maps\决战塔桑尼斯.png" />
     <None Remove="Resources\maps\净网行动.png" />
     <None Remove="Resources\maps\升格之链.png" />
+    <None Remove="Resources\maps\君临不灭王朝.png" />
     <None Remove="Resources\maps\天界封锁.png" />
     <None Remove="Resources\maps\往日神庙.png" />
+    <None Remove="Resources\maps\探索遗灵之地.png" />
     <None Remove="Resources\maps\机会渺茫.png" />
     <None Remove="Resources\maps\死亡摇篮.png" />
     <None Remove="Resources\maps\湮灭快车.png" />
     <None Remove="Resources\maps\熔火危机.png" />
+    <None Remove="Resources\maps\神明亵渎之时.png" />
     <None Remove="Resources\maps\聚铁成兵.png" />
     <None Remove="Resources\maps\营救矿工.png" />
+    <None Remove="Resources\maps\萨尔纳加预兆.png" />
     <None Remove="Resources\maps\虚空撕裂.png" />
     <None Remove="Resources\maps\虚空降临.png" />
     <None Remove="Resources\maps\融火危机.png" />
+    <None Remove="Resources\maps\重返亡灵之城.png" />
     <None Remove="Resources\maps\黑暗杀星.png" />
     <None Remove="Resources\R-C-16-9.jpg" />
     <None Remove="Resources\R-C.jpg" />
@@ -633,16 +639,25 @@
     <Resource Include="Resources\maps\克哈裂痕.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\maps\决战塔桑尼斯.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\maps\净网行动.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\升格之链.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\maps\君临不灭王朝.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\maps\天界封锁.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\往日神庙.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\探索遗灵之地.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\机会渺茫.png">
@@ -657,16 +672,25 @@
     <Resource Include="Resources\maps\熔火危机.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\maps\神明亵渎之时.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\maps\聚铁成兵.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\营救矿工.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\maps\萨尔纳加预兆.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\maps\虚空撕裂.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\虚空降临.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\maps\重返亡灵之城.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\maps\黑暗杀星.png">

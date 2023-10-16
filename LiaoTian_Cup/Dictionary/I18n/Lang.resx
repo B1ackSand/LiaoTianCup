@@ -196,7 +196,7 @@
     <value>you need to pick commander</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
-    <value>聊天杯 LiaoTian_Cup v0.2.5 - Programmed by B1ackSand</value>
+    <value>聊天杯 LiaoTian_Cup v0.3.0 - Programmed by B1ackSand</value>
   </data>
   <data name="ThreeMutatorsMode" xml:space="preserve">
     <value>3 mutators mode</value>
@@ -358,12 +358,39 @@
     <value>Usuck mode</value>
   </data>
   <data name="HubMode" xml:space="preserve">
-    <value>Hub Mode</value>
+    <value>Nexus co-op Mode</value>
   </data>
   <data name="CommanderWarnUsuck" xml:space="preserve">
     <value>you need to pick 2 Cmdrs. in Usuck mode</value>
   </data>
   <data name="CommanderWarnHub" xml:space="preserve">
-    <value>you need to pick 2 Cmdrs. in Hub mode</value>
+    <value>you need to pick 2 Cmdrs. in Nexus co-op mode</value>
+  </data>
+  <data name="SixMutatorsMode" xml:space="preserve">
+    <value>6 mutators mode</value>
+  </data>
+  <data name="BraveMode" xml:space="preserve">
+    <value>Brave mode</value>
+  </data>
+  <data name="决战塔桑尼斯" xml:space="preserve">
+    <value>Tarsonis</value>
+  </data>
+  <data name="萨尔纳加预兆" xml:space="preserve">
+    <value>Xel`naga Oracle</value>
+  </data>
+  <data name="君临不灭王朝" xml:space="preserve">
+    <value>Return of the Eternal Dynasty</value>
+  </data>
+  <data name="神明亵渎之时" xml:space="preserve">
+    <value>Ultimate Blasphemy</value>
+  </data>
+  <data name="探索遗灵之地" xml:space="preserve">
+    <value>Where the forgotten lie</value>
+  </data>
+  <data name="重返亡灵之城" xml:space="preserve">
+    <value>Back to the City of Ghosts</value>
+  </data>
+  <data name="FreeMutatorsWarn4" xml:space="preserve">
+    <value>6 mutators mode will need you pick 4 free choice mutators</value>
   </data>
 </root>

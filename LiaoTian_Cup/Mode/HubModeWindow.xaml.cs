@@ -1,4 +1,5 @@
-﻿using LiaoTian_Cup.Helper;
+﻿using Force.DeepCloner;
+using LiaoTian_Cup.Helper;
 using LiaoTian_Cup.Overview;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,6 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using Force.DeepCloner;
 
 namespace LiaoTian_Cup.Mode
 {
@@ -63,8 +63,8 @@ namespace LiaoTian_Cup.Mode
             }
         }
 
-        //模式选择（5因子模式,8因子模式）数据
-        private string _modeName = Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode");
+        //模式选择（6因子模式,8因子模式）数据
+        private string _modeName = Dictionary.I18n.Lang.ResourceManager.GetString("SixMutatorsMode");
         public string modeName
         {
             get { return _modeName; }
@@ -99,6 +99,7 @@ namespace LiaoTian_Cup.Mode
         {
             Warn.Text = "";
             ModeBox.IsEnabled = true;
+            RandStartBtn.IsEnabled = true;
             SetRandMapEnable(true);
             SetBaseFactorEnable(true);
 
@@ -132,6 +133,7 @@ namespace LiaoTian_Cup.Mode
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
             ModeBox.IsEnabled = false;
+            RandStartBtn.IsEnabled = false;
             ShowRandomMaps();
         }
 
@@ -157,13 +159,30 @@ namespace LiaoTian_Cup.Mode
         {
             hasSelectMap = new Image();
             FlashHasSelectMap();
-            List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
-            MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
-            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
-            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
-            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+
+            if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("BraveMode")))
+            {
+                List<int> randNums = rk.GenerateXRandomNum(3, FileData.braveMapsInfo.Count);
+                MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.braveMapsInfo[randNums[0]] + ".png", UriKind.Relative));
+                MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.braveMapsInfo[randNums[1]] + ".png", UriKind.Relative));
+                MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.braveMapsInfo[randNums[2]] + ".png", UriKind.Relative));
+
+                MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.braveMapsInfo[randNums[0]]);
+                MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.braveMapsInfo[randNums[1]]);
+                MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.braveMapsInfo[randNums[2]]);
+            }
+            else
+            {
+                List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
+                MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
+                MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
+                MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+
+                MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
+                MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
+                MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+            }
+
             MapLabel.Foreground = Brushes.Red;
         }
 
@@ -269,7 +288,10 @@ namespace LiaoTian_Cup.Mode
             Image selectBase = (Image)sender;
             if (selectBase != null)
             {
-                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectBase != null && !hasSelectBase.Contains(selectBase))
+                if ((_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("SixMutatorsMode"))
+                    || _modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("BraveMode")))
+                    && hasSelectBase != null 
+                    && !hasSelectBase.Contains(selectBase))
                 {
                     if (hasSelectBase.Count < 2)
                     {
@@ -311,7 +333,7 @@ namespace LiaoTian_Cup.Mode
         private void Button_BaseConfirm_Click(Object sender, RoutedEventArgs e)
         {
             Warn.Text = "";
-            if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectBase.Count < 2)
+            if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("SixMutatorsMode")) && hasSelectBase.Count < 2)
             {
                 Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("BaseMutatorsWarn");
                 return;
@@ -381,9 +403,11 @@ namespace LiaoTian_Cup.Mode
             Image selectFactor = (Image)sender;
             if (selectFactor != null)
             {
-                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor))
+                if ((_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("SixMutatorsMode"))
+                    || _modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("BraveMode")))
+                    && hasSelectFactor != null && !hasSelectFactor.Contains(selectFactor))
                 {
-                    if (hasSelectFactor.Count < 3)
+                    if (hasSelectFactor.Count < 4)
                     {
                         hasSelectFactor.Add(selectFactor);
                     }
@@ -429,6 +453,7 @@ namespace LiaoTian_Cup.Mode
                 HasSelectFactor1.Source = hasSelectFactor.Count < 1 ? null : hasSelectFactor[0].Source;
                 HasSelectFactor2.Source = hasSelectFactor.Count < 2 ? null : hasSelectFactor[1].Source;
                 HasSelectFactor3.Source = hasSelectFactor.Count < 3 ? null : hasSelectFactor[2].Source;
+                HasSelectFactor4.Source = hasSelectFactor.Count < 4 ? null : hasSelectFactor[3].Source;
 
                 if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("EightMutatorsMode")))
                 {
@@ -508,9 +533,9 @@ namespace LiaoTian_Cup.Mode
             botName = IsRandAIFunc();
             if (hasSelectFactor != null)
             {
-                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("FiveMutatorsMode")) && hasSelectFactor != null && hasSelectFactor.Count != 3)
+                if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("SixMutatorsMode")) && hasSelectFactor != null && hasSelectFactor.Count != 4)
                 {
-                    Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("FreeMutatorsWarn2");
+                    Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("FreeMutatorsWarn4");
                     return;
                 }
                 else if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("EightMutatorsMode")) && hasSelectFactor != null && hasSelectFactor.Count != 5)
@@ -518,7 +543,6 @@ namespace LiaoTian_Cup.Mode
                     Warn.Text = Dictionary.I18n.Lang.ResourceManager.GetString("FreeMutatorsWarn3");
                     return;
                 }
-
             }
 
             if (hasSelectCommander == null || hasSelectCommander.Count < 2)

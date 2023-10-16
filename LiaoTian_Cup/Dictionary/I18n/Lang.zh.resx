@@ -196,7 +196,7 @@
     <value>未选择指挥官</value>
   </data>
   <data name="MainWindowTitle" xml:space="preserve">
-    <value>聊天杯 LiaoTian_Cup v0.2.5 - Programmed by B1ackSand</value>
+    <value>聊天杯 LiaoTian_Cup v0.3.0 - Programmed by B1ackSand</value>
   </data>
   <data name="ThreeMutatorsMode" xml:space="preserve">
     <value>3因子模式</value>
@@ -358,12 +358,39 @@
     <value>Usuck 模式</value>
   </data>
   <data name="HubMode" xml:space="preserve">
-    <value>枢纽模式</value>
+    <value>枢纽双打模式</value>
   </data>
   <data name="CommanderWarnUsuck" xml:space="preserve">
     <value>Usuck模式需选择两名指挥官</value>
   </data>
   <data name="CommanderWarnHub" xml:space="preserve">
-    <value>Hub模式需选择两名指挥官</value>
+    <value>枢纽双打模式需选择两名指挥官</value>
+  </data>
+  <data name="SixMutatorsMode" xml:space="preserve">
+    <value>6因子模式</value>
+  </data>
+  <data name="BraveMode" xml:space="preserve">
+    <value>勇敢者游戏模式</value>
+  </data>
+  <data name="决战塔桑尼斯" xml:space="preserve">
+    <value>决战塔桑尼斯</value>
+  </data>
+  <data name="萨尔纳加预兆" xml:space="preserve">
+    <value>萨尔纳加预兆</value>
+  </data>
+  <data name="君临不灭王朝" xml:space="preserve">
+    <value>君临不灭王朝</value>
+  </data>
+  <data name="神明亵渎之时" xml:space="preserve">
+    <value>神明亵渎之时</value>
+  </data>
+  <data name="探索遗灵之地" xml:space="preserve">
+    <value>探索遗灵之地</value>
+  </data>
+  <data name="重返亡灵之城" xml:space="preserve">
+    <value>重返亡灵之城</value>
+  </data>
+  <data name="FreeMutatorsWarn4" xml:space="preserve">
+    <value>6因子模式需要至少自选4个因子</value>
   </data>
 </root>

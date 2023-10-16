@@ -115,6 +115,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Brave mode 的本地化字符串。
+        /// </summary>
+        public static string BraveMode {
+            get {
+                return ResourceManager.GetString("BraveMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 you need to pick 2 Cmdrs. in Co-op mode 的本地化字符串。
         /// </summary>
         public static string CommanderWarn1 {
@@ -133,7 +142,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 you need to pick 2 Cmdrs. in Hub mode 的本地化字符串。
+        ///   查找类似 you need to pick 2 Cmdrs. in Nexus co-op mode 的本地化字符串。
         /// </summary>
         public static string CommanderWarnHub {
             get {
@@ -241,6 +250,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 6 mutators mode will need you pick 4 free choice mutators 的本地化字符串。
+        /// </summary>
+        public static string FreeMutatorsWarn4 {
+            get {
+                return ResourceManager.GetString("FreeMutatorsWarn4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Banned mutators: 的本地化字符串。
         /// </summary>
         public static string HasBanMutators {
@@ -286,7 +304,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Hub Mode 的本地化字符串。
+        ///   查找类似 Nexus co-op Mode 的本地化字符串。
         /// </summary>
         public static string HubMode {
             get {
@@ -304,7 +322,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 聊天杯 LiaoTian_Cup v0.2.5 - Programmed by B1ackSand 的本地化字符串。
+        ///   查找类似 聊天杯 LiaoTian_Cup v0.3.0 - Programmed by B1ackSand 的本地化字符串。
         /// </summary>
         public static string MainWindowTitle {
             get {
@@ -484,6 +502,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 6 mutators mode 的本地化字符串。
+        /// </summary>
+        public static string SixMutatorsMode {
+            get {
+                return ResourceManager.GetString("SixMutatorsMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 3 mutators mode 的本地化字符串。
         /// </summary>
         public static string ThreeMutatorsMode {
@@ -529,6 +556,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Tarsonis 的本地化字符串。
+        /// </summary>
+        public static string 决战塔桑尼斯 {
+            get {
+                return ResourceManager.GetString("决战塔桑尼斯", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Malwarfare 的本地化字符串。
         /// </summary>
         public static string 净网行动 {
@@ -552,6 +588,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 卡莱的希望 {
             get {
                 return ResourceManager.GetString("卡莱的希望", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Return of the Eternal Dynasty 的本地化字符串。
+        /// </summary>
+        public static string 君临不灭王朝 {
+            get {
+                return ResourceManager.GetString("君临不灭王朝", resourceCulture);
             }
         }
         
@@ -597,6 +642,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 战争机械团 {
             get {
                 return ResourceManager.GetString("战争机械团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Where the forgotten lie 的本地化字符串。
+        /// </summary>
+        public static string 探索遗灵之地 {
+            get {
+                return ResourceManager.GetString("探索遗灵之地", resourceCulture);
             }
         }
         
@@ -709,6 +763,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Ultimate Blasphemy 的本地化字符串。
+        /// </summary>
+        public static string 神明亵渎之时 {
+            get {
+                return ResourceManager.GetString("神明亵渎之时", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Raiding Party 的本地化字符串。
         /// </summary>
         public static string 突击团 {
@@ -754,6 +817,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
+        ///   查找类似 Xel`naga Oracle 的本地化字符串。
+        /// </summary>
+        public static string 萨尔纳加预兆 {
+            get {
+                return ResourceManager.GetString("萨尔纳加预兆", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Void Thrashing 的本地化字符串。
         /// </summary>
         public static string 虚空撕裂 {
@@ -786,6 +858,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 遮天蔽日 {
             get {
                 return ResourceManager.GetString("遮天蔽日", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Back to the City of Ghosts 的本地化字符串。
+        /// </summary>
+        public static string 重返亡灵之城 {
+            get {
+                return ResourceManager.GetString("重返亡灵之城", resourceCulture);
             }
         }
         

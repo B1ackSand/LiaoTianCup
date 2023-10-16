@@ -64,8 +64,9 @@
                     IsEditable="False"
                     Style="{StaticResource BaseComboBox}"
                     Text="{Binding Path=modeName}">
-                    <ComboBoxItem Content="{Binding [FiveMutatorsMode], Source={x:Static local:LanguageManager.Instance}}" />
+                    <ComboBoxItem Content="{Binding [SixMutatorsMode], Source={x:Static local:LanguageManager.Instance}}" />
                     <ComboBoxItem Content="{Binding [EightMutatorsMode], Source={x:Static local:LanguageManager.Instance}}" />
+                    <ComboBoxItem Content="{Binding [BraveMode], Source={x:Static local:LanguageManager.Instance}}" />
                 </ComboBox>
             </StackPanel>
         </Grid>
@@ -336,10 +337,7 @@
                     Y1="0"
                     Y2="0" />
                 <StackPanel Orientation="Horizontal">
-                    <Image
-                        x:Name="HasSelectMap"
-                        Margin="10,0,0,0"
-                        Style="{StaticResource MapImg}" />
+                    <Image x:Name="HasSelectMap" Style="{StaticResource MapImg}" />
                     <TextBlock
                         x:Name="MapTip"
                         Margin="50,0,0,0"

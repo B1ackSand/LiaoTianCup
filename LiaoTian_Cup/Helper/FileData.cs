@@ -42,6 +42,7 @@ namespace LiaoTian_Cup.Helper
         public static List<string> hubFactorList = new List<string>();
         public static List<string> hubBeforeCommanderInfo = new List<string>();
         public static List<string> hubAfterCommanderInfo = new List<string>();
+        public static List<string> braveMapsInfo = new List<string>();
 
         //存放地图数据
         public static List<string> mapsInfo = new List<string>();
@@ -77,6 +78,7 @@ namespace LiaoTian_Cup.Helper
             DbHelper.GetColumnData("hub_negativelist", hubNegativeFactorInfo);
             DbHelper.GetColumnData("hub_cmdroldlist", hubBeforeCommanderInfo);
             DbHelper.GetColumnData("hub_cmdrnewlist", hubAfterCommanderInfo);
+            DbHelper.GetColumnData("hub_bravemap", braveMapsInfo);
         }
     }
 }
