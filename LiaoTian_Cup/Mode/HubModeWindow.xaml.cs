@@ -173,14 +173,14 @@ namespace LiaoTian_Cup.Mode
             }
             else
             {
-                List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
-                MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-                MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-                MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
+                List<int> randNums = rk.GenerateXRandomNum(3, FileData.hubMapsInfo.Count);
+                MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[0]] + ".png", UriKind.Relative));
+                MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[1]] + ".png", UriKind.Relative));
+                MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[2]] + ".png", UriKind.Relative));
 
-                MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
-                MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
-                MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+                MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[0]]);
+                MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[1]]);
+                MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[2]]);
             }
 
             MapLabel.Foreground = Brushes.Red;
@@ -264,6 +264,7 @@ namespace LiaoTian_Cup.Mode
             NegativeFactor12.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[11] + ".png", UriKind.Relative));
             NegativeFactor13.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[12] + ".png", UriKind.Relative));
             NegativeFactor14.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[13] + ".png", UriKind.Relative));
+            NegativeFactor15.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[14] + ".png", UriKind.Relative));
         }
 
         //多线因子显示
@@ -626,6 +627,7 @@ namespace LiaoTian_Cup.Mode
             NegativeFactor12.Source = new BitmapImage();
             NegativeFactor13.Source = new BitmapImage();
             NegativeFactor14.Source = new BitmapImage();
+            NegativeFactor15.Source = new BitmapImage();
         }
 
         //多线因子清除

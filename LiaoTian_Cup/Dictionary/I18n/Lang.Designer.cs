@@ -88,7 +88,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Right click to ban a mutator 的本地化字符串。
+        ///   查找类似 Right click to ban 的本地化字符串。
         /// </summary>
         public static string BanTip {
             get {
@@ -115,7 +115,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Brave mode 的本地化字符串。
+        ///   查找类似 Vincent&apos;s Game 的本地化字符串。
         /// </summary>
         public static string BraveMode {
             get {
@@ -309,6 +309,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string HubMode {
             get {
                 return ResourceManager.GetString("HubMode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Nexus solo mode 的本地化字符串。
+        /// </summary>
+        public static string HubSoloMode {
+            get {
+                return ResourceManager.GetString("HubSoloMode", resourceCulture);
             }
         }
         
@@ -867,6 +876,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 重返亡灵之城 {
             get {
                 return ResourceManager.GetString("重返亡灵之城", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Real Steel 的本地化字符串。
+        /// </summary>
+        public static string 铁甲钢拳 {
+            get {
+                return ResourceManager.GetString("铁甲钢拳", resourceCulture);
             }
         }
         

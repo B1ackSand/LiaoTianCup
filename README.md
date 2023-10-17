@@ -1,6 +1,6 @@
 # LiaoTian_Cup
 
-[LiaoTian Cup](https://github.com/B1ackSand/LiaoTianCup) is an unofficial competition of StarCraftII.
+[LiaoTian Cup](https://qm.qq.com/q/nS395vkauA) is an unofficial competition of StarCraftII.
 
 This project is a competition tool created for my friend, based on WPF (C#/.NET 6.0).
 
@@ -32,3 +32,4 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 + 根据GPL3许可证协议你可以自行修改源代码，但无论以何种方式修改或者使用代码，都需要开源。
 + 由于此工具为聊天杯 - “星际争霸2”非官方比赛工具，开源目的是供社区学习使用和软件逻辑公开。
 + 禁止任何人通过修改工具代码，在聊天杯比赛中达成利益目的。
+

@@ -24,15 +24,9 @@ namespace LiaoTian_Cup
         /// <param name="e"></param>
         private void I18nBtn(object sender, RoutedEventArgs e)
         {
-            if((sender as Button).Content.ToString().Equals("English"))
-            {
-                LanguageManager.Instance.ChangeLanguage(new CultureInfo("en-US"));
-            }
-            else
-            {
-                LanguageManager.Instance.ChangeLanguage(new CultureInfo("zh-CN"));
-            }
-           
+            LanguageManager.Instance.ChangeLanguage((sender as Button).Content.ToString().Equals("English")
+                ? new CultureInfo("en-US")
+                : new CultureInfo("zh-CN"));
         }
 
         private void Button_RandomMutation_Click(object sender, RoutedEventArgs e)
@@ -65,9 +59,20 @@ namespace LiaoTian_Cup
             this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubModeWindow.xaml", UriKind.Relative));
         }
 
+        private void Button_SoloHub_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new Uri("/LiaoTian_Cup;component/Mode/HubSoloModeWindow.xaml", UriKind.Relative));
+        }
+
         private void AboutMeBtn(object sender, RoutedEventArgs e)
         {
-            string url = "https://github.com/B1ackSand";
+            var url = "https://github.com/B1ackSand";
+            System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
+        }
+
+        private void AddGroupBtn(object sender, RoutedEventArgs e)
+        {
+            string url = "https://qm.qq.com/q/nS395vkauA";
             System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo("cmd", $"/c start {url}") { CreateNoWindow = true });
         }
     }

@@ -159,6 +159,7 @@ namespace LiaoTian_Cup
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
             ModeBox.IsEnabled = false;
+            RandStartBtn.IsEnabled = false;
             ShowRandomMaps();
         }
 
@@ -525,6 +526,7 @@ namespace LiaoTian_Cup
         public void ResetFunc()
         {
             ModeBox.IsEnabled = true;
+            RandStartBtn.IsEnabled = true;
             SetRandMapEnable(true);
             SetBaseFactorEnable(true);
 

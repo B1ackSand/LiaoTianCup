@@ -130,7 +130,7 @@
     <value>正常单刷模式</value>
   </data>
   <data name="About" xml:space="preserve">
-    <value>关于</value>
+    <value>关于我</value>
   </data>
   <data name="PlayerName" xml:space="preserve">
     <value>选手名称：</value>
@@ -392,5 +392,11 @@
   </data>
   <data name="FreeMutatorsWarn4" xml:space="preserve">
     <value>6因子模式需要至少自选4个因子</value>
+  </data>
+  <data name="HubSoloMode" xml:space="preserve">
+    <value>枢纽单刷模式</value>
+  </data>
+  <data name="铁甲钢拳" xml:space="preserve">
+    <value>铁甲钢拳</value>
   </data>
 </root>

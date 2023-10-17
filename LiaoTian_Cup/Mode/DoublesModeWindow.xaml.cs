@@ -99,6 +99,7 @@ namespace LiaoTian_Cup
         {
             Warn.Text = "";
             ModeBox.IsEnabled = true;
+            RandStartBtn.IsEnabled = true;
             SetRandMapEnable(true);
             SetBaseFactorEnable(true);
 
@@ -132,6 +133,7 @@ namespace LiaoTian_Cup
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
             ModeBox.IsEnabled = false;
+            RandStartBtn.IsEnabled = false;
             ShowRandomMaps();
         }
 

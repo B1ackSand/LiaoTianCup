@@ -289,7 +289,7 @@
     <value>RandMap:</value>
   </data>
   <data name="BanTip" xml:space="preserve">
-    <value>Right click to ban a mutator</value>
+    <value>Right click to ban</value>
   </data>
   <data name="HasBanMutators" xml:space="preserve">
     <value>Banned mutators:</value>
@@ -370,7 +370,7 @@
     <value>6 mutators mode</value>
   </data>
   <data name="BraveMode" xml:space="preserve">
-    <value>Brave mode</value>
+    <value>Vincent's Game</value>
   </data>
   <data name="决战塔桑尼斯" xml:space="preserve">
     <value>Tarsonis</value>
@@ -392,5 +392,11 @@
   </data>
   <data name="FreeMutatorsWarn4" xml:space="preserve">
     <value>6 mutators mode will need you pick 4 free choice mutators</value>
+  </data>
+  <data name="HubSoloMode" xml:space="preserve">
+    <value>Nexus solo mode</value>
+  </data>
+  <data name="铁甲钢拳" xml:space="preserve">
+    <value>Real Steel</value>
   </data>
 </root>

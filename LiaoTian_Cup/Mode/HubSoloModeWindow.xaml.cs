@@ -15,7 +15,7 @@ namespace LiaoTian_Cup
     /// <summary>
     /// SingleModeWindow.xaml 的交互逻辑
     /// </summary>
-    public partial class SingleModeWindow : Page
+    public partial class HubSoloModeWindow : Page
     {
         public string botName = Dictionary.I18n.Lang.ResourceManager.GetString("RandomBotStrTip");
 
@@ -32,7 +32,7 @@ namespace LiaoTian_Cup
         string commanderDir = Dictionary.FilePath.commanderDir;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public SingleModeWindow()
+        public HubSoloModeWindow()
         {
             InitializeComponent();
             this.DataContext = this;
@@ -170,13 +170,13 @@ namespace LiaoTian_Cup
         {
             hasSelectMap = new Image();
             FlashHasSelectMap();
-            List<int> randNums = rk.GenerateXRandomNum(3, FileData.mapsInfo.Count);
-            MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[0]] + ".png", UriKind.Relative));
-            MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[1]] + ".png", UriKind.Relative));
-            MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.mapsInfo[randNums[2]] + ".png", UriKind.Relative));
-            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[0]]);
-            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[1]]);
-            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.mapsInfo[randNums[2]]);
+            List<int> randNums = rk.GenerateXRandomNum(3, FileData.hubMapsInfo.Count);
+            MapImg1.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[0]] + ".png", UriKind.Relative));
+            MapImg2.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[1]] + ".png", UriKind.Relative));
+            MapImg3.Source = new BitmapImage(new Uri(mapDir + FileData.hubMapsInfo[randNums[2]] + ".png", UriKind.Relative));
+            MapName1.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[0]]);
+            MapName2.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[1]]);
+            MapName3.Text = Dictionary.I18n.Lang.ResourceManager.GetString(FileData.hubMapsInfo[randNums[2]]);
             MapLabel.Foreground = Brushes.Red;
         }
 
@@ -245,13 +245,13 @@ namespace LiaoTian_Cup
         //显示最多10个随机选择因子
         private void ShowRandomFactor()
         {
-            var factorListClone = FileData.scoreFactorList.DeepClone();
+            var factorListClone = FileData.hubFactorCostList.DeepClone();
 
             if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("ThreeMutatorsMode")))
             {
                 for (int i = 0; i < factorListClone.Count; i++)
                 {
-
+                    // 不出现cost大于6的因子
                     if (Convert.ToInt32(factorListClone[i][2]) > 6)
                     {
                         factorListClone.RemoveAt(i);
@@ -277,15 +277,15 @@ namespace LiaoTian_Cup
                     int num = rk.GenerateRandomFromNumToNum(1, 101);
                     if (num <= 3)
                     {
-                        randNum.Add(rk.GenerateRandomFromNumToNum(0, 3));
+                        randNum.Add(rk.GenerateRandomFromNumToNum(0, 8));
                         continue;
                     }
-                    if (num <= 21)
+                    if (num <= 19)
                     {
-                        randNum.Add(rk.GenerateRandomFromNumToNum(3, 15));
+                        randNum.Add(rk.GenerateRandomFromNumToNum(8, 25));
                         continue;
                     }
-                    randNum.Add(rk.GenerateRandomFromNumToNum(15, 48));
+                    randNum.Add(rk.GenerateRandomFromNumToNum(25, 63));
                 }
 
                 SelectFactor1.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum.ElementAt(0)][1] + ".png", UriKind.Relative));
@@ -309,11 +309,11 @@ namespace LiaoTian_Cup
             var selectName = (img.Source as BitmapImage).UriSource.ToString()
                         .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-            for (int i = 0; i < FileData.scoreFactorList.Count; i++)
+            for (int i = 0; i < FileData.hubFactorCostList.Count; i++)
             {
-                if (FileData.scoreFactorList[i][1].Equals(selectName))
+                if (FileData.hubFactorCostList[i][1].Equals(selectName))
                 {
-                    _score += Convert.ToInt32(FileData.scoreFactorList[i][2]);
+                    _score += Convert.ToInt32(FileData.hubFactorCostList[i][2]);
                     Score.Text = _score.ToString();
                     break;
                 }
@@ -397,11 +397,11 @@ namespace LiaoTian_Cup
                 var selectName = (cancelFactor.Source as BitmapImage).UriSource.ToString()
                             .Replace("/LiaoTian_Cup;component/Resources/factor/", "").Replace(".png", "");
 
-                for (int i = 0; i < FileData.scoreFactorList.Count; i++)
+                for (int i = 0; i < FileData.hubFactorCostList.Count; i++)
                 {
-                    if (FileData.scoreFactorList[i][1].Equals(selectName))
+                    if (FileData.hubFactorCostList[i][1].Equals(selectName))
                     {
-                        _score -= Convert.ToInt32(FileData.scoreFactorList[i][2]);
+                        _score -= Convert.ToInt32(FileData.hubFactorCostList[i][2]);
                         Score.Text = _score.ToString();
                         break;
                     }
@@ -470,17 +470,17 @@ namespace LiaoTian_Cup
         //随机先出和后出指挥官处理逻辑
         private void RandomCommanderInfo()
         {
-            List<int> beforeRandNum = rk.GenerateXRandomNum(4, FileData.beforeCommanderInfo.Count);
-            List<int> afterRandNum = rk.GenerateXRandomNum(2, FileData.afterCommanderInfo.Count);
+            List<int> beforeRandNum = rk.GenerateXRandomNum(4, FileData.hubBeforeCommanderInfo.Count);
+            List<int> afterRandNum = rk.GenerateXRandomNum(2, FileData.hubAfterCommanderInfo.Count);
 
             //相对路径URI指定指挥官图片来源
-            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
-            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
-            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
-            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.beforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
+            BeforeCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.hubBeforeCommanderInfo[beforeRandNum[0]] + ".png", UriKind.Relative));
+            BeforeCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.hubBeforeCommanderInfo[beforeRandNum[1]] + ".png", UriKind.Relative));
+            BeforeCommander3.Source = new BitmapImage(new Uri(commanderDir + FileData.hubBeforeCommanderInfo[beforeRandNum[2]] + ".png", UriKind.Relative));
+            BeforeCommander4.Source = new BitmapImage(new Uri(commanderDir + FileData.hubBeforeCommanderInfo[beforeRandNum[3]] + ".png", UriKind.Relative));
 
-            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
-            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.afterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
+            AfterCommander1.Source = new BitmapImage(new Uri(commanderDir + FileData.hubAfterCommanderInfo[afterRandNum[0]] + ".png", UriKind.Relative));
+            AfterCommander2.Source = new BitmapImage(new Uri(commanderDir + FileData.hubAfterCommanderInfo[afterRandNum[1]] + ".png", UriKind.Relative));
         }
 
         //点击自选指挥官事件响应
@@ -546,7 +546,7 @@ namespace LiaoTian_Cup
             {
                 Warn.Text = "";
             }
-            this.NavigationService.Navigate(new ShowSingleDetail(this));
+            this.NavigationService.Navigate(new ShowHubSoloDetail(this));
         }
 
 

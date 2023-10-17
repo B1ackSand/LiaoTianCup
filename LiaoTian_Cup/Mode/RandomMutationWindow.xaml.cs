@@ -158,6 +158,7 @@ namespace LiaoTian_Cup
         private void Button_Random_Click(object sender, RoutedEventArgs e)
         {
             ChkDoubles.IsEnabled = false;
+            RandStartBtn.IsEnabled = false;
             reflashSelectItem();
             RandomMutationFunc();
         }
@@ -316,6 +317,7 @@ namespace LiaoTian_Cup
             CommanderWarn.Text = "";
             ChkDoubles.IsEnabled = true;
             isDoubles = false;
+            RandStartBtn.IsEnabled = true;
 
             MutationBox.Text = string.Empty;
             MapBox.Text = string.Empty;
