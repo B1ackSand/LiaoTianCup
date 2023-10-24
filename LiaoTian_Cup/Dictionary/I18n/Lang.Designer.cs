@@ -187,7 +187,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Co-op mode 的本地化字符串。
+        ///   查找类似 Official co-op mode 的本地化字符串。
         /// </summary>
         public static string DoublesMode {
             get {
@@ -502,7 +502,7 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         }
         
         /// <summary>
-        ///   查找类似 Solo mode 的本地化字符串。
+        ///   查找类似 Official solo mode 的本地化字符串。
         /// </summary>
         public static string SingleMode {
             get {
@@ -687,6 +687,15 @@ namespace LiaoTian_Cup.Dictionary.I18n {
         public static string 旧世步兵团 {
             get {
                 return ResourceManager.GetString("旧世步兵团", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Nexus_BattleField 的本地化字符串。
+        /// </summary>
+        public static string 时空战场 {
+            get {
+                return ResourceManager.GetString("时空战场", resourceCulture);
             }
         }
         

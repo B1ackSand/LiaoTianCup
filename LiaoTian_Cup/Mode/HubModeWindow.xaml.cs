@@ -264,7 +264,7 @@ namespace LiaoTian_Cup.Mode
             NegativeFactor12.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[11] + ".png", UriKind.Relative));
             NegativeFactor13.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[12] + ".png", UriKind.Relative));
             NegativeFactor14.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[13] + ".png", UriKind.Relative));
-            NegativeFactor15.Source = new BitmapImage(new Uri(factorDir + FileData.hubNegativeFactorInfo[14] + ".png", UriKind.Relative));
+            NegativeFactor15.Source = new BitmapImage(new Uri(factorDir + Dictionary.I18n.Lang.ResourceManager.GetString("时空战场") + ".png", UriKind.Relative));
         }
 
         //多线因子显示
@@ -392,8 +392,7 @@ namespace LiaoTian_Cup.Mode
             if (_modeName.Equals(Dictionary.I18n.Lang.ResourceManager.GetString("EightMutatorsMode")))
             {
                 SelectFactor7.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[6]] + ".png", UriKind.Relative));
-                // SelectFactor8.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[7]] + ".png", UriKind.Relative));
-                SelectFactor8.Source = new BitmapImage(new Uri("/LiaoTian_Cup;component/Resources/factor/此面向敌.png", UriKind.Relative));
+                SelectFactor8.Source = new BitmapImage(new Uri(factorDir + factorListClone[randNum[7]] + ".png", UriKind.Relative));
             }
         }
 

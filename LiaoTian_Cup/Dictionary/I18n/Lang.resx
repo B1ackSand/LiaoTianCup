@@ -124,10 +124,10 @@
     <value>Pure negative mode</value>
   </data>
   <data name="DoublesMode" xml:space="preserve">
-    <value>Co-op mode</value>
+    <value>Official co-op mode</value>
   </data>
   <data name="SingleMode" xml:space="preserve">
-    <value>Solo mode</value>
+    <value>Official solo mode</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>About Me</value>
@@ -398,5 +398,8 @@
   </data>
   <data name="铁甲钢拳" xml:space="preserve">
     <value>Real Steel</value>
+  </data>
+  <data name="时空战场" xml:space="preserve">
+    <value>Nexus_BattleField</value>
   </data>
 </root>

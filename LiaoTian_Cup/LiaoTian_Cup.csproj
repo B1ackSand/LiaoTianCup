@@ -68,6 +68,7 @@
     <None Remove="Resources\commander\雷诺.png" />
     <None Remove="Resources\database.db" />
     <None Remove="Resources\factor\nexusbattlefield.png" />
+    <None Remove="Resources\factor\Nexus_BattleField.png" />
     <None Remove="Resources\factor\万钧皇权.png" />
     <None Remove="Resources\factor\不给糖果就捣蛋.png" />
     <None Remove="Resources\factor\丧尸大战.png" />
@@ -263,7 +264,7 @@
     <Resource Include="Resources\commander\赛兰蒂斯.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="Resources\factor\nexusbattlefield.png">
+    <Resource Include="Resources\factor\Nexus_BattleField.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\factor\万钧皇权.png">

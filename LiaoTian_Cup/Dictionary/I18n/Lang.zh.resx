@@ -124,10 +124,10 @@
     <value>纯正面因子模式</value>
   </data>
   <data name="DoublesMode" xml:space="preserve">
-    <value>双打模式</value>
+    <value>官方双打模式</value>
   </data>
   <data name="SingleMode" xml:space="preserve">
-    <value>正常单刷模式</value>
+    <value>官方单刷模式</value>
   </data>
   <data name="About" xml:space="preserve">
     <value>关于我</value>
@@ -398,5 +398,8 @@
   </data>
   <data name="铁甲钢拳" xml:space="preserve">
     <value>铁甲钢拳</value>
+  </data>
+  <data name="时空战场" xml:space="preserve">
+    <value>时空战场</value>
   </data>
 </root>

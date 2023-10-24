@@ -1,6 +1,6 @@
 # LiaoTian_Cup
 
-[聊天杯](https://github.com/B1ackSand/LiaoTianCup)是一个星际争霸2非官方的比赛赛事。
+[聊天杯](https://qm.qq.com/q/nS395vkauA)是一个星际争霸2非官方的比赛赛事。
 
 该项目基于WPF (C#/.NET 6.0)，为我朋友创建的竞赛工具。
 

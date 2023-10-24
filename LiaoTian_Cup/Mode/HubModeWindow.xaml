@@ -187,7 +187,6 @@
                                 <Image x:Name="NegativeFactor3" />
                                 <Image x:Name="NegativeFactor4" />
                                 <Image x:Name="NegativeFactor5" />
-                                <Image x:Name="NegativeFactor15" />
                             </StackPanel>
                         </Grid>
                         <Grid Margin="0,15,0,0" Row="1">
@@ -201,6 +200,7 @@
                                 <Image x:Name="NegativeFactor12" />
                                 <Image x:Name="NegativeFactor13" />
                                 <Image x:Name="NegativeFactor14" />
+                                <Image x:Name="NegativeFactor15" />
                             </StackPanel>
                         </Grid>
                     </Grid>

@@ -106,13 +106,13 @@
                     FontSize="15" />
             </StackPanel>
             <Button
-                Width="200"
+                Width="160"
                 Height="40"
                 Margin="0,0,15,10"
                 HorizontalAlignment="Right"
                 VerticalAlignment="Bottom"
                 Click="AddGroupBtn"
-                Content="聊天杯赛事群：437813472"
+                Content="赛事群：437813472"
                 FontSize="15" />
         </Grid>
     </Grid>
