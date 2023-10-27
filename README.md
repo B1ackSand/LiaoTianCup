@@ -4,6 +4,8 @@
 
 This project is a competition tool created for my friend, based on WPF (C#/.NET 6.0).
 
+**由于版权争斗问题，此项目不再维护。**
+
 ## GUI
 ![](https://s2.loli.net/2023/09/20/48vLNREnQ1OkMuy.png)
 ![](https://s2.loli.net/2023/09/20/mNxeP4R8SdFbZ3W.png)
