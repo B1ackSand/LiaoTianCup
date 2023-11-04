@@ -4,7 +4,7 @@
 
 This project is a competition tool created for my friend, based on WPF (C#/.NET 6.0).
 
-**由于版权争斗问题，此项目不再维护。**
+**由于讨厌的势力争斗问题，此项目不再进行开放维护。**
 
 ## GUI
 ![](https://s2.loli.net/2023/09/20/48vLNREnQ1OkMuy.png)
@@ -33,5 +33,5 @@ This project is a competition tool created for my friend, based on WPF (C#/.NET 
 ## 许可补充说明
 + 根据GPL3许可证协议你可以自行修改源代码，但无论以何种方式修改或者使用代码，都需要开源。
 + 由于此工具为聊天杯 - “星际争霸2”非官方比赛工具，开源目的是供社区学习使用和软件逻辑公开。
-+ 禁止任何人通过修改工具代码，在聊天杯比赛中达成利益目的。
++ 禁止任何人通过修改工具代码，在非聊天杯比赛中达成利益目的。
 
