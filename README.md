@@ -4,7 +4,7 @@
 
 This project is a competition tool created for my friend, based on WPF (C#/.NET 6.0).
 
-**由于讨厌的势力争斗问题，此项目不再进行开放维护。**
+**由于讨厌的势力争斗问题，此项目不再进行公开维护,转为私有仓库进行个人维护。**
 
 ## GUI
 ![](https://s2.loli.net/2023/09/20/48vLNREnQ1OkMuy.png)
